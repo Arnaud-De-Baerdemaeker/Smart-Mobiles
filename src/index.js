@@ -1,9 +1,16 @@
+/*
+	Smart Mobiles
+	Started on December 2022
+	By Arnaud De Baerdemaeker
+*/
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import reportWebVitals from './client/reportWebVitals';
 
-import './index.css';
+import './client/App.scss';
+
 import App from './client/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
