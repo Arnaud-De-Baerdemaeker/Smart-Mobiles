@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from "react";
 
-import './App.css';
-
 import {getAllBrands} from "./api-calls/fetch-all-brands";
 
 function App() {
