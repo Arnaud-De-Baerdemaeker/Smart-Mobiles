@@ -1,5 +1,19 @@
-/*
-	Smart Mobiles
-	Started on December 2022
-	By Arnaud De Baerdemaeker
-*/
+// HEADER
+
+header {
+	display: flex;
+	justify-content: center;
+	background: radial-gradient(circle at 0% 50%, rgba(0, 97, 255, 1) 0%, rgba(96, 239, 255, 1) 70%);
+
+	h1 {
+		margin: 0;
+		padding: {
+			top: 20px;
+			bottom: 20px;
+		}
+		font: {
+			family: $shareTechMono;
+			size: 30px;
+		}
+	}
+}
