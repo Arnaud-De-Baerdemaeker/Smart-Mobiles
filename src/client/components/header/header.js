@@ -8,7 +8,9 @@ import React from "react";
 
 function Header() {
 	return(
-		<header>{"Smart Mobiles"}</header>
+		<header>
+			<h1>{"SMART MOBILES"}</h1>
+		</header>
 	);
 }
 
