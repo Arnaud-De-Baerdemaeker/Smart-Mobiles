@@ -7,12 +7,12 @@
 import React from "react";
 
 function Footer() {
-    return(
-        <footer>
-            <p>{"Smart Mobiles"}</p>
-            <p>{"A project made in ReactJS by Arnaud De Baerdemaeker"}</p>
-        </footer>
-    );
+	return(
+		<footer>
+			<p>{"Smart Mobiles"}</p>
+			<p>{"A project made in ReactJS by Arnaud De Baerdemaeker"}</p>
+		</footer>
+	);
 }
 
 export default Footer;
