@@ -3,3 +3,28 @@
 	Started on December 2022
 	By Arnaud De Baerdemaeker
 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+body {
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+header h1 {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: "Share Tech Mono", arial;
+  font-size: 30px;
+}
+
+footer {
+  border-top-style: solid;
+  border-top-width: 1px;
+}
