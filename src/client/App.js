@@ -11,6 +11,7 @@ const App = () => {
 	const [brandTitle, setBrandTitle] = useState(null);
 	const [phones, setPhones] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [phoneDetails, setPhoneDetails] = useState(null);
 	const dropDown = useRef(null);
 
 	const getOption = () => {
@@ -23,15 +24,14 @@ const App = () => {
 		});
 	}
 
-	const acquirePhoneDetails = (url) => {
-		return () => {
-			getPhoneDetails(url)
-			.then(result => console.log(result.data.data));
-		}
+	const handleCardClick = (url) => {
+		setIsModalOpen(!isModalOpen);
+		acquirePhoneDetails(url);
 	}
 
-	const toggleModal = () => {
-		setIsModalOpen({isModalOpen: !isModalOpen});
+	const acquirePhoneDetails = (url) => {
+		getPhoneDetails(url)
+		.then(result => setPhoneDetails(result.data.data));
 	}
 
 	useEffect(() => {
@@ -65,16 +65,19 @@ const App = () => {
 				<div>
 					{phones
 						? phones.map(phone =>
-							<section onClick={toggleModal} key={phone.slug}>
+							<section onClick={() => handleCardClick(phone.detail)} key={phone.slug}>
 								<div>
-									<img src={phone.image} alt={phone.brand + phone.phone_name + " image"} />
+									<img src={phone.image} alt={`${phone.brand} ${phone.phone_name}`} />
 								</div>
 								<h3>{phone.brand + phone.phone_name}</h3>
 							</section>
 						)
 						: null
 					}
-					<Modal />
+					{isModalOpen
+						? <Modal phoneDetails={phoneDetails} />
+						: null
+					}
 				</div>
 			</main>
 		</div>
