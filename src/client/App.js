@@ -1,86 +1,36 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState} from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
-import Modal from "./components/modal/modal";
+import Home from "./components/home/home";
+import PhoneDetails from "./components/phoneDetails/phoneDetails";
 
-import {getAllBrands} from "./apiCalls/fetchAllBrands";
-import {getPhonesFromBrand} from "./apiCalls/fetchPhonesFromBrand";
 import {getPhoneDetails} from "./apiCalls/fetchPhoneDetails";
 
 const App = () => {
-	const [brands, setBrands] = useState([]);
-	const [brandTitle, setBrandTitle] = useState(null);
-	const [phones, setPhones] = useState(null);
-	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [phoneDetails, setPhoneDetails] = useState(null);
-	const dropDown = useRef(null);
-
-	const getOption = () => {
-		let selected = dropDown.current.value;
-
-		getPhonesFromBrand(selected)
-		.then(result => {
-			setBrandTitle(result.data.data.title);
-			setPhones(result.data.data.phones);
-		});
-	}
-
-	const handleCardClick = (url) => {
-		setIsModalOpen(!isModalOpen);
-		acquirePhoneDetails(url);
-	}
 
 	const acquirePhoneDetails = (url) => {
 		getPhoneDetails(url)
 		.then(result => setPhoneDetails(result.data.data));
 	}
 
-	useEffect(() => {
-		getAllBrands()
-		.then(result => {
-			setBrands(result.data.data);
-		});
-	}, []);
-
 	return (
-		<div className={"App"}>
-			<main>
-				<div>
-					<label htmlFor={"brandSelection"}>{"Select a brand"}</label>
-					<select name={"brands"} id={"brandSelection"} ref={dropDown}>
-						<option value={""}>{"Please choose an option"}</option>
-						{brands.length && brands.map(item => 
-							<option value={item.brand_slug} key={item.brand_id}>{item.brand_name}</option>
-						)}
-					</select>
-					<button onClick={getOption}>{"Validate"}</button>
-				</div>
-
-				<div>
-					{brandTitle
-						? <h2>{brandTitle}</h2>
-						: null
+		<BrowserRouter>
+			<Routes>
+				<Route
+					path={"/"}
+					element={
+						<Home acquirePhoneDetails={acquirePhoneDetails} />
 					}
-				</div>
-
-				<div>
-					{phones
-						? phones.map(phone =>
-							<section onClick={() => handleCardClick(phone.detail)} key={phone.slug}>
-								<div>
-									<img src={phone.image} alt={`${phone.brand} ${phone.phone_name}`} />
-								</div>
-								<h3>{phone.brand + phone.phone_name}</h3>
-							</section>
-						)
-						: null
+				/>
+				<Route
+					path={"/phone-details"}
+					element={
+						<PhoneDetails phoneDetails={phoneDetails} />
 					}
-					{isModalOpen
-						? <Modal phoneDetails={phoneDetails} />
-						: null
-					}
-				</div>
-			</main>
-		</div>
+				/>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
