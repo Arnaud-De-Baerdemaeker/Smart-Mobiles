@@ -1,10 +1,12 @@
 import React, {useState, useEffect, useRef} from "react";
 import {Link} from "react-router-dom";
 
+import {getLatestPhones} from "../../apiCalls/fetchLatestPhones";
 import {getAllBrands} from "../../apiCalls/fetchAllBrands";
 import {getPhonesFromBrand} from "../../apiCalls/fetchPhonesFromBrand";
 
 const Home = ({acquirePhoneDetails}) => {
+	const [latestPhones, setLatestPhones] = useState(null);
 	const [brands, setBrands] = useState([]);
 	const [brandTitle, setBrandTitle] = useState(null);
 	const [phones, setPhones] = useState(null);
@@ -21,10 +23,14 @@ const Home = ({acquirePhoneDetails}) => {
 	}
 
 	useEffect(() => {
+		getLatestPhones()
+		.then(result =>
+			setLatestPhones(result.data.data)
+		);
 		getAllBrands()
-		.then(result => {
-			setBrands(result.data.data);
-		});
+		.then(result =>
+			setBrands(result.data.data)
+		);
 	}, []);
 
 	return(
@@ -39,6 +45,27 @@ const Home = ({acquirePhoneDetails}) => {
 				</select>
 				<button onClick={getOption}>{"Validate"}</button>
 			</div>
+
+			{latestPhones
+				? <section>
+					<h2>{latestPhones.title}</h2>
+					{latestPhones.phones.map(phone =>
+						<Link
+							to={"/phone-details"}
+							onClick={() => acquirePhoneDetails(phone.detail)}
+							key={phone.phone_name}
+						>
+							<section>
+								<div>
+									<img src={phone.image} alt={phone.phone_name} />
+								</div>
+								<h3>{phone.phone_name}</h3>
+							</section>
+						</Link>
+					)}
+				</section>
+				: <p>{"Loading"}</p>
+			}
 
 			<div>
 				{brandTitle
