@@ -36,7 +36,21 @@ const PhoneDetails = ({phoneDetails}) => {
 						</div>
 					</div>
 					<div>
-						
+						{phoneDetails.specifications.map(specification =>
+							<section key={specification.title}>
+								<h3>{specification.title}</h3>
+								<dl>
+									{specification.specs.map(spec =>
+										<>
+											<dt>{spec.key}</dt>
+											{spec.val.map(value =>
+												<dd>{value}</dd>
+											)}
+										</>
+									)}
+								</dl>
+							</section>
+						)}
 					</div>
 				</>
 				: <p>{"Loading"}</p>
