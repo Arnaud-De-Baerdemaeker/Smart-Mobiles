@@ -1,17 +1,17 @@
 import axios from "axios";
 
-const baseURL = "http://phone-specs-api.azharimm.dev";
+import {baseURL} from "../App";
 
 const getPhonesFromBrand = async (brand) => {
-    const request = await axios({
-        method: "GET",
-        url: baseURL + `/v2/brands/${brand}`,
-        headers: {
-            "content-type": "application/json"
-        }
-    });
+	const request = await axios({
+		method: "GET",
+		url: `${baseURL}/v2/brands/${brand}`,
+		headers: {
+			"content-type": "application/json"
+		}
+	});
 
-    return request;
+	return request;
 }
 
 export {getPhonesFromBrand}

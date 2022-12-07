@@ -6,6 +6,8 @@ import PhoneDetails from "./components/phoneDetails/phoneDetails";
 
 import {getPhoneDetails} from "./apiCalls/fetchPhoneDetails";
 
+const baseURL = "http://phone-specs-api.azharimm.dev";
+
 const App = () => {
 	const [phoneDetails, setPhoneDetails] = useState(null);
 
@@ -35,3 +37,5 @@ const App = () => {
 }
 
 export default App;
+
+export {baseURL};
