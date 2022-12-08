@@ -35,17 +35,28 @@ const Home = ({acquirePhoneDetails}) => {
 
 	return(
 		<main>
+			{/* Brand selection */}
 			<div>
 				<label htmlFor={"brandSelection"}>{"Select a brand"}</label>
-				<select name={"brands"} id={"brandSelection"} ref={dropDown}>
+				<select
+					name={"brands"}
+					id={"brandSelection"}
+					ref={dropDown}
+				>
 					<option value={""}>{"Please choose an option"}</option>
 					{brands.length && brands.map(item => 
-						<option value={item.brand_slug} key={item.brand_id}>{item.brand_name}</option>
+						<option
+							value={item.brand_slug}
+							key={item.brand_id}
+						>
+							{item.brand_name}
+						</option>
 					)}
 				</select>
 				<button onClick={getOption}>{"Validate"}</button>
 			</div>
 
+			{/* Latest phones */}
 			{latestPhones
 				? <section>
 					<h2>{latestPhones.title}</h2>
@@ -57,7 +68,10 @@ const Home = ({acquirePhoneDetails}) => {
 						>
 							<section>
 								<div>
-									<img src={phone.image} alt={phone.phone_name} />
+									<img
+										src={phone.image}
+										alt={phone.phone_name}
+									/>
 								</div>
 								<h3>{phone.phone_name}</h3>
 							</section>
@@ -67,6 +81,7 @@ const Home = ({acquirePhoneDetails}) => {
 				: <p>{"Loading"}</p>
 			}
 
+			{/* Brand titles when option selected */}
 			<div>
 				{brandTitle
 					? <h2>{brandTitle}</h2>
@@ -74,6 +89,7 @@ const Home = ({acquirePhoneDetails}) => {
 				}
 			</div>
 
+			{/* List of phones from a brand */}
 			<div>
 				{phones
 					? phones.map(phone =>
@@ -84,9 +100,12 @@ const Home = ({acquirePhoneDetails}) => {
 						>
 							<section>
 								<div>
-									<img src={phone.image} alt={`${phone.brand} ${phone.phone_name}`} />
+									<img
+										src={phone.image}
+										alt={`${phone.brand} ${phone.phone_name}`}
+									/>
 								</div>
-								<h3>{phone.brand + phone.phone_name}</h3>
+								<h3>{`${phone.brand} ${phone.phone_name}`}</h3>
 							</section>
 						</Link>
 					)
