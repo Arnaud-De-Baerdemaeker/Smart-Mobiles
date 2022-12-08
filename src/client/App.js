@@ -21,15 +21,11 @@ const App = () => {
 			<Routes>
 				<Route
 					path={"/"}
-					element={
-						<Home acquirePhoneDetails={acquirePhoneDetails} />
-					}
+					element={<Home acquirePhoneDetails={acquirePhoneDetails} />}
 				/>
 				<Route
 					path={"/:slug"}
-					element={
-						<PhoneDetails phoneDetails={phoneDetails} />
-					}
+					element={<PhoneDetails phoneDetails={phoneDetails} />}
 				/>
 			</Routes>
 		</BrowserRouter>
