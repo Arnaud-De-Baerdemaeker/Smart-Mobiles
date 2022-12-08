@@ -27,15 +27,11 @@ const App = () => {
 			<Routes>
 				<Route
 					path={"/"}
-					element={
-						<Home acquirePhoneDetails={acquirePhoneDetails} />
-					}
+					element={<Home acquirePhoneDetails={acquirePhoneDetails} />}
 				/>
 				<Route
-					path={"/phone-details"}
-					element={
-						<PhoneDetails phoneDetails={phoneDetails} />
-					}
+					path={"/:slug"}
+					element={<PhoneDetails phoneDetails={phoneDetails} />}
 				/>
 			</Routes>
 		</BrowserRouter>

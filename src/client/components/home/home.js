@@ -85,7 +85,7 @@ const Home = ({acquirePhoneDetails}) => {
 					<h2>{searchResult.title}</h2>
 					{searchResult.phones.map(phone =>
 						<Link
-							to={"/phone-details"}
+							to={`/${phone.slug}`}
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.phone_name}
 						>
@@ -110,7 +110,7 @@ const Home = ({acquirePhoneDetails}) => {
 					<h2>{latestPhones.title}</h2>
 					{latestPhones.phones.map(phone =>
 						<Link
-							to={"/phone-details"}
+							to={`/${phone.slug}`}
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.phone_name}
 						>
@@ -130,19 +130,19 @@ const Home = ({acquirePhoneDetails}) => {
 			}
 
 			{/* Brand titles when option selected */}
-			<div>
-				{brandTitle
-					? <h2>{brandTitle}</h2>
-					: null
-				}
-			</div>
+			{brandTitle
+				? <div>
+					<h2>{brandTitle}</h2>
+				</div>
+				: null
+			}
 
 			{/* List of phones from a brand */}
-			<div>
-				{phones
-					? phones.map(phone =>
+			{phones
+				? <div>
+					{phones.map(phone =>
 						<Link
-							to={"/phone-details"}
+							to={`/${phone.slug}`}
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.slug}
 						>
@@ -156,10 +156,10 @@ const Home = ({acquirePhoneDetails}) => {
 								<h3>{`${phone.brand} ${phone.phone_name}`}</h3>
 							</section>
 						</Link>
-					)
-					: null
-				}
-			</div>
+					)}
+				</div>
+				: null
+			}
 		</main>
 	);
 }
