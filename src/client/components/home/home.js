@@ -130,17 +130,17 @@ const Home = ({acquirePhoneDetails}) => {
 			}
 
 			{/* Brand titles when option selected */}
-			<div>
-				{brandTitle
-					? <h2>{brandTitle}</h2>
-					: null
-				}
-			</div>
+			{brandTitle
+				? <div>
+					<h2>{brandTitle}</h2>
+				</div>
+				: null
+			}
 
 			{/* List of phones from a brand */}
-			<div>
-				{phones
-					? phones.map(phone =>
+			{phones
+				? <div>
+					{phones.map(phone =>
 						<Link
 							to={`/${phone.slug}`}
 							onClick={() => acquirePhoneDetails(phone.detail)}
@@ -156,10 +156,10 @@ const Home = ({acquirePhoneDetails}) => {
 								<h3>{`${phone.brand} ${phone.phone_name}`}</h3>
 							</section>
 						</Link>
-					)
-					: null
-				}
-			</div>
+					)}
+				</div>
+				: null
+			}
 		</main>
 	);
 }
