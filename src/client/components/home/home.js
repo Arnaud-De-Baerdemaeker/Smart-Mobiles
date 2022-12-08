@@ -3,14 +3,17 @@ import {Link} from "react-router-dom";
 
 import {getLatestPhones} from "../../apiCalls/fetchLatestPhones";
 import {getAllBrands} from "../../apiCalls/fetchAllBrands";
+import {getResultsFromSearchQuery} from "../../apiCalls/fetchFromInputTerm";
 import {getPhonesFromBrand} from "../../apiCalls/fetchPhonesFromBrand";
 
 const Home = ({acquirePhoneDetails}) => {
 	const [latestPhones, setLatestPhones] = useState(null);
 	const [brands, setBrands] = useState([]);
 	const [brandTitle, setBrandTitle] = useState(null);
+	const [searchResult, setSearchResult] = useState(null);
 	const [phones, setPhones] = useState(null);
 	const dropDown = useRef(null);
+	const searchInput = useRef(null);
 
 	const getOption = () => {
 		let selected = dropDown.current.value;
@@ -20,6 +23,15 @@ const Home = ({acquirePhoneDetails}) => {
 			setBrandTitle(result.data.data.title);
 			setPhones(result.data.data.phones);
 		});
+	}
+
+	const getSearchQuery = () => {
+		let searchTerms = searchInput.current.value;
+
+		getResultsFromSearchQuery(searchTerms)
+		.then(result =>
+			setSearchResult(result.data.data)
+		);
 	}
 
 	useEffect(() => {
@@ -55,6 +67,42 @@ const Home = ({acquirePhoneDetails}) => {
 				</select>
 				<button onClick={getOption}>{"Validate"}</button>
 			</div>
+
+			{/* Search field */}
+			<div>
+				<label htmlFor={"phoneSearch"}>{"Search a phone"}</label>
+				<input
+					type={"search"}
+					id={"phoneSearch"}
+					ref={searchInput}
+				/>
+				<button onClick={getSearchQuery}>{"Search"}</button>
+			</div>
+
+			{/* Search results */}
+			{searchResult
+				? <section>
+					<h2>{searchResult.title}</h2>
+					{searchResult.phones.map(phone =>
+						<Link
+							to={"/phone-details"}
+							onClick={() => acquirePhoneDetails(phone.detail)}
+							key={phone.phone_name}
+						>
+							<section>
+								<div>
+									<img
+										src={phone.image}
+										alt={phone.phone_name}
+									/>
+								</div>
+								<h3>{phone.phone_name}</h3>
+							</section>
+						</Link>
+					)}
+				</section>
+				: null
+			}
 
 			{/* Latest phones */}
 			{latestPhones
