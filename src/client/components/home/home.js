@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import {Link} from "react-router-dom";
 
 import UserInput from "../userInput/userInput";
+import PhonesList from "../phonesList/phonesList";
 import PhoneCard from "../phoneCard/phoneCard";
 
 import {getLatestPhones} from "../../apiCalls/fetchLatestPhones";
@@ -90,8 +91,9 @@ const Home = ({acquirePhoneDetails}) => {
 
 			{/* Search results */}
 			{searchResult
-				? <section>
-					<h2>{searchResult.title}</h2>
+				? <PhonesList
+					title={searchResult.title}
+				>
 					{searchResult.phones.map(phone =>
 						<Link
 							to={`/${phone.slug}`}
@@ -105,14 +107,15 @@ const Home = ({acquirePhoneDetails}) => {
 							/>
 						</Link>
 					)}
-				</section>
+				</PhonesList>
 				: null
 			}
 
 			{/* Latest phones */}
 			{latestPhones
-				? <section>
-					<h2>{latestPhones.title}</h2>
+				? <PhonesList
+					title={latestPhones.title}
+				>
 					{latestPhones.phones.map(phone =>
 						<Link
 							to={`/${phone.slug}`}
@@ -126,14 +129,16 @@ const Home = ({acquirePhoneDetails}) => {
 							/>
 						</Link>
 					)}
-				</section>
+				</PhonesList>
 				: <p>{"Loading"}</p>
 			}
 
 			{/* List of phones from a brand */}
 			{brandTitle && phones
-				? <div>
-					<h2>{brandTitle}</h2>
+				? <PhonesList
+					title={brandTitle}
+				>
+					
 					{phones.map(phone =>
 						<Link
 							to={`/${phone.slug}`}
@@ -147,7 +152,7 @@ const Home = ({acquirePhoneDetails}) => {
 							/>
 						</Link>
 					)}
-				</div>
+				</PhonesList>
 				: null
 			}
 		</main>
