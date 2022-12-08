@@ -1,6 +1,8 @@
 import React, {useState, useEffect, useRef} from "react";
 import {Link} from "react-router-dom";
 
+import UserInput from "../userInput/userInput";
+
 import {getLatestPhones} from "../../apiCalls/fetchLatestPhones";
 import {getAllBrands} from "../../apiCalls/fetchAllBrands";
 import {getResultsFromSearchQuery} from "../../apiCalls/fetchFromInputTerm";
@@ -48,8 +50,12 @@ const Home = ({acquirePhoneDetails}) => {
 	return(
 		<main>
 			{/* Brand selection */}
-			<div>
-				<label htmlFor={"brandSelection"}>{"Select a brand"}</label>
+			<UserInput
+				labelFor={"brandSelection"}
+				labelName={"Select a brand"}
+				buttonClick={getOption}
+				buttonName={"Validate"}
+			>
 				<select
 					name={"brands"}
 					id={"brandSelection"}
@@ -65,19 +71,21 @@ const Home = ({acquirePhoneDetails}) => {
 						</option>
 					)}
 				</select>
-				<button onClick={getOption}>{"Validate"}</button>
-			</div>
+			</UserInput>
 
 			{/* Search field */}
-			<div>
-				<label htmlFor={"phoneSearch"}>{"Search a phone"}</label>
+			<UserInput
+				labelFor={"phoneSearch"}
+				labelName={"Search a phone"}
+				buttonClick={getSearchQuery}
+				buttonName={"Search"}
+			>
 				<input
 					type={"search"}
 					id={"phoneSearch"}
 					ref={searchInput}
 				/>
-				<button onClick={getSearchQuery}>{"Search"}</button>
-			</div>
+			</UserInput>
 
 			{/* Search results */}
 			{searchResult
