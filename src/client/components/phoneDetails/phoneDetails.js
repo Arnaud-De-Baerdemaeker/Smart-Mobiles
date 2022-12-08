@@ -1,13 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
+
+import Modal from "../modal/modal";
 
 const PhoneDetails = ({phoneDetails}) => {
+	const [modalState, setModalState] = useState(false);
+
 	return(
 		<main>
 			{phoneDetails
 				? <>
 					<h2>{`${phoneDetails.brand} ${phoneDetails.phone_name}`}</h2>
 					<div>
-						<div>
+						<div onClick={() => setModalState(!modalState)}>
 							<img
 								src={phoneDetails.thumbnail}
 								alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
@@ -52,6 +56,14 @@ const PhoneDetails = ({phoneDetails}) => {
 							</section>
 						)}
 					</div>
+					{modalState
+						? <Modal
+							modalState={modalState}
+							images={phoneDetails.phone_images}
+							name={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
+						/>
+						: null
+					}
 				</>
 				: <p>{"Loading"}</p>
 			}
