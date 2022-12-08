@@ -89,56 +89,8 @@ const Home = ({acquirePhoneDetails}) => {
 				/>
 			</UserInput>
 
-			{/* Search results */}
-			{searchResult
-				? <PhonesList
-					title={searchResult.title}
-				>
-					{searchResult.phones.map(phone =>
-						<Link
-							to={`/${phone.slug}`}
-							onClick={() => acquirePhoneDetails(phone.detail)}
-							key={phone.phone_name}
-						>
-							<PhoneCard
-								imgSrc={phone.image}
-								imgAlt={phone.phone_name}
-								title={phone.phone_name}
-							/>
-						</Link>
-					)}
-				</PhonesList>
-				: null
-			}
-
-			{/* Latest phones */}
-			{latestPhones
-				? <PhonesList
-					title={latestPhones.title}
-				>
-					{latestPhones.phones.map(phone =>
-						<Link
-							to={`/${phone.slug}`}
-							onClick={() => acquirePhoneDetails(phone.detail)}
-							key={phone.phone_name}
-						>
-							<PhoneCard
-								imgSrc={phone.image}
-								imgAlt={phone.phone_name}
-								title={phone.phone_name}
-							/>
-						</Link>
-					)}
-				</PhonesList>
-				: <p>{"Loading"}</p>
-			}
-
-			{/* List of phones from a brand */}
 			{brandTitle && phones
-				? <PhonesList
-					title={brandTitle}
-				>
-					
+				? <PhonesList title={brandTitle}>
 					{phones.map(phone =>
 						<Link
 							to={`/${phone.slug}`}
@@ -153,7 +105,39 @@ const Home = ({acquirePhoneDetails}) => {
 						</Link>
 					)}
 				</PhonesList>
-				: null
+				: searchResult
+					? searchResult && <PhonesList title={searchResult.title}>
+						{searchResult.phones.map(phone =>
+							<Link
+								to={`/${phone.slug}`}
+								onClick={() => acquirePhoneDetails(phone.detail)}
+								key={phone.phone_name}
+							>
+								<PhoneCard
+									imgSrc={phone.image}
+									imgAlt={phone.phone_name}
+									title={phone.phone_name}
+								/>
+							</Link>
+						)}
+					</PhonesList>
+					: latestPhones
+						? <PhonesList title={latestPhones.title}>
+							{latestPhones.phones.map(phone =>
+								<Link
+									to={`/${phone.slug}`}
+									onClick={() => acquirePhoneDetails(phone.detail)}
+									key={phone.phone_name}
+								>
+									<PhoneCard
+										imgSrc={phone.image}
+										imgAlt={phone.phone_name}
+										title={phone.phone_name}
+									/>
+								</Link>
+							)}
+						</PhonesList>
+						: <p>{"Loading"}</p>
 			}
 		</main>
 	);
