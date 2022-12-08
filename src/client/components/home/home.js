@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import {Link} from "react-router-dom";
 
 import UserInput from "../userInput/userInput";
+import PhoneCard from "../phoneCard/phoneCard";
 
 import {getLatestPhones} from "../../apiCalls/fetchLatestPhones";
 import {getAllBrands} from "../../apiCalls/fetchAllBrands";
@@ -97,15 +98,11 @@ const Home = ({acquirePhoneDetails}) => {
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.phone_name}
 						>
-							<section>
-								<div>
-									<img
-										src={phone.image}
-										alt={phone.phone_name}
-									/>
-								</div>
-								<h3>{phone.phone_name}</h3>
-							</section>
+							<PhoneCard
+								imgSrc={phone.image}
+								imgAlt={phone.phone_name}
+								title={phone.phone_name}
+							/>
 						</Link>
 					)}
 				</section>
@@ -122,47 +119,32 @@ const Home = ({acquirePhoneDetails}) => {
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.phone_name}
 						>
-							<section>
-								<div>
-									<img
-										src={phone.image}
-										alt={phone.phone_name}
-									/>
-								</div>
-								<h3>{phone.phone_name}</h3>
-							</section>
+							<PhoneCard
+								imgSrc={phone.image}
+								imgAlt={phone.phone_name}
+								title={phone.phone_name}
+							/>
 						</Link>
 					)}
 				</section>
 				: <p>{"Loading"}</p>
 			}
 
-			{/* Brand titles when option selected */}
-			{brandTitle
+			{/* List of phones from a brand */}
+			{brandTitle && phones
 				? <div>
 					<h2>{brandTitle}</h2>
-				</div>
-				: null
-			}
-
-			{/* List of phones from a brand */}
-			{phones
-				? <div>
 					{phones.map(phone =>
 						<Link
 							to={`/${phone.slug}`}
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.slug}
 						>
-							<section>
-								<div>
-									<img
-										src={phone.image}
-										alt={`${phone.brand} ${phone.phone_name}`}
-									/>
-								</div>
-								<h3>{`${phone.brand} ${phone.phone_name}`}</h3>
-							</section>
+							<PhoneCard
+								imgSrc={phone.image}
+								imgAlt={`${phone.brand} ${phone.phone_name}`}
+								title={`${phone.brand} ${phone.phone_name}`}
+							/>
 						</Link>
 					)}
 				</div>
