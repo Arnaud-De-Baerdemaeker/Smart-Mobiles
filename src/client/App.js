@@ -4,41 +4,44 @@
 	By Arnaud De Baerdemaeker
 */
 
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
-import Header from "./components/header/header";
-import Footer from "./components/footer/footer";
+import Home from "./components/home/home";
+import PhoneDetails from "./components/phoneDetails/phoneDetails";
 
-import "./App.scss";
+import {getPhoneDetails} from "./apiCalls/fetchPhoneDetails";
 
-import {getAllBrands} from "./api-calls/fetch-all-brands";
+const baseURL = "http://phone-specs-api.azharimm.dev";
 
-function App() {
-	const [brands, setBrands] = useState([]);
+const App = () => {
+	const [phoneDetails, setPhoneDetails] = useState(null);
 
-	useEffect(() => {
-		getAllBrands()
-		.then(result => {
-			setBrands(result.data.data);
-		});
-	}, []);
+	const acquirePhoneDetails = (url) => {
+		getPhoneDetails(url)
+		.then(result => setPhoneDetails(result.data.data));
+	}
 
 	return (
-		<>
-			<Header />
-			<div className="App">
-				{brands.length > 0
-				? <ul>
-					{brands.map(item => 
-						<li key={item.brand_id}>{item.brand_name}</li>
-					)}
-				</ul>
-				: <p>{"Loading"}</p>
-				}
-			</div>
-			<Footer />
-		</>
+		<BrowserRouter>
+			<Routes>
+				<Route
+					path={"/"}
+					element={
+						<Home acquirePhoneDetails={acquirePhoneDetails} />
+					}
+				/>
+				<Route
+					path={"/phone-details"}
+					element={
+						<PhoneDetails phoneDetails={phoneDetails} />
+					}
+				/>
+			</Routes>
+		</BrowserRouter>
 	);
 }
+
+export {baseURL};
 
 export default App;
