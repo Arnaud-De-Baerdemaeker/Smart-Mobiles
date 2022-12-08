@@ -14,4 +14,4 @@ const getLatestPhones = async () => {
 	return request;
 }
 
-export {getLatestPhones}
+export {getLatestPhones};

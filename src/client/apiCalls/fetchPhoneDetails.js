@@ -12,4 +12,4 @@ const getPhoneDetails = async (url) => {
 	return request;
 }
 
-export {getPhoneDetails}
+export {getPhoneDetails};

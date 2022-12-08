@@ -36,6 +36,6 @@ const App = () => {
 	);
 }
 
-export default App;
-
 export {baseURL};
+
+export default App;

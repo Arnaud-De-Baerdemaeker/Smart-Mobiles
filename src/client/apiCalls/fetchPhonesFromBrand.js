@@ -14,4 +14,4 @@ const getPhonesFromBrand = async (brand) => {
 	return request;
 }
 
-export {getPhonesFromBrand}
+export {getPhonesFromBrand};
