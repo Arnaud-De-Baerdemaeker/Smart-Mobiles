@@ -26,7 +26,7 @@ const App = () => {
 					}
 				/>
 				<Route
-					path={"/phone-details"}
+					path={"/:slug"}
 					element={
 						<PhoneDetails phoneDetails={phoneDetails} />
 					}

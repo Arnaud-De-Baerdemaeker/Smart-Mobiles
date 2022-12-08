@@ -85,7 +85,7 @@ const Home = ({acquirePhoneDetails}) => {
 					<h2>{searchResult.title}</h2>
 					{searchResult.phones.map(phone =>
 						<Link
-							to={"/phone-details"}
+							to={`/${phone.slug}`}
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.phone_name}
 						>
@@ -110,7 +110,7 @@ const Home = ({acquirePhoneDetails}) => {
 					<h2>{latestPhones.title}</h2>
 					{latestPhones.phones.map(phone =>
 						<Link
-							to={"/phone-details"}
+							to={`/${phone.slug}`}
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.phone_name}
 						>
@@ -142,7 +142,7 @@ const Home = ({acquirePhoneDetails}) => {
 				{phones
 					? phones.map(phone =>
 						<Link
-							to={"/phone-details"}
+							to={`/${phone.slug}`}
 							onClick={() => acquirePhoneDetails(phone.detail)}
 							key={phone.slug}
 						>
