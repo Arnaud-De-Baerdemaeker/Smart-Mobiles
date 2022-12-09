@@ -12,6 +12,7 @@ const Render = ({latestPhones, brandTitle, searchResult, phones, acquirePhoneDet
 					to={`/${phone.slug}`}
 					onClick={() => acquirePhoneDetails(phone.detail)}
 					key={phone.slug}
+					className={"phonesList__link"}
 				>
 					<PhoneCard
 						imgSrc={phone.image}
@@ -29,6 +30,7 @@ const Render = ({latestPhones, brandTitle, searchResult, phones, acquirePhoneDet
 					to={`/${phone.slug}`}
 					onClick={() => acquirePhoneDetails(phone.detail)}
 					key={phone.phone_name}
+					className={"phonesList__link"}
 				>
 					<PhoneCard
 						imgSrc={phone.image}
@@ -47,6 +49,7 @@ const Render = ({latestPhones, brandTitle, searchResult, phones, acquirePhoneDet
 						to={`/${phone.slug}`}
 						onClick={() => acquirePhoneDetails(phone.detail)}
 						key={phone.phone_name}
+						className={"phonesList__link"}
 					>
 						<PhoneCard
 							imgSrc={phone.image}

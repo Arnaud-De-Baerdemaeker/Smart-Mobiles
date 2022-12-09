@@ -1,14 +1,16 @@
 import React from "react";
 
 const PhoneCard = ({imgSrc, imgAlt, title}) => {
-    return(
-        <section>
-            <div>
-                <img src={imgSrc} alt={imgAlt} />
-            </div>
-            <h3>{title}</h3>
-        </section>
-    );
+	return(
+		<section className={"phoneCard"}>
+			<img
+				src={imgSrc}
+				alt={imgAlt}
+				className={"phoneCard__image"}
+			/>
+			<h3 className={"phoneCard__title"}>{title}</h3>
+		</section>
+	);
 }
 
 export default PhoneCard;
