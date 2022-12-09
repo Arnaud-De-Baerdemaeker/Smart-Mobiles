@@ -19,7 +19,9 @@ const Home = ({acquirePhoneDetails}) => {
 	const dropDown = useRef(null);
 	const searchInput = useRef(null);
 
-	const getOption = () => {
+	const getOption = (event) => {
+		event.preventDefault();
+
 		let selected = dropDown.current.value;
 
 		if(selected !== "default") {
@@ -28,14 +30,17 @@ const Home = ({acquirePhoneDetails}) => {
 				setBrandTitle(result.data.data.title);
 				setPhones(result.data.data.phones);
 				setSearchResult(null);
-			});
+			})
+			.catch(error => console.error(error));
 		}
 		else {
 			alert("Please select a brand");
 		}
 	};
 
-	const getSearchQuery = () => {
+	const getSearchQuery = (event) => {
+		event.preventDefault();
+
 		let searchTerms = searchInput.current.value;
 
 		if(searchTerms !== "") {
@@ -44,7 +49,8 @@ const Home = ({acquirePhoneDetails}) => {
 				setSearchResult(result.data.data);
 				setBrandTitle(null);
 				setPhones(null);
-			});
+			})
+			.catch(error => console.error(error));
 		}
 		else {
 			alert("Please provide a term for the research");
@@ -75,53 +81,64 @@ const Home = ({acquirePhoneDetails}) => {
 		<>
 			<Header />
 			<main>
-				{/* Brand selection */}
-				<UserInput
-					labelFor={"brandSelection"}
-					labelName={"Select a brand"}
-					buttonClick={getOption}
-					buttonName={"Validate"}
-				>
-					<select
-						name={"brands"}
-						id={"brandSelection"}
-						defaultValue={"default"}
-						ref={dropDown}
+				<div className={"userInterface"}>
+					{/* Brand selection */}
+					<UserInput
+						formName={"brandSelection"}
+						buttonClick={getOption}
+						buttonName={"Validate"}
+						formClass={"userInterface__dropdown"}
 					>
-						<option
-							value={"default"}
-							hidden
-							disabled
+						<select
+							name={"brands"}
+							id={"brandSelection"}
+							defaultValue={"default"}
+							ref={dropDown}
+							className={"userInterface__selection"}
 						>
-							{"Acer, Alcatel..."}
-						</option>
-						{brands.length && brands.map(item => 
 							<option
-								value={item.brand_slug}
-								key={item.brand_id}
+								value={"default"}
+								hidden
+								disabled
 							>
-								{item.brand_name}
+								{"Select brand"}
 							</option>
-						)}
-					</select>
-				</UserInput>
+							{brands.length && brands.map(item => 
+								<option
+									value={item.brand_slug}
+									key={item.brand_id}
+									className={"userInterface__option"}
+								>
+									{item.brand_name}
+								</option>
+							)}
+						</select>
+					</UserInput>
 
-				{/* Search field */}
-				<UserInput
-					labelFor={"phoneSearch"}
-					labelName={"Search a phone"}
-					buttonClick={getSearchQuery}
-					buttonName={"Search"}
-				>
-					<input
-						type={"search"}
-						id={"phoneSearch"}
-						ref={searchInput}
-					/>
-				</UserInput>
+					{/* Search field */}
+					<UserInput
+						formName={"searchPhone"}
+						buttonClick={getSearchQuery}
+						buttonName={"Search"}
+						formClass={"userInterface__search"}
+					>
+						<input
+							type={"search"}
+							placeholder={"Search phone"}
+							id={"phoneSearch"}
+							ref={searchInput}
+							className={"userInterface__field"}
+						/>
+					</UserInput>
 
-				<div>
-					<button onClick={clear}>{"Clear"}</button>
+					<div>
+						<button
+							type={"button"}
+							onClick={clear}
+						>
+							{"Clear"}
+						</button>
+					</div>
 				</div>
 
 				{/* Render the corresponding component based on the user's actions */}
