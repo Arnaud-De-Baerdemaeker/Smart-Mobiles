@@ -3,4 +3,13 @@
 body {
 	margin: 0;
 	font-family: $notoSans;
+
+	main {
+		padding: {
+			top: 40px;
+			right: 20px;
+			bottom: 40px;
+			left: 20px;
+		}
+	}
 }
