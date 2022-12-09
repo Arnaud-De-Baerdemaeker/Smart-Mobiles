@@ -1,9 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
-import {Link} from "react-router-dom";
 
+import Render from "../render/render";
 import UserInput from "../userInput/userInput";
-import PhonesList from "../phonesList/phonesList";
-import PhoneCard from "../phoneCard/phoneCard";
 
 import {getLatestPhones} from "../../apiCalls/fetchLatestPhones";
 import {getAllBrands} from "../../apiCalls/fetchAllBrands";
@@ -22,21 +20,43 @@ const Home = ({acquirePhoneDetails}) => {
 	const getOption = () => {
 		let selected = dropDown.current.value;
 
-		getPhonesFromBrand(selected)
-		.then(result => {
-			setBrandTitle(result.data.data.title);
-			setPhones(result.data.data.phones);
-		});
-	}
+		if(selected !== "default") {
+			getPhonesFromBrand(selected)
+			.then(result => {
+				setBrandTitle(result.data.data.title);
+				setPhones(result.data.data.phones);
+				setSearchResult(null);
+			});
+		}
+		else {
+			alert("Please select a brand");
+		}
+	};
 
 	const getSearchQuery = () => {
 		let searchTerms = searchInput.current.value;
 
-		getResultsFromSearchQuery(searchTerms)
-		.then(result =>
-			setSearchResult(result.data.data)
-		);
-	}
+		if(searchTerms !== "") {
+			getResultsFromSearchQuery(searchTerms)
+			.then(result => {
+				setSearchResult(result.data.data);
+				setBrandTitle(null);
+				setPhones(null);
+			});
+		}
+		else {
+			alert("Please provide a term for the research");
+		}
+	};
+
+	const clear = () => {
+		setBrandTitle(null);
+		setPhones(null);
+		setSearchResult(null);
+
+		dropDown.current.value = "default";
+		searchInput.current.value = null;
+	};
 
 	useEffect(() => {
 		getLatestPhones()
@@ -61,9 +81,16 @@ const Home = ({acquirePhoneDetails}) => {
 				<select
 					name={"brands"}
 					id={"brandSelection"}
+					defaultValue={"default"}
 					ref={dropDown}
 				>
-					<option value={""}>{"Please choose an option"}</option>
+					<option
+						value={"default"}
+						hidden
+						disabled
+					>
+						{"Acer, Alcatel..."}
+					</option>
 					{brands.length && brands.map(item => 
 						<option
 							value={item.brand_slug}
@@ -89,56 +116,18 @@ const Home = ({acquirePhoneDetails}) => {
 				/>
 			</UserInput>
 
-			{brandTitle && phones
-				? <PhonesList title={brandTitle}>
-					{phones.map(phone =>
-						<Link
-							to={`/${phone.slug}`}
-							onClick={() => acquirePhoneDetails(phone.detail)}
-							key={phone.slug}
-						>
-							<PhoneCard
-								imgSrc={phone.image}
-								imgAlt={`${phone.brand} ${phone.phone_name}`}
-								title={`${phone.brand} ${phone.phone_name}`}
-							/>
-						</Link>
-					)}
-				</PhonesList>
-				: searchResult
-					? searchResult && <PhonesList title={searchResult.title}>
-						{searchResult.phones.map(phone =>
-							<Link
-								to={`/${phone.slug}`}
-								onClick={() => acquirePhoneDetails(phone.detail)}
-								key={phone.phone_name}
-							>
-								<PhoneCard
-									imgSrc={phone.image}
-									imgAlt={phone.phone_name}
-									title={phone.phone_name}
-								/>
-							</Link>
-						)}
-					</PhonesList>
-					: latestPhones
-						? <PhonesList title={latestPhones.title}>
-							{latestPhones.phones.map(phone =>
-								<Link
-									to={`/${phone.slug}`}
-									onClick={() => acquirePhoneDetails(phone.detail)}
-									key={phone.phone_name}
-								>
-									<PhoneCard
-										imgSrc={phone.image}
-										imgAlt={phone.phone_name}
-										title={phone.phone_name}
-									/>
-								</Link>
-							)}
-						</PhonesList>
-						: <p>{"Loading"}</p>
-			}
+			<div>
+				<button onClick={clear}>{"Clear"}</button>
+			</div>
+
+			{/* Render the corresponding component based on the user's actions */}
+			<Render
+				latestPhones={latestPhones}
+				brandTitle={brandTitle}
+				searchResult={searchResult}
+				phones={phones}
+				acquirePhoneDetails={acquirePhoneDetails}
+			/>
 		</main>
 	);
 }
