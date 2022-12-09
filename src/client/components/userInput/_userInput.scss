@@ -1,0 +1,39 @@
+.userInterface { // <div>
+	padding: {
+		top: 10px;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
+	}
+	border: {
+		style: solid;
+		width: 1px;
+		radius: 10px;
+	}
+
+	&__dropdown { // <form>
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: 0;
+		border: none;
+	}
+
+	&__selection { // <select>
+		width: 100%;
+		border: none;
+		background-color: transparent;
+		outline: none;
+	}
+
+	&__option { // <option>
+	}
+
+	&__search { // <form>
+		@extend .userInterface__dropdown;
+	}
+
+	&__field { // <input>
+		@extend .userInterface__selection;
+	}
+}
