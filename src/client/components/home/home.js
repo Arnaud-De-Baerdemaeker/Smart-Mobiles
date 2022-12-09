@@ -1,7 +1,9 @@
 import React, {useState, useEffect, useRef} from "react";
 
+import Header from "../header/header";
 import Render from "../render/render";
 import UserInput from "../userInput/userInput";
+import Footer from "../footer/footer";
 
 import {getLatestPhones} from "../../apiCalls/fetchLatestPhones";
 import {getAllBrands} from "../../apiCalls/fetchAllBrands";
@@ -70,65 +72,69 @@ const Home = ({acquirePhoneDetails}) => {
 	}, []);
 
 	return(
-		<main>
-			{/* Brand selection */}
-			<UserInput
-				labelFor={"brandSelection"}
-				labelName={"Select a brand"}
-				buttonClick={getOption}
-				buttonName={"Validate"}
-			>
-				<select
-					name={"brands"}
-					id={"brandSelection"}
-					defaultValue={"default"}
-					ref={dropDown}
+		<>
+			<Header />
+			<main>
+				{/* Brand selection */}
+				<UserInput
+					labelFor={"brandSelection"}
+					labelName={"Select a brand"}
+					buttonClick={getOption}
+					buttonName={"Validate"}
 				>
-					<option
-						value={"default"}
-						hidden
-						disabled
+					<select
+						name={"brands"}
+						id={"brandSelection"}
+						defaultValue={"default"}
+						ref={dropDown}
 					>
-						{"Acer, Alcatel..."}
-					</option>
-					{brands.length && brands.map(item => 
 						<option
-							value={item.brand_slug}
-							key={item.brand_id}
+							value={"default"}
+							hidden
+							disabled
 						>
-							{item.brand_name}
+							{"Acer, Alcatel..."}
 						</option>
-					)}
-				</select>
-			</UserInput>
+						{brands.length && brands.map(item => 
+							<option
+								value={item.brand_slug}
+								key={item.brand_id}
+							>
+								{item.brand_name}
+							</option>
+						)}
+					</select>
+				</UserInput>
 
-			{/* Search field */}
-			<UserInput
-				labelFor={"phoneSearch"}
-				labelName={"Search a phone"}
-				buttonClick={getSearchQuery}
-				buttonName={"Search"}
-			>
-				<input
-					type={"search"}
-					id={"phoneSearch"}
-					ref={searchInput}
+				{/* Search field */}
+				<UserInput
+					labelFor={"phoneSearch"}
+					labelName={"Search a phone"}
+					buttonClick={getSearchQuery}
+					buttonName={"Search"}
+				>
+					<input
+						type={"search"}
+						id={"phoneSearch"}
+						ref={searchInput}
+					/>
+				</UserInput>
+
+				<div>
+					<button onClick={clear}>{"Clear"}</button>
+				</div>
+
+				{/* Render the corresponding component based on the user's actions */}
+				<Render
+					latestPhones={latestPhones}
+					brandTitle={brandTitle}
+					searchResult={searchResult}
+					phones={phones}
+					acquirePhoneDetails={acquirePhoneDetails}
 				/>
-			</UserInput>
-
-			<div>
-				<button onClick={clear}>{"Clear"}</button>
-			</div>
-
-			{/* Render the corresponding component based on the user's actions */}
-			<Render
-				latestPhones={latestPhones}
-				brandTitle={brandTitle}
-				searchResult={searchResult}
-				phones={phones}
-				acquirePhoneDetails={acquirePhoneDetails}
-			/>
-		</main>
+			</main>
+			<Footer />
+		</>
 	);
 }
 
