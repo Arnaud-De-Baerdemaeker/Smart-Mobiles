@@ -1,0 +1,41 @@
+.phoneCard { // <section>
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	padding: {
+		top: 30px;
+		right: 20px;
+		bottom: 30px;
+		left: 20px;
+	}
+
+	&__image { // <img>
+		max-width: 150px;
+		margin: {
+			right: auto;
+			left: auto;
+		}
+	}
+
+	&__title { // <h3>
+		text-align: center;
+		margin: 0;
+		padding: {
+			top: 5px;
+			bottom: 5px;
+		}
+		color: black;
+		border: {
+			top: {
+				style: solid;
+				width: 1px;
+			}
+			bottom: {
+				style: solid;
+				width: 1px;
+			}
+		}
+	}
+}
