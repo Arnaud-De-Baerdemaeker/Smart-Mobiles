@@ -1,0 +1,23 @@
+.phonesList { // <section>
+    &__title { // <h2>
+        text-align: center;
+        margin: {
+            top: 40px;
+            bottom: 40px;
+        }
+    }
+
+    &__list { // <div>
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+    }
+
+    &__link { // <a>
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        text-decoration: none;
+    }
+}
