@@ -1,12 +1,15 @@
 import React from "react";
 
-const UserInput = ({labelFor, labelName, children, buttonClick, buttonName}) => {
+const UserInput = ({formName, children, buttonClick, buttonName, formClass}) => {
 	return(
-		<div>
-			<label htmlFor={labelFor}>{labelName}</label>
+		<form
+			name={formName}
+			onSubmit={buttonClick}
+			className={formClass}
+		>
 			{children}
-			<button onClick={buttonClick}>{buttonName}</button>
-		</div>
+			<button type={"submit"}>{buttonName}</button>
+		</form>
 	);
 };
 
