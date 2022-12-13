@@ -3,6 +3,9 @@
 body {
 	margin: 0;
 	font-family: $notoSans;
+	color: $secondary;
+	background-color: $primary;
+	font-size: 16px;
 
 	main {
 		padding: {
