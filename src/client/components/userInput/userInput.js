@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserInput = ({formName, children, buttonClick, buttonName, formClass}) => {
+const UserInput = ({formName, children, buttonClick, formClass}) => {
 	return(
 		<form
 			name={formName}
@@ -8,7 +8,6 @@ const UserInput = ({formName, children, buttonClick, buttonName, formClass}) => 
 			className={formClass}
 		>
 			{children}
-			<button type={"submit"}>{buttonName}</button>
 		</form>
 	);
 };
