@@ -1,0 +1,33 @@
+.userInterface { // <div>
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px;
+	padding: {
+		top: 10px;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
+	}
+
+	&__controls { // <div>
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	&__fields { // <div>
+		display: flex;
+		height: 50px;
+		padding: {
+			// top: 10px;
+			right: 5px;
+			// bottom: 10px;
+			left: 5px;
+		}
+		border-radius: 50px;
+		background-color: $secondary;
+
+		&--closed { // <div>
+			display: none;
+		}
+	}
+}
