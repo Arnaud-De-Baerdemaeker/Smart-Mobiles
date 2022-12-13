@@ -1,0 +1,9 @@
+.svg {
+    &__search { // <svg>
+        fill: $primary;
+    }
+
+    &__clear { // <svg>
+        @extend .svg__search;
+    }
+}
