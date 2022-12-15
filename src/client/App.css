@@ -86,7 +86,7 @@ header h1 {
 .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover {
   cursor: pointer;
 }
-.svg__search, .svg__clear {
+.svg__brands, .svg__clear, .svg__search {
   fill: rgb(18, 73, 94);
 }
 .userInput__dropdown, .userInput__search {
