@@ -1,9 +1,13 @@
 .svg {
-    &__search { // <svg>
+    &__brands { // <svg>
         fill: $primary;
     }
 
+    &__search { // <svg>
+        @extend .svg__brands;
+    }
+
     &__clear { // <svg>
-        @extend .svg__search;
+        @extend .svg__brands;
     }
 }
