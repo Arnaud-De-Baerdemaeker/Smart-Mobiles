@@ -22,20 +22,11 @@
 	}
 
 	&__validate {
-		margin: 0;
-		padding: {
-			right: 10px;
-			left: 10px;
-		}
-		background-color: unset;
-		border: none;
-		border-left: {
-			style: solid;
-			width: 1px;
-		};
-		border: {
-			top-right-radius: 50px;
-			bottom-right-radius: 50px;
+		@extend .button__brands;
+		color: $primary;
+		font: {
+			family: $notoSans;
+			weight: 900;
 		}
 
 		&:hover {
