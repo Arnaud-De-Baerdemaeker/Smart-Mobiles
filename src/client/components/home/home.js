@@ -111,7 +111,7 @@ const Home = ({acquirePhoneDetails}) => {
 							<SVG
 								width={"50"}
 								height={"50"}
-								viewbox={"0 0 50 50"}
+								viewbox={"-12.5 -12.5 75 75"}
 								svgClass={"svg__brands"}
 							>
 								<path
