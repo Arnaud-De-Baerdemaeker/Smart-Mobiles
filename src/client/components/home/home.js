@@ -176,37 +176,45 @@ const Home = ({acquirePhoneDetails}) => {
 								: "userInput__dropdown--closed"
 							}
 						>
-							<select
-								name={"brands"}
-								id={"brandSelection"}
-								defaultValue={"default"}
-								ref={dropDown}
-								className={"userInput__selection"}
+							<label
+								for={"brandSelection"}
+								className={"dropdown__label"}
 							>
-								<option
-									value={"default"}
-									hidden
-									disabled
+								{"Select brand"}
+							</label>
+							<div className={"dropdown__fieldsContainer"}>
+								<select
+									name={"brands"}
+									id={"brandSelection"}
+									defaultValue={"default"}
+									ref={dropDown}
+									className={"dropdown__selection"}
 								>
-									{"Select brand"}
-								</option>
-								{brands.length && brands.map(item => 
 									<option
-										value={item.brand_slug}
-										key={item.brand_id}
-										className={"userInput__option"}
+										value={"default"}
+										hidden
+										disabled
 									>
-										{item.brand_name}
+										{""}
 									</option>
-								)}
-							</select>
-							<Button
-								buttonType={"submit"}
-								buttonClick={getOption}
-								buttonClass={"button__validateSelection"}
-							>
-								{"Select"}
-							</Button>
+									{brands.length && brands.map(item => 
+										<option
+											value={item.brand_slug}
+											key={item.brand_id}
+											className={"dropdown__option"}
+										>
+											{item.brand_name}
+										</option>
+									)}
+								</select>
+								<Button
+									buttonType={"submit"}
+									buttonClick={getOption}
+									buttonClass={"button__validateSelection"}
+								>
+									{"OK"}
+								</Button>
+							</div>
 						</UserInput>
 
 						{/* Search field */}
@@ -218,20 +226,27 @@ const Home = ({acquirePhoneDetails}) => {
 								: "userInput__search--closed"
 							}
 						>
-							<input
-								type={"search"}
-								placeholder={"Search phone"}
-								id={"phoneSearch"}
-								ref={searchInput}
-								className={"userInput__field"}
-							/>
-							<Button
-								buttonType={"submit"}
-								buttonClick={getSearchQuery}
-								buttonClass={"button__validateTerms"}
+							<label
+								for={"phoneSearch"}
+								className={"search__label"}
 							>
-								{"Search"}
-							</Button>
+								{"Search phone"}
+							</label>
+							<div className={"search__fieldsContainer"}>
+								<input
+									type={"search"}
+									id={"phoneSearch"}
+									ref={searchInput}
+									className={"search__field"}
+								/>
+								<Button
+									buttonType={"submit"}
+									buttonClick={getSearchQuery}
+									buttonClass={"button__validateTerms"}
+								>
+									{"OK"}
+								</Button>
+							</div>
 						</UserInput>
 					</div>
 				</div>
