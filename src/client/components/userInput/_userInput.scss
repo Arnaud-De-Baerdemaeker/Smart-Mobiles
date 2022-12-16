@@ -46,14 +46,6 @@
 			}
 
 			&__option { // <option>
-				background-color: $secondary;
-				font-family: $notoSans;
-				color: $primary;
-		
-				&:hover {
-					background-color: $primary;
-					color: $secondary;
-				}
 			}
 		}
 	}
