@@ -15,11 +15,6 @@
 	}
 
 	&__fields { // <div>
-		display: flex;
-		height: 50px;
-		border-radius: 50px;
-		background-color: $secondary;
-
 		&--closed { // <div>
 			display: none;
 		}
