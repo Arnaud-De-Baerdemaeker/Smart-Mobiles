@@ -10,7 +10,7 @@
 
 		.dropdown {
 			&__label { // <label>
-				color: $secondary;
+				color: $primary;
 				text-align: center;
 				font-size: 18px;
 			}
@@ -25,7 +25,11 @@
 				height: 50px;
 				border: none;
 				border-radius: 50px;
-				background-color: $secondary;
+				border: {
+					style: solid;
+					width: 1px;
+					color: $primary;
+				}
 				outline: none;
 				padding: {
 					right: 10px;
