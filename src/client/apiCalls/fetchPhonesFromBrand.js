@@ -5,7 +5,7 @@ import {baseURL} from "../App";
 const getPhonesFromBrand = async (brand) => {
 	const request = await axios({
 		method: "GET",
-		url: `${baseURL}/v2/brands/${brand}`,
+		url: `${baseURL}/brands/${brand}`,
 		headers: {
 			"content-type": "application/json"
 		}

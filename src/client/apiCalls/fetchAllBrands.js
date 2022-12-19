@@ -5,7 +5,7 @@ import {baseURL} from "../App";
 const getAllBrands = async () => {
 	const request = await axios({
 		method: "GET",
-		url: `${baseURL}/v2/brands`,
+		url: `${baseURL}/brands`,
 		headers: {
 			"content-type": "application/json"
 		}
