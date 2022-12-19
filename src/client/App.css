@@ -9,38 +9,62 @@ body {
   margin: 0;
   font-family: "Noto Sans", sans-serif;
   color: rgb(250, 250, 250);
-  background-color: rgb(18, 73, 94);
+  background-color: rgb(250, 250, 250);
   font-size: 16px;
 }
 body main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
   padding-top: 40px;
-  padding-right: 20px;
   padding-bottom: 40px;
-  padding-left: 20px;
 }
 
 header {
-  display: flex;
-  justify-content: center;
-}
-header h1 {
-  margin: 0;
   padding-top: 20px;
+  padding-right: 20px;
   padding-bottom: 20px;
+  padding-left: 20px;
+}
+
+.header__title {
+  margin: 0;
   font-family: "Share Tech Mono", arial;
-  font-size: 40px;
   font-weight: 100;
+  text-align: center;
+  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(172, 27, 29) 50%, rgb(252, 157, 49) 100%);
+  color: rgb(250, 250, 250);
+  border-radius: 59px;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  font-size: 35px;
   letter-spacing: -1px;
+}
+
+.footer__title {
+  margin: 0;
+  font-family: "Share Tech Mono", arial;
+  font-weight: 100;
+  text-align: center;
+  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(172, 27, 29) 50%, rgb(252, 157, 49) 100%);
+  color: rgb(250, 250, 250);
+  border-radius: 59px;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
 }
 
 .userInterface {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 .userInterface__controls {
   display: flex;
@@ -57,21 +81,36 @@ header h1 {
   width: 50px;
   height: 50px;
   border-radius: 50px;
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: rgb(26, 39, 101);
   background-color: rgb(250, 250, 250);
+  -webkit-tap-highlight-color: transparent;
+  transition-property: background-color;
+  transition-duration: 0.2s;
 }
 .button__brands:hover, .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover, .button__clear:hover, .button__search:hover {
   cursor: pointer;
+  background: rgb(26, 39, 101);
 }
 .button__validate, .button__validateTerms, .button__validateSelection {
-  color: rgb(18, 73, 94);
+  color: rgb(26, 39, 101);
   font-family: "Noto Sans", sans-serif;
   font-weight: 900;
+  transition-property: color;
+  transition-duration: 0.2s;
 }
 .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover {
   cursor: pointer;
+  color: rgb(250, 250, 250);
 }
 .svg__brands, .svg__clear, .svg__search {
-  fill: rgb(18, 73, 94);
+  fill: rgb(26, 39, 101);
+  transition-property: fill;
+  transition-duration: 0.2s;
+}
+.svg__brands:hover, .svg__clear:hover, .svg__search:hover {
+  fill: rgb(250, 250, 250);
 }
 .userInput__dropdown, .userInput__search {
   display: flex;
@@ -82,7 +121,7 @@ header h1 {
   display: none;
 }
 .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
-  color: rgb(250, 250, 250);
+  color: rgb(26, 39, 101);
   text-align: center;
   font-size: 18px;
 }
@@ -96,7 +135,9 @@ header h1 {
   height: 50px;
   border: none;
   border-radius: 50px;
-  background-color: rgb(250, 250, 250);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(26, 39, 101);
   outline: none;
   padding-right: 10px;
   padding-left: 10px;
@@ -109,15 +150,24 @@ header h1 {
   background-position: calc(100% - 10px) center;
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
-  color: rgb(18, 73, 94);
+  color: rgb(26, 39, 101);
 }
 .userInput__search .search__field {
   background-image: unset;
 }
+.phonesList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(172, 27, 29) 50%, rgb(252, 157, 49) 100%);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
+}
 .phonesList__title {
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin: 0;
 }
 .phonesList__list {
   display: flex;
@@ -155,7 +205,7 @@ header h1 {
   margin: 0;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: black;
+  color: rgb(26, 39, 101);
   border-top-style: solid;
   border-top-width: 1px;
   border-bottom-style: solid;
@@ -163,6 +213,10 @@ header h1 {
 }
 
 footer {
-  border-top-style: solid;
-  border-top-width: 1px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+footer p {
+  color: rgb(26, 39, 101);
+  text-align: center;
 }
