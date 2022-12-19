@@ -1,24 +1,32 @@
 .phonesList { // <section>
-    &__title { // <h2>
-        text-align: center;
-        margin: {
-            top: 40px;
-            bottom: 40px;
-        }
-    }
+	display: flex;
+	flex-direction: column;
+	row-gap: 40px;
+	background-color: $primary;
+	padding: {
+		top: 40px;
+		bottom: 40px;
+	}
+	border-radius: 20px;
+	box-shadow: 0 0 7px 0 rgb(0, 0, 0, 0.4);
 
-    &__list { // <div>
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        row-gap: 30px;
-    }
+	&__title { // <h2>
+		text-align: center;
+		margin: 0;
+	}
 
-    &__link { // <a>
-        display: block;
-        width: 100%;
-        max-width: 250px;
-        text-decoration: none;
-        border-radius: 10px;
-    }
+	&__list { // <div>
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 30px;
+	}
+
+	&__link { // <a>
+		display: block;
+		width: 100%;
+		max-width: 250px;
+		text-decoration: none;
+		border-radius: 10px;
+	}
 }
