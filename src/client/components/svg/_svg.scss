@@ -1,19 +1,21 @@
 .svg {
-    &__brands { // <svg>
-        fill: $primary;
-        transition-property: fill;
-        transition-duration: 0.2s;
+	&__brands { // <svg>
+		fill: $primary;
+		transition: {
+			property: fill;
+			duration: 0.2s;
+		}
 
-        &:active {
-            fill: $white;
-        }
-    }
+		&:hover {
+			fill: $white;
+		}
+	}
 
-    &__search { // <svg>
-        @extend .svg__brands;
-    }
+	&__search { // <svg>
+		@extend .svg__brands;
+	}
 
-    &__clear { // <svg>
-        @extend .svg__brands;
-    }
+	&__clear { // <svg>
+		@extend .svg__brands;
+	}
 }

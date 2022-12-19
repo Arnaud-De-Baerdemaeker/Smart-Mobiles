@@ -20,9 +20,6 @@
 
 		&:hover {
 			cursor: pointer;
-		}
-
-		&:active {
 			background: $primary;
 		}
 	}
@@ -42,9 +39,14 @@
 			family: $notoSans;
 			weight: 900;
 		}
+		transition: {
+			property: color;
+			duration: 0.2s;
+		}
 
 		&:hover {
 			cursor: pointer;
+			color: $white;
 		}
 
 		&Selection { // <button>
