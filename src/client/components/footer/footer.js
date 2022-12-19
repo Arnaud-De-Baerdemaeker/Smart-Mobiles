@@ -6,13 +6,17 @@
 
 import React from "react";
 
-import Title from "../header/header";
+import Title from "../title/title";
 
 const Footer = () => {
 	return(
 		<footer>
-			<Title />
-			<p>{"A project made in ReactJS by Arnaud De Baerdemaeker"}</p>
+			<Title titleClass={"footer__title"} />
+			<p>
+				{"A project made in ReactJS by"}
+				<br />
+				{"Arnaud De Baerdemaeker"}
+			</p>
 		</footer>
 	);
 }
