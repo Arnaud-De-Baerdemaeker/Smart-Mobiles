@@ -1,20 +1,31 @@
 // HEADER
 
 header {
-	display: flex;
-	justify-content: center;
+	padding: {
+		top: 20px;
+		right: 20px;
+		bottom: 20px;
+		left: 20px;
+	}
 
 	h1 {
 		margin: 0;
 		padding: {
-			top: 20px;
-			bottom: 20px;
+			top: 10px;
+			right: 10px;
+			bottom: 10px;
+			left: 10px;
 		}
 		font: {
 			family: $shareTechMono;
-			size: 40px;
+			size: 35px;
 			weight: 100;
 		}
 		letter-spacing: -1px;
+		background-color: $primary;
+		color: $white;
+		border-radius: 59px;
+		text-align: center;
+		box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
 	}
 }
