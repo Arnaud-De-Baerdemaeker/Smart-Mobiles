@@ -11,7 +11,7 @@ import Title from "../title/title";
 const Header = () => {
 	return(
 		<header>
-			<Title />
+			<Title titleClass={"header__title"} />
 		</header>
 	);
 }
