@@ -6,10 +6,12 @@
 
 import React from "react";
 
-function Footer() {
+import Title from "../header/header";
+
+const Footer = () => {
 	return(
 		<footer>
-			<p>{"Smart Mobiles"}</p>
+			<Title />
 			<p>{"A project made in ReactJS by Arnaud De Baerdemaeker"}</p>
 		</footer>
 	);

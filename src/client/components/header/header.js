@@ -6,10 +6,12 @@
 
 import React from "react";
 
-function Header() {
+import Title from "../title/title";
+
+const Header = () => {
 	return(
 		<header>
-			<h1>{"smartmobiles"}</h1>
+			<Title />
 		</header>
 	);
 }
