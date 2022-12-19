@@ -10,5 +10,6 @@ $notoSans: "Noto Sans", sans-serif;
 $shareTechMono: "Share Tech Mono", arial;
 
 // Colors
-$primary: rgb(18, 73, 94);
+$primary: rgb(26, 39, 101);
 $white: rgb(250, 250, 250);
+$gradient: linear-gradient(90deg, $primary 0%, rgb(172, 27, 29) 50%, rgb(252, 157, 49) 100%);
