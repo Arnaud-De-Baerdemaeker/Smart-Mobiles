@@ -1,0 +1,28 @@
+@mixin globalTitleSettings {
+	margin: 0;
+	font: {
+		family: $shareTechMono;
+		weight: 100;
+	}
+	text-align: center;
+	background: $gradient;
+	color: $white;
+	border-radius: 59px;
+	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+	padding: {
+		top: 10px;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
+	}
+}
+
+.header__title {
+	@include globalTitleSettings;
+	font-size: 35px;
+	letter-spacing: -1px;
+}
+
+.footer__title {
+	@include globalTitleSettings;
+}
