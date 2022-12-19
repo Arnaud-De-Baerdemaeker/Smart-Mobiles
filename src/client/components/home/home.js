@@ -177,7 +177,7 @@ const Home = ({acquirePhoneDetails}) => {
 							}
 						>
 							<label
-								for={"brandSelection"}
+								htmlFor={"brandSelection"}
 								className={"dropdown__label"}
 							>
 								{"Select brand"}
@@ -227,7 +227,7 @@ const Home = ({acquirePhoneDetails}) => {
 							}
 						>
 							<label
-								for={"phoneSearch"}
+								htmlFor={"phoneSearch"}
 								className={"search__label"}
 							>
 								{"Search phone"}
