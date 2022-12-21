@@ -6,8 +6,12 @@
 			duration: 0.2s;
 		}
 
-		&:hover {
-			fill: $white;
+		@media screen {
+			@media (hover: hover) {
+				&:hover {
+					fill: $white;
+				}
+			}
 		}
 	}
 
@@ -17,5 +21,10 @@
 
 	&__clear { // <svg>
 		@extend .svg__brands;
+		pointer-events: none;
 	}
+}
+
+.touchSVG {
+	fill: $white;
 }

@@ -18,9 +18,13 @@
 			duration: 0.2s;
 		}
 
-		&:hover {
-			cursor: pointer;
-			background: $primary;
+		@media screen {
+			@media (hover: hover) {
+				&:hover {
+					cursor: pointer;
+					background: $primary;
+				}
+			}
 		}
 	}
 
@@ -44,9 +48,13 @@
 			duration: 0.2s;
 		}
 
-		&:hover {
-			cursor: pointer;
-			color: $white;
+		@media screen {
+			@media (hover: hover) {
+				&:hover {
+					cursor: pointer;
+					color: $white;
+				}
+			}
 		}
 
 		&Selection { // <button>
@@ -57,4 +65,9 @@
 			@extend .button__validate;
 		}
 	}
+}
+
+.touchButton {
+	background-color: $primary;
+	color: $white;
 }
