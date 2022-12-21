@@ -20,13 +20,27 @@ const Home = ({acquirePhoneDetails}) => {
 	const [brandTitle, setBrandTitle] = useState(null);
 	const [searchResult, setSearchResult] = useState(null);
 	const [phones, setPhones] = useState(null);
+	const brandsButton = useRef(null);
+	const searchButton = useRef(null);
 	const dropDown = useRef(null);
 	const searchInput = useRef(null);
 
 	const toggleBrandInput = () => {
 		setIsBrandSelectionOpen(!isBrandSelectionOpen);
 
-		if(isSearchFieldOpen == true) {
+		if(isBrandSelectionOpen === false) {
+			brandsButton.current.classList.add("touchButton");
+			brandsButton.current.childNodes[0].classList.add("touchSVG");
+
+			searchButton.current.classList.remove("touchButton");
+			searchButton.current.childNodes[0].classList.remove("touchSVG");
+		}
+		else {
+			brandsButton.current.classList.remove("touchButton");
+			brandsButton.current.childNodes[0].classList.remove("touchSVG");
+		}
+
+		if(isSearchFieldOpen === true) {
 			setIsSearchFieldOpen(!isSearchFieldOpen);
 		}
 	};
@@ -34,7 +48,19 @@ const Home = ({acquirePhoneDetails}) => {
 	const toggleSearchInput = () => {
 		setIsSearchFieldOpen(!isSearchFieldOpen);
 
-		if(isBrandSelectionOpen == true) {
+		if(isSearchFieldOpen === false) {
+			searchButton.current.classList.add("touchButton");
+			searchButton.current.childNodes[0].classList.add("touchSVG");
+
+			brandsButton.current.classList.remove("touchButton");
+			brandsButton.current.childNodes[0].classList.remove("touchSVG");
+		}
+		else {
+			searchButton.current.classList.remove("touchButton");
+			searchButton.current.childNodes[0].classList.remove("touchSVG");
+		}
+
+		if(isBrandSelectionOpen === true) {
 			setIsBrandSelectionOpen(!isBrandSelectionOpen);
 		}
 	};
@@ -86,11 +112,28 @@ const Home = ({acquirePhoneDetails}) => {
 		searchInput.current.value = null;
 	};
 
+	const touchStartEffect = (event) => {
+		event.target.classList.add("touchButton");
+
+		if(event.target.children.length > 0) {
+			event.target.childNodes[0].classList.add("touchSVG");
+		}
+	};
+
+	const touchEndEffect = (event) => {
+		event.target.classList.remove("touchButton");
+
+		if(event.target.children.length > 0) {
+			event.target.childNodes[0].classList.remove("touchSVG");
+		}
+	};
+
 	useEffect(() => {
 		getLatestPhones()
 		.then(result =>
 			setLatestPhones(result.data.data)
 		);
+
 		getAllBrands()
 		.then(result =>
 			setBrands(result.data.data)
@@ -106,6 +149,7 @@ const Home = ({acquirePhoneDetails}) => {
 						<Button
 							buttonType={"button"}
 							buttonClick={toggleBrandInput}
+							buttonRef={brandsButton}
 							buttonClass={"button__brands"}
 						>
 							<SVG
@@ -129,6 +173,7 @@ const Home = ({acquirePhoneDetails}) => {
 						<Button
 							buttonType={"button"}
 							buttonClick={toggleSearchInput}
+							buttonRef={searchButton}
 							buttonClass={"button__search"}
 						>
 							<SVG
@@ -148,6 +193,8 @@ const Home = ({acquirePhoneDetails}) => {
 						<Button
 							buttonType={"button"}
 							buttonClick={clear}
+							buttonTouchStart={touchStartEffect}
+							buttonTouchEnd={touchEndEffect}
 							buttonClass={"button__clear"}
 						>
 							<SVG
@@ -210,6 +257,8 @@ const Home = ({acquirePhoneDetails}) => {
 								<Button
 									buttonType={"submit"}
 									buttonClick={getOption}
+									buttonTouchStart={touchStartEffect}
+									buttonTouchEnd={touchEndEffect}
 									buttonClass={"button__validateSelection"}
 								>
 									{"OK"}
@@ -242,6 +291,8 @@ const Home = ({acquirePhoneDetails}) => {
 								<Button
 									buttonType={"submit"}
 									buttonClick={getSearchQuery}
+									buttonTouchStart={touchStartEffect}
+									buttonTouchEnd={touchEndEffect}
 									buttonClass={"button__validateTerms"}
 								>
 									{"OK"}
