@@ -20,6 +20,17 @@
 				column-gap: 10px;
 			}
 
+			&__warning { // <p>
+				background-color: $warning;
+				text-align: center;
+				margin: 0;
+				padding: {
+					top: 5px;
+					bottom: 5px;
+				}
+				border-radius: 22px;
+			}
+
 			&__selection { // <select>
 				width: calc(100% - (50px + 10px));
 				height: 50px;
@@ -70,6 +81,10 @@
 
 			&__fieldsContainer { // <div>
 				@extend .dropdown__fieldsContainer;
+			}
+
+			&__warning {
+				@extend .dropdown__warning;
 			}
 
 			&__field { // <input>
