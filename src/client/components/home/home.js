@@ -48,6 +48,8 @@ const Home = ({acquirePhoneDetails}) => {
 
 		if(isSearchFieldOpen === true) {
 			setIsSearchFieldOpen(!isSearchFieldOpen);
+
+			document.querySelector(".search__warning").remove();
 		}
 	};
 
@@ -70,6 +72,8 @@ const Home = ({acquirePhoneDetails}) => {
 
 		if(isBrandSelectionOpen === true) {
 			setIsBrandSelectionOpen(!isBrandSelectionOpen);
+
+			document.querySelector(".dropdown__warning").remove();
 		}
 	};
 
