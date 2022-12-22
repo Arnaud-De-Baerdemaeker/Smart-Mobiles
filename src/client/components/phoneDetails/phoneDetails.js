@@ -10,18 +10,22 @@ const PhoneDetails = ({phoneDetails}) => {
 	return(
 		<>
 			<Header />
-			<main>
+			<main className={"phoneDetails"}>
 				{phoneDetails
 					? <>
-						<h2>{`${phoneDetails.brand} ${phoneDetails.phone_name}`}</h2>
-						<div>
-							<div onClick={() => setModalState(!modalState)}>
+						<h2 className={"phoneDetails__title"}>{`${phoneDetails.brand} ${phoneDetails.phone_name}`}</h2>
+						<div className={"phoneDetails__presentation"}>
+							<div
+								onClick={() => setModalState(!modalState)}
+								className={"presentation__thumbnailContainer"}
+							>
 								<img
 									src={phoneDetails.thumbnail}
 									alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
+									className={"presentation__thumbnail"}
 								/>
 							</div>
-							<div>
+							<div className={"presentation__infos"}>
 								<dl>
 									<dt>{"Brand"}</dt>
 									<dd>{phoneDetails.brand}</dd>
