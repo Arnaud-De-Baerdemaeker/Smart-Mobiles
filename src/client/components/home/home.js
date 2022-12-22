@@ -24,6 +24,10 @@ const Home = ({acquirePhoneDetails}) => {
 	const searchButton = useRef(null);
 	const dropDown = useRef(null);
 	const searchInput = useRef(null);
+	const dropdownContainer = useRef(null);
+	const searchContainer = useRef(null);
+
+	const warningElement = document.createElement("p");
 
 	const toggleBrandInput = () => {
 		setIsBrandSelectionOpen(!isBrandSelectionOpen);
@@ -38,6 +42,8 @@ const Home = ({acquirePhoneDetails}) => {
 		else {
 			brandsButton.current.classList.remove("touchButton");
 			brandsButton.current.childNodes[0].classList.remove("touchSVG");
+
+			document.querySelector(".dropdown__warning").remove();
 		}
 
 		if(isSearchFieldOpen === true) {
@@ -58,6 +64,8 @@ const Home = ({acquirePhoneDetails}) => {
 		else {
 			searchButton.current.classList.remove("touchButton");
 			searchButton.current.childNodes[0].classList.remove("touchSVG");
+
+			document.querySelector(".search__warning").remove();
 		}
 
 		if(isBrandSelectionOpen === true) {
@@ -80,7 +88,11 @@ const Home = ({acquirePhoneDetails}) => {
 			.catch(error => console.error(error));
 		}
 		else {
-			alert("Please select a brand");
+			if(!document.querySelector(".dropdown__warning")) {
+				warningElement.setAttribute("class", "dropdown__warning");
+				warningElement.innerText = "Please select a brand";
+				dropdownContainer.current.after(warningElement);
+			}
 		}
 	};
 
@@ -99,7 +111,11 @@ const Home = ({acquirePhoneDetails}) => {
 			.catch(error => console.error(error));
 		}
 		else {
-			alert("Please provide a term for the research");
+			if(!document.querySelector(".search__warning")) {
+				warningElement.setAttribute("class", "search__warning");
+				warningElement.innerText = "Please provide a term for the research";
+				searchContainer.current.after(warningElement);
+			}
 		}
 	};
 
@@ -229,7 +245,10 @@ const Home = ({acquirePhoneDetails}) => {
 							>
 								{"Select brand"}
 							</label>
-							<div className={"dropdown__fieldsContainer"}>
+							<div
+								ref={dropdownContainer}
+								className={"dropdown__fieldsContainer"}
+							>
 								<select
 									name={"brands"}
 									id={"brandSelection"}
@@ -281,7 +300,10 @@ const Home = ({acquirePhoneDetails}) => {
 							>
 								{"Search phone"}
 							</label>
-							<div className={"search__fieldsContainer"}>
+							<div
+								ref={searchContainer}
+								className={"search__fieldsContainer"}
+							>
 								<input
 									type={"search"}
 									id={"phoneSearch"}
