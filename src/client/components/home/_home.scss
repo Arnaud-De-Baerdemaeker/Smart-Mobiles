@@ -1,20 +1,30 @@
-.userInterface { // <div>
+.home { // <main>
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
+	row-gap: 40px;
 	padding: {
-		right: 20px;
-		left: 20px;
+		top: 40px;
+		bottom: 40px;
 	}
 
-	&__controls { // <div>
+	.userInterface { // <div>
 		display: flex;
-		justify-content: space-evenly;
-	}
+		flex-direction: column;
+		row-gap: 20px;
+		padding: {
+			right: 20px;
+			left: 20px;
+		}
 
-	&__fields { // <div>
-		&--closed { // <div>
-			display: none;
+		&__controls { // <div>
+			display: flex;
+			justify-content: space-evenly;
+		}
+
+		&__fields { // <div>
+			&--closed { // <div>
+				display: none;
+			}
 		}
 	}
 }
