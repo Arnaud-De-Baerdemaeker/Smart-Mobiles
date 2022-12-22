@@ -171,7 +171,7 @@ const Home = ({acquirePhoneDetails}) => {
 	return(
 		<>
 			<Header />
-			<main>
+			<main className={"home"}>
 				<div className={"userInterface"}>
 					<div className={"userInterface__controls"}>
 						<Button
