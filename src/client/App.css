@@ -32,7 +32,7 @@ header {
   font-family: "Share Tech Mono", arial;
   font-weight: 100;
   text-align: center;
-  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(172, 27, 29) 50%, rgb(252, 157, 49) 100%);
+  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   color: rgb(250, 250, 250);
   border-radius: 59px;
   box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
@@ -49,7 +49,7 @@ header {
   font-family: "Share Tech Mono", arial;
   font-weight: 100;
   text-align: center;
-  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(172, 27, 29) 50%, rgb(252, 157, 49) 100%);
+  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   color: rgb(250, 250, 250);
   border-radius: 59px;
   box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
@@ -92,7 +92,6 @@ header {
 @media screen and (hover: hover) {
   .button__brands:hover, .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover, .button__clear:hover, .button__search:hover {
     cursor: pointer;
-    background: rgb(26, 39, 101);
   }
 }
 .button__validate, .button__validateTerms, .button__validateSelection {
@@ -149,6 +148,14 @@ header {
   -moz-column-gap: 10px;
        column-gap: 10px;
 }
+.userInput__dropdown .dropdown__warning, .userInput__search .dropdown__warning, .userInput__search .search__warning {
+  background-color: rgb(101, 26, 39);
+  text-align: center;
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 22px;
+}
 .userInput__dropdown .dropdown__selection, .userInput__dropdown .userInput__field, .userInput__search .dropdown__selection, .userInput__search .userInput__field, .userInput__search .search__field {
   width: calc(100% - 60px);
   height: 50px;
@@ -178,7 +185,7 @@ header {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
-  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(172, 27, 29) 50%, rgb(252, 157, 49) 100%);
+  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   padding-top: 40px;
   padding-bottom: 40px;
   border-radius: 20px;
