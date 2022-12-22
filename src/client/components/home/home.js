@@ -130,6 +130,14 @@ const Home = ({acquirePhoneDetails}) => {
 
 		dropDown.current.value = "default";
 		searchInput.current.value = null;
+
+		if(document.querySelector(".dropdown__warning")) {
+			document.querySelector(".dropdown__warning").remove();
+		}
+
+		if(document.querySelector(".search__warning")) {
+			document.querySelector(".search__warning").remove()
+		}
 	};
 
 	const touchStartEffect = (event) => {
