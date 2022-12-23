@@ -1,11 +1,22 @@
 import React, {useState} from "react";
 
 import Header from "../header/header";
-import Modal from "../modal/modal";
+// import Modal from "../modal/modal";
 import Footer from "../footer/footer";
 
 const PhoneDetails = ({phoneDetails}) => {
 	const [modalState, setModalState] = useState(false);
+
+	const transformTitle = (title) => {
+		let splitWord = title.split("");
+		let letters = [];
+
+		splitWord.forEach(letter => {
+			letters.push(<span className={"title"}>{letter}</span>);
+		});
+
+		return <h3 className={"container__title"}>{letters}</h3>
+	}
 
 	return(
 		<>
@@ -15,17 +26,19 @@ const PhoneDetails = ({phoneDetails}) => {
 					? <>
 						<h2 className={"phoneDetails__title"}>{`${phoneDetails.brand} ${phoneDetails.phone_name}`}</h2>
 						<div className={"phoneDetails__presentation"}>
-							<div
-								onClick={() => setModalState(!modalState)}
-								className={"presentation__thumbnailContainer"}
-							>
-								<img
-									src={phoneDetails.thumbnail}
-									alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
-									className={"presentation__thumbnail"}
-								/>
+							<div className={"presentation"}>
+								<div
+									onClick={() => setModalState(!modalState)}
+									className={"presentation__thumbnailContainer"}
+								>
+									<img
+										src={phoneDetails.thumbnail}
+										alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
+										className={"presentation__thumbnail"}
+									/>
+								</div>
 							</div>
-							<div className={"presentation__infos"}>
+							<div className={"informations"}>
 								<dl>
 									<dt>{"Brand"}</dt>
 									<dd>{phoneDetails.brand}</dd>
@@ -47,10 +60,15 @@ const PhoneDetails = ({phoneDetails}) => {
 								</dl>
 							</div>
 						</div>
-						<div>
+						<div className={"phoneDetails__specifications"}>
 							{phoneDetails.specifications.map(specification =>
-								<section key={specification.title}>
-									<h3>{specification.title}</h3>
+								<div
+									key={specification.title}
+									className={"specifications"}
+								>
+									<div className={"specifications__container"}>
+										{transformTitle(specification.title)}
+									</div>
 									<dl>
 										{specification.specs.map(spec =>
 											<>
@@ -61,17 +79,17 @@ const PhoneDetails = ({phoneDetails}) => {
 											</>
 										)}
 									</dl>
-								</section>
+								</div>
 							)}
 						</div>
-						{modalState
+						{/* {modalState
 							? <Modal
 								modalState={modalState}
 								images={phoneDetails.phone_images}
 								name={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
 							/>
 							: null
-						}
+						} */}
 					</>
 					: <p>{"Loading"}</p>
 				}
