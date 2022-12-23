@@ -12,13 +12,6 @@ body {
   background-color: rgb(250, 250, 250);
   font-size: 16px;
 }
-body main {
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
 
 header {
   padding-top: 20px;
@@ -59,18 +52,25 @@ header {
   padding-left: 10px;
 }
 
-.userInterface {
+.home, .phoneDetails {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.home .userInterface, .phoneDetails .userInterface {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
   padding-right: 20px;
   padding-left: 20px;
 }
-.userInterface__controls {
+.home .userInterface__controls, .phoneDetails .userInterface__controls {
   display: flex;
   justify-content: space-evenly;
 }
-.userInterface__fields--closed {
+.home .userInterface__fields--closed, .phoneDetails .userInterface__fields--closed {
   display: none;
 }
 
@@ -182,14 +182,14 @@ header {
   background-image: unset;
 }
 .phonesList {
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
-  background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
+  background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   padding-top: 40px;
   padding-bottom: 40px;
   border-radius: 20px;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
 }
 .phonesList__title {
   text-align: center;
@@ -210,9 +210,6 @@ header {
 }
 
 .phoneCard {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
   padding-top: 30px;
@@ -220,6 +217,9 @@ header {
   padding-bottom: 30px;
   padding-left: 20px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 .phoneCard__image {
   max-width: 150px;
@@ -236,6 +236,106 @@ header {
   border-top-width: 1px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+}
+
+.phoneDetails__title {
+  text-align: center;
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: rgb(26, 39, 101);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.phoneDetails__presentation {
+  background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.phoneDetails__presentation .presentation {
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  padding-top: 30px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  background-color: white;
+}
+.phoneDetails__presentation .presentation__thumbnailContainer {
+  display: flex;
+  justify-content: center;
+}
+.phoneDetails__presentation .presentation__thumbnail {
+  max-width: 150px;
+}
+.phoneDetails__presentation .informations dl {
+  margin: 0;
+}
+.phoneDetails__presentation .informations dl dt {
+  font-weight: 900;
+}
+.phoneDetails__presentation .informations dl dt:not(:first-child) {
+  margin-top: 20px;
+}
+.phoneDetails__presentation .informations dl dd {
+  margin: 0;
+}
+.phoneDetails__specifications {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: rgb(26, 39, 101);
+}
+.phoneDetails__specifications .specifications {
+  display: inherit;
+  align-items: stretch;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  row-gap: 20px;
+}
+.phoneDetails__specifications .specifications__container {
+  display: inherit;
+  align-items: center;
+  background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
+  border-radius: 35px;
+}
+.phoneDetails__specifications .specifications__container .container__title {
+  display: inherit;
+  flex-direction: column-reverse;
+  margin: 0;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+.phoneDetails__specifications .specifications__container .container__title .title {
+  transform: rotateZ(-90deg);
+  color: rgb(250, 250, 250);
+}
+.phoneDetails__specifications .specifications dl {
+  margin: 0;
+}
+.phoneDetails__specifications .specifications dl dt {
+  font-weight: 900;
+}
+.phoneDetails__specifications .specifications dl dt:not(:first-child) {
+  margin-top: 20px;
+}
+.phoneDetails__specifications .specifications dl dd {
+  margin: 0;
 }
 
 footer {
