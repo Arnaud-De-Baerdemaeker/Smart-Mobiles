@@ -1,14 +1,8 @@
 .phonesList { // <section>
+	@include gradientBackground;
 	display: flex;
 	flex-direction: column;
 	row-gap: 40px;
-	background: $gradient;
-	padding: {
-		top: 40px;
-		bottom: 40px;
-	}
-	border-radius: 20px;
-	box-shadow: 0 0 7px 0 rgb(0, 0, 0, 0.4);
 
 	&__title { // <h2>
 		text-align: center;
