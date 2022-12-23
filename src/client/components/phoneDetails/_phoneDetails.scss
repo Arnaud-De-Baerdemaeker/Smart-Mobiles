@@ -1,0 +1,90 @@
+.phoneDetails { // <main>
+	@extend .home;
+
+	&__title { // <h2>
+		@include productTitle;
+		margin: {
+			right: 20px;
+			left: 20px;
+		}
+	}
+
+	&__presentation { // <div>
+		@include gradientBackground;
+		display: flex;
+		flex-direction: column;
+		row-gap: 40px;
+		padding: {
+			right: 20px;
+			left: 20px;
+		}
+
+		.presentation {
+			@include whiteBackground;
+
+			&__thumbnailContainer { // <div>
+				display: flex;
+				justify-content: center;
+			}
+
+			&__thumbnail { // <img>
+				max-width: 150px;
+			}
+		}
+
+		.informations { // <div>
+			dl {
+				margin: 0;
+
+				dt {
+					font-weight: 900;
+
+					&:not(:first-child) {
+						margin-top: 20px;
+					}
+				}
+
+				dd {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&__specifications { // <div>
+		display: flex;
+		flex-direction: column;
+		row-gap: 40px;
+		padding: {
+			right: 20px;
+			left: 20px;
+		}
+		color: $primary;
+
+		.specifications { // <section>
+			display: flex;
+			flex-direction: column;
+			row-gap: 20px;
+
+			&__title { // <h3>
+				margin: 0;
+			}
+
+			dl {
+				margin: 0;
+
+				dt {
+					font-weight: 900;
+
+					&:not(:first-child) {
+						margin-top: 20px;
+					}
+				}
+
+				dd {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
