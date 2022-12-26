@@ -69,7 +69,7 @@
 
 			&__container { // <div>
 				display: inherit;
-				align-items: center;
+				align-items: start;
 				background-image: $gradient;
 				border-radius: 35px;
 
@@ -77,6 +77,8 @@
 					&__title { // <h3>
 						display: inherit;
 						flex-direction: column-reverse;
+						align-items: center;
+						text-transform: uppercase;
 						margin: 0;
 						padding: {
 							top: 20px;
@@ -88,7 +90,10 @@
 						.title { // <span>
 							transform: rotateZ(-90deg);
 							color: $white;
-							// height: 10px;
+						}
+
+						.space { // <span>
+							height: 25px;
 						}
 					}
 				}
