@@ -12,10 +12,15 @@ const PhoneDetails = ({phoneDetails}) => {
 		let letters = [];
 
 		splitWord.forEach(letter => {
-			letters.push(<span className={"title"}>{letter}</span>);
+			if(letter === " ") {
+				letters.push(<span className={"space"}>{letter}</span>);
+			}
+			else {
+				letters.push(<span className={"title"}>{letter}</span>);
+			}
 		});
 
-		return <h3 className={"container__title"}>{letters}</h3>
+		return <h3 className={"container__title"}>{letters}</h3>;
 	}
 
 	return(
