@@ -5,13 +5,16 @@
 */
 
 import React from "react";
+import {Link} from "react-router-dom";
 
 import Title from "../title/title";
 
 const Header = () => {
 	return(
 		<header>
-			<Title titleClass={"header__title"} />
+			<Link to={"/"} className={"header__link"}>
+				<Title titleClass={"header__title"} />
+			</Link>
 		</header>
 	);
 }
