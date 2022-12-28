@@ -1,12 +1,16 @@
 import React from "react";
 
-const Modal = ({images, name}) => {
+const Modal = ({modalState, images, name}) => {
 	return(
-		<section>
+		<div className={
+			modalState
+			? "modal"
+			: "modal--closed"
+		}>
 			{images.map(image =>
 				<img src={image} alt={name} key={image} />
 			)}
-		</section>
+		</div>
 	);
 }
 

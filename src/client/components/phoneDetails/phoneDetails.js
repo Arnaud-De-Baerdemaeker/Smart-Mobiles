@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import Header from "../header/header";
-// import Modal from "../modal/modal";
+import Modal from "../modal/modal";
 import Footer from "../footer/footer";
 
 const PhoneDetails = ({phoneDetails}) => {
@@ -87,14 +87,11 @@ const PhoneDetails = ({phoneDetails}) => {
 								</div>
 							)}
 						</div>
-						{/* {modalState
-							? <Modal
-								modalState={modalState}
-								images={phoneDetails.phone_images}
-								name={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
-							/>
-							: null
-						} */}
+						<Modal
+							modalState={modalState}
+							images={phoneDetails.phone_images}
+							name={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
+						/>
 					</>
 					: <p>{"Loading"}</p>
 				}
