@@ -19,6 +19,10 @@ header {
   padding-bottom: 20px;
   padding-left: 20px;
 }
+header .header__link {
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
 
 .header__title {
   margin: 0;
@@ -308,13 +312,15 @@ header {
 }
 .phoneDetails__specifications .specifications__container {
   display: inherit;
-  align-items: center;
+  align-items: start;
   background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   border-radius: 35px;
 }
 .phoneDetails__specifications .specifications__container .container__title {
   display: inherit;
   flex-direction: column-reverse;
+  align-items: center;
+  text-transform: uppercase;
   margin: 0;
   padding-top: 20px;
   padding-right: 10px;
@@ -324,6 +330,9 @@ header {
 .phoneDetails__specifications .specifications__container .container__title .title {
   transform: rotateZ(-90deg);
   color: rgb(250, 250, 250);
+}
+.phoneDetails__specifications .specifications__container .container__title .space {
+  height: 25px;
 }
 .phoneDetails__specifications .specifications dl {
   margin: 0;
@@ -336,6 +345,7 @@ header {
 }
 .phoneDetails__specifications .specifications dl dd {
   margin: 0;
+  white-space: pre-line;
 }
 
 footer {
