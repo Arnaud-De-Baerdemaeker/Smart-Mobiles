@@ -65,6 +65,23 @@
 			@extend .button__validate;
 		}
 	}
+
+	&__previous { // <button>
+		position: absolute;
+		top: 50%;
+	}
+
+	&__close { // button>
+		position: absolute;
+		top: 90%;
+		left: 50%;
+	}
+
+	&__next { // <button>
+		position: absolute;
+		top: 50%;
+		right: 0;
+	}
 }
 
 .touchButton {
