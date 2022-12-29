@@ -66,21 +66,11 @@
 		}
 	}
 
-	&__previous { // <button>
-		position: absolute;
-		top: 50%;
-	}
-
 	&__close { // button>
-		position: absolute;
-		top: 90%;
-		left: 50%;
-	}
-
-	&__next { // <button>
-		position: absolute;
-		top: 50%;
-		right: 0;
+		@extend .button__brands;
+		position: fixed;
+		right: 20px;
+		bottom: 20px;
 	}
 }
 
