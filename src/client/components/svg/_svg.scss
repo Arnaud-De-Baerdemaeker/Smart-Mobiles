@@ -26,6 +26,10 @@
 		@extend .svg__brands;
 		pointer-events: none;
 	}
+
+	&__close { // <svg>
+		@extend .svg__brands;
+	}
 }
 
 .touchSVG {
