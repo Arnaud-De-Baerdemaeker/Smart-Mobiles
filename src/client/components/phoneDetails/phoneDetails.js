@@ -89,6 +89,7 @@ const PhoneDetails = ({phoneDetails}) => {
 						</div>
 						<Modal
 							modalState={modalState}
+							setModalState={setModalState}
 							images={phoneDetails.phone_images}
 							name={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
 						/>
