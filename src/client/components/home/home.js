@@ -181,8 +181,6 @@ const Home = ({acquirePhoneDetails}) => {
 							buttonClass={"button__brands"}
 						>
 							<SVG
-								width={"50"}
-								height={"50"}
 								viewbox={"-12.5 -12.5 75 75"}
 								svgClass={"svg__brands"}
 							>
@@ -205,8 +203,6 @@ const Home = ({acquirePhoneDetails}) => {
 							buttonClass={"button__search"}
 						>
 							<SVG
-								width={"50"}
-								height={"50"}
 								viewbox={"-12.5 -12.5 75 75"}
 								svgClass={"svg__search"}
 							>
@@ -226,8 +222,6 @@ const Home = ({acquirePhoneDetails}) => {
 							buttonClass={"button__clear"}
 						>
 							<SVG
-								width={"50"}
-								height={"50"}
 								viewbox={"-12.5 -12.5 75 75"}
 								svgClass={"svg__clear"}
 							>
