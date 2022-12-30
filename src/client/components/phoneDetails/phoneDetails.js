@@ -50,6 +50,22 @@ const PhoneDetails = ({phoneDetails}) => {
 		setFullscreenModalState(false);
 	};
 
+	const touchStartEffect = (event) => {
+		event.target.classList.add("touchButton--modal");
+
+		if(event.target.children.length > 0) {
+			event.target.childNodes[0].classList.add("touchSVG");
+		}
+	};
+
+	const touchEndEffect = (event) => {
+		event.target.classList.remove("touchButton--modal");
+
+		if(event.target.children.length > 0) {
+			event.target.childNodes[0].classList.remove("touchSVG");
+		}
+	};
+
 	return(
 		<>
 			<Header />
@@ -137,16 +153,15 @@ const PhoneDetails = ({phoneDetails}) => {
 							<Button
 								buttonType={"button"}
 								buttonClick={closeGalleryModal}
+								buttonTouchStart={touchStartEffect}
+								buttonTouchEnd={touchEndEffect}
 								buttonClass={"button__close"}
 							>
 								<SVG
 									viewbox={"-7 -7 50 50"}
-									class={"svg__close"}
+									svgClass={"svg__close"}
 								>
-									<path
-										d="M7.5 6C6 4.49998 4.5 6 6 7.5L16.5 18L6.00004 28.5C4.50003 30 6.00007 31.5 7.50006 30L18 19.5L28.5 30C30 31.5 31.5 30 30 28.5L19.5 18L30 7.5C31.5 5.99997 30 4.49998 28.5 5.99998L18 16.5L7.5 6Z"
-										className={"svg__close"}
-									/>
+									<path d="M7.5 6C6 4.49998 4.5 6 6 7.5L16.5 18L6.00004 28.5C4.50003 30 6.00007 31.5 7.50006 30L18 19.5L28.5 30C30 31.5 31.5 30 30 28.5L19.5 18L30 7.5C31.5 5.99997 30 4.49998 28.5 5.99998L18 16.5L7.5 6Z" />
 								</SVG>
 							</Button>
 						</Modal>
@@ -163,16 +178,15 @@ const PhoneDetails = ({phoneDetails}) => {
 							<Button
 								buttonType={"button"}
 								buttonClick={closeFullscreenModal}
+								buttonTouchStart={touchStartEffect}
+								buttonTouchEnd={touchEndEffect}
 								buttonClass={"button__close"}
 							>
 								<SVG
 									viewbox={"-7 -7 50 50"}
-									class={"svg__close"}
+									svgClass={"svg__close"}
 								>
-									<path
-										d="M7.5 6C6 4.49998 4.5 6 6 7.5L16.5 18L6.00004 28.5C4.50003 30 6.00007 31.5 7.50006 30L18 19.5L28.5 30C30 31.5 31.5 30 30 28.5L19.5 18L30 7.5C31.5 5.99997 30 4.49998 28.5 5.99998L18 16.5L7.5 6Z"
-										className={"svg__close"}
-									/>
+									<path d="M7.5 6C6 4.49998 4.5 6 6 7.5L16.5 18L6.00004 28.5C4.50003 30 6.00007 31.5 7.50006 30L18 19.5L28.5 30C30 31.5 31.5 30 30 28.5L19.5 18L30 7.5C31.5 5.99997 30 4.49998 28.5 5.99998L18 16.5L7.5 6Z" />
 								</SVG>
 							</Button>
 						</Modal>
