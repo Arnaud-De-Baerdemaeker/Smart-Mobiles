@@ -5,10 +5,6 @@
 		flex-direction: column;
 		row-gap: 10px;
 
-		&--closed {
-			display: none;
-		}
-
 		.dropdown {
 			&__label { // <label>
 				color: $primary;
@@ -70,10 +66,6 @@
 
 	&__search { // <form>
 		@extend .userInput__dropdown;
-
-		&--closed {
-			@extend .userInput__dropdown--closed;
-		}
 
 		.search {
 			&__label { // <label>
