@@ -130,66 +130,62 @@ const PhoneDetails = ({phoneDetails}) => {
 								</div>
 							)}
 						</div>
-						<Modal
-							galleryModalState={galleryModalState}
-							setGalleryModalState={setGalleryModalState}
-							modalClass={
-								galleryModalState
-								? "modal__gallery"
-								: "modal__gallery--closed"
-							}
-						>
-							<div className={"gallery"}>
-								{phoneDetails.phone_images.map((image, index) =>
-									<img
-										key={image}
-										src={image}
-										alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
-										onClick={openFullscreenModal}
-										className={`gallery__image image${index + 1}`}
-									/>
-								)}
-							</div>
-							<Button
-								buttonType={"button"}
-								buttonClick={closeGalleryModal}
-								buttonTouchStart={touchStartEffect}
-								buttonTouchEnd={touchEndEffect}
-								buttonClass={"button__close"}
+
+						{galleryModalState &&
+							<Modal
+								galleryModalState={galleryModalState}
+								setGalleryModalState={setGalleryModalState}
+								modalClass={"modal__gallery"}
 							>
-								<SVG
-									viewbox={"-7 -7 50 50"}
-									svgClass={"svg__close"}
+								<div className={"gallery"}>
+									{phoneDetails.phone_images.map((image, index) =>
+										<img
+											key={image}
+											src={image}
+											alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
+											onClick={openFullscreenModal}
+											className={`gallery__image image${index + 1}`}
+										/>
+									)}
+								</div>
+								<Button
+									buttonType={"button"}
+									buttonClick={closeGalleryModal}
+									buttonTouchStart={touchStartEffect}
+									buttonTouchEnd={touchEndEffect}
+									buttonClass={"button__close"}
 								>
-									<path d="M7.5 6C6 4.49998 4.5 6 6 7.5L16.5 18L6.00004 28.5C4.50003 30 6.00007 31.5 7.50006 30L18 19.5L28.5 30C30 31.5 31.5 30 30 28.5L19.5 18L30 7.5C31.5 5.99997 30 4.49998 28.5 5.99998L18 16.5L7.5 6Z" />
-								</SVG>
-							</Button>
-						</Modal>
-						<Modal
-							modalClass={
-								fullscreenModalState
-								? "modal__fullscreen"
-								: "modal__fullscreen--closed"
-							}
-						>
-							<div className={"fullscreen"}>
-								<img src={clickedImage.src} alt={clickedImage.alt} className={"fullscreen__image"} />
-							</div>
-							<Button
-								buttonType={"button"}
-								buttonClick={closeFullscreenModal}
-								buttonTouchStart={touchStartEffect}
-								buttonTouchEnd={touchEndEffect}
-								buttonClass={"button__close"}
-							>
-								<SVG
-									viewbox={"-7 -7 50 50"}
-									svgClass={"svg__close"}
+									<SVG
+										viewbox={"-7 -7 50 50"}
+										svgClass={"svg__close"}
+									>
+										<path d="M7.5 6C6 4.49998 4.5 6 6 7.5L16.5 18L6.00004 28.5C4.50003 30 6.00007 31.5 7.50006 30L18 19.5L28.5 30C30 31.5 31.5 30 30 28.5L19.5 18L30 7.5C31.5 5.99997 30 4.49998 28.5 5.99998L18 16.5L7.5 6Z" />
+									</SVG>
+								</Button>
+							</Modal>
+						}
+
+						{fullscreenModalState &&
+							<Modal modalClass={"modal__fullscreen"}>
+								<div className={"fullscreen"}>
+									<img src={clickedImage.src} alt={clickedImage.alt} className={"fullscreen__image"} />
+								</div>
+								<Button
+									buttonType={"button"}
+									buttonClick={closeFullscreenModal}
+									buttonTouchStart={touchStartEffect}
+									buttonTouchEnd={touchEndEffect}
+									buttonClass={"button__close"}
 								>
-									<path d="M7.5 6C6 4.49998 4.5 6 6 7.5L16.5 18L6.00004 28.5C4.50003 30 6.00007 31.5 7.50006 30L18 19.5L28.5 30C30 31.5 31.5 30 30 28.5L19.5 18L30 7.5C31.5 5.99997 30 4.49998 28.5 5.99998L18 16.5L7.5 6Z" />
-								</SVG>
-							</Button>
-						</Modal>
+									<SVG
+										viewbox={"-7 -7 50 50"}
+										svgClass={"svg__close"}
+									>
+										<path d="M7.5 6C6 4.49998 4.5 6 6 7.5L16.5 18L6.00004 28.5C4.50003 30 6.00007 31.5 7.50006 30L18 19.5L28.5 30C30 31.5 31.5 30 30 28.5L19.5 18L30 7.5C31.5 5.99997 30 4.49998 28.5 5.99998L18 16.5L7.5 6Z" />
+									</SVG>
+								</Button>
+							</Modal>
+						}
 					</>
 					: <p>{"Loading"}</p>
 				}
