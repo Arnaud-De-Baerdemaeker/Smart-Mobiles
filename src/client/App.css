@@ -150,9 +150,6 @@ header .header__link {
   flex-direction: column;
   row-gap: 10px;
 }
-.userInput__dropdown--closed, .userInput__search--closed {
-  display: none;
-}
 .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
   color: rgb(26, 39, 101);
   text-align: center;
@@ -385,9 +382,6 @@ header .header__link {
   border-radius: 20px;
   width: 100px;
 }
-.modal__gallery--closed, .modal__fullscreen--closed {
-  display: none;
-}
 .modal__fullscreen .fullscreen {
   display: flex;
   align-items: center;
@@ -398,6 +392,7 @@ header .header__link {
   background-color: white;
   border-radius: 20px;
 }
+
 footer {
   padding-right: 20px;
   padding-left: 20px;
