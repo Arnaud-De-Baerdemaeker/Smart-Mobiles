@@ -28,10 +28,6 @@
 				width: 100px;
 			}
 		}
-
-		&--closed {
-			display: none;
-		}
 	}
 
 	&__fullscreen { // <div>
@@ -47,10 +43,6 @@
 				background-color: white;
 				border-radius: 20px;
 			}
-		}
-
-		&--closed {
-			@extend .modal__gallery--closed;
 		}
 	}
 }
