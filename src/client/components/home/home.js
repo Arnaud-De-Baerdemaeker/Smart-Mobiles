@@ -231,19 +231,10 @@ const Home = ({acquirePhoneDetails}) => {
 						</Button>
 					</div>
 
-					<div className={
-						isBrandSelectionOpen || isSearchFieldOpen === true
-						? "userInterface__fields"
-						: "userInterface__fields--closed"
-					}>
-						{/* Brand selection */}
+					{isBrandSelectionOpen &&
 						<UserInput
 							formName={"brandSelection"}
-							formClass={
-								isBrandSelectionOpen
-								? "userInput__dropdown"
-								: "userInput__dropdown--closed"
-							}
+							formClass={"userInput__dropdown"}
 						>
 							<label
 								htmlFor={"brandSelection"}
@@ -290,8 +281,9 @@ const Home = ({acquirePhoneDetails}) => {
 								</Button>
 							</div>
 						</UserInput>
+					}
 
-						{/* Search field */}
+					{isSearchFieldOpen &&
 						<UserInput
 							formName={"searchPhone"}
 							formClass={
@@ -327,7 +319,7 @@ const Home = ({acquirePhoneDetails}) => {
 								</Button>
 							</div>
 						</UserInput>
-					</div>
+					}
 				</div>
 
 				{/* Render the corresponding component based on the user's actions */}
