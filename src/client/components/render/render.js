@@ -29,7 +29,7 @@ const Render = ({latestPhones, brandTitle, searchResult, phones, acquirePhoneDet
 				<Link
 					to={`/${phone.slug}`}
 					onClick={() => acquirePhoneDetails(phone.detail)}
-					key={phone.phone_name}
+					key={phone.slug}
 					className={"phonesList__link"}
 				>
 					<PhoneCard
@@ -48,7 +48,7 @@ const Render = ({latestPhones, brandTitle, searchResult, phones, acquirePhoneDet
 					<Link
 						to={`/${phone.slug}`}
 						onClick={() => acquirePhoneDetails(phone.detail)}
-						key={phone.phone_name}
+						key={phone.slug}
 						className={"phonesList__link"}
 					>
 						<PhoneCard
