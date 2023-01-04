@@ -20,6 +20,9 @@ const Home = ({acquirePhoneDetails}) => {
 	const [brandTitle, setBrandTitle] = useState(null);
 	const [searchResult, setSearchResult] = useState(null);
 	const [phones, setPhones] = useState(null);
+	const [selectedBrand, setSelectedBrand] = useState(null);
+	const [currentPage, setCurrentPage] = useState(null);
+	const [totalPages, setTotalPages] = useState(null);
 	const brandsButton = useRef(null);
 	const searchButton = useRef(null);
 	const dropDown = useRef(null);
@@ -27,6 +30,7 @@ const Home = ({acquirePhoneDetails}) => {
 	const dropdownContainer = useRef(null);
 	const searchContainer = useRef(null);
 
+	let currentBrand = null;
 	const warningElement = document.createElement("p");
 
 	const toggleBrandInput = () => {
@@ -80,16 +84,20 @@ const Home = ({acquirePhoneDetails}) => {
 	const getOption = (event) => {
 		event.preventDefault();
 
-		let selected = dropDown.current.value;
+		currentBrand = dropDown.current.value;
 
-		if(selected !== "default") {
-			getPhonesFromBrand(selected)
+		if(currentBrand !== "default") {
+			getPhonesFromBrand(currentBrand)
 			.then(result => {
 				setBrandTitle(result.data.data.title);
 				setPhones(result.data.data.phones);
+				setCurrentPage(result.data.data.current_page);
+				setTotalPages(result.data.data.last_page);
 				setSearchResult(null);
 			})
 			.catch(error => console.error(error));
+
+			setSelectedBrand(currentBrand);
 		}
 		else {
 			if(!document.querySelector(".dropdown__warning")) {
@@ -328,6 +336,11 @@ const Home = ({acquirePhoneDetails}) => {
 					brandTitle={brandTitle}
 					searchResult={searchResult}
 					phones={phones}
+					setPhones={setPhones}
+					selectedBrand={selectedBrand}
+					currentPage={currentPage}
+					setCurrentPage={setCurrentPage}
+					totalPages={totalPages}
 					acquirePhoneDetails={acquirePhoneDetails}
 				/>
 			</main>
