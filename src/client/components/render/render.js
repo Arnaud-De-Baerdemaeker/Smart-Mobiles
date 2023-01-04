@@ -2,11 +2,19 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import PhonesList from "../phonesList/phonesList";
+import Pagination from "../pagination/pagination";
 import PhoneCard from "../phoneCard/phoneCard";
 
-const Render = ({latestPhones, brandTitle, searchResult, phones, acquirePhoneDetails}) => {
+const Render = ({latestPhones, brandTitle, searchResult, phones, selectedBrand, setPhones, currentPage, setCurrentPage, totalPages, acquirePhoneDetails}) => {
 	if(brandTitle && phones) {
 		return <PhonesList title={brandTitle}>
+			<Pagination
+				selectedBrand={selectedBrand}
+				setPhones={setPhones}
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}
+				totalPages={totalPages}
+			/>
 			{phones.map(phone =>
 				<Link
 					to={`/${phone.slug}`}
@@ -21,6 +29,13 @@ const Render = ({latestPhones, brandTitle, searchResult, phones, acquirePhoneDet
 					/>
 				</Link>
 			)}
+			<Pagination
+				selectedBrand={selectedBrand}
+				setPhones={setPhones}
+				currentPage={currentPage}
+				setCurrentPage={setCurrentPage}
+				totalPages={totalPages}
+			/>
 		</PhonesList>;
 	}
 	else if(searchResult) {
