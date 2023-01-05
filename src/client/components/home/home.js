@@ -5,6 +5,7 @@ import Render from "../render/render";
 import Button from "../button/button";
 import SVG from "../svg/svg";
 import UserInput from "../userInput/userInput";
+import Warning from "../warning/warning";
 import Footer from "../footer/footer";
 
 import {getLatestPhones} from "../../apiCalls/fetchLatestPhones";
@@ -17,10 +18,13 @@ const Home = ({acquirePhoneDetails}) => {
 	const [brands, setBrands] = useState([]);
 	const [isBrandSelectionOpen, setIsBrandSelectionOpen] = useState(false);
 	const [isSearchFieldOpen, setIsSearchFieldOpen] = useState(false);
+	const [brandInputWarning, setBrandInputWarning] = useState(false);
+	const [searchInputWarning, setSearchInputWarning] = useState(false);
+	const [selectedBrand, setSelectedBrand] = useState(null);
+	const [term, setTerm] = useState(null);
 	const [brandTitle, setBrandTitle] = useState(null);
 	const [searchResult, setSearchResult] = useState(null);
 	const [phones, setPhones] = useState(null);
-	const [selectedBrand, setSelectedBrand] = useState(null);
 	const [currentPage, setCurrentPage] = useState(null);
 	const [totalPages, setTotalPages] = useState(null);
 	const brandsButton = useRef(null);
@@ -30,11 +34,13 @@ const Home = ({acquirePhoneDetails}) => {
 	const dropdownContainer = useRef(null);
 	const searchContainer = useRef(null);
 
-	let currentBrand = null;
-	const warningElement = document.createElement("p");
-
 	const toggleBrandInput = () => {
 		setIsBrandSelectionOpen(!isBrandSelectionOpen);
+
+		// Remove the warning if it was displayed
+		if(searchInputWarning) {
+			setSearchInputWarning(false);
+		}
 
 		if(isBrandSelectionOpen === false) {
 			brandsButton.current.classList.add("touchButton");
@@ -47,18 +53,31 @@ const Home = ({acquirePhoneDetails}) => {
 			brandsButton.current.classList.remove("touchButton");
 			brandsButton.current.childNodes[0].classList.remove("touchSVG");
 
-			document.querySelector(".dropdown__warning").remove();
+			if(selectedBrand) {
+				setSelectedBrand(null);
+			}
+
+			if(brandInputWarning) {
+				setBrandInputWarning(false);
+			}
 		}
 
 		if(isSearchFieldOpen === true) {
 			setIsSearchFieldOpen(!isSearchFieldOpen);
 
-			document.querySelector(".search__warning").remove();
+			if(brandInputWarning) {
+				setBrandInputWarning(false);
+			}
 		}
 	};
 
 	const toggleSearchInput = () => {
 		setIsSearchFieldOpen(!isSearchFieldOpen);
+
+		// Remove the warning if it was displayed
+		if(brandInputWarning) {
+			setBrandInputWarning(false);
+		}
 
 		if(isSearchFieldOpen === false) {
 			searchButton.current.classList.add("touchButton");
@@ -71,80 +90,116 @@ const Home = ({acquirePhoneDetails}) => {
 			searchButton.current.classList.remove("touchButton");
 			searchButton.current.childNodes[0].classList.remove("touchSVG");
 
-			document.querySelector(".search__warning").remove();
+			if(term) {
+				setTerm(null);
+			}
+
+			if(searchInputWarning) {
+				setSearchInputWarning(false);
+			}
 		}
 
 		if(isBrandSelectionOpen === true) {
 			setIsBrandSelectionOpen(!isBrandSelectionOpen);
 
-			document.querySelector(".dropdown__warning").remove();
+			if(searchInputWarning) {
+				setSearchInputWarning(false);
+			}
 		}
 	};
 
 	const getOption = (event) => {
+		setSelectedBrand(event.target.value);
+	};
+
+	const getDropdownResults = (event) => {
 		event.preventDefault();
 
-		currentBrand = dropDown.current.value;
+		// Launch the call if the value is different than default
+		if(selectedBrand !== null) {
+			// Remove the warning if it was set due to a previous mistake
+			if(brandInputWarning) {
+				setBrandInputWarning(false);
+			}
 
-		if(currentBrand !== "default") {
-			getPhonesFromBrand(currentBrand)
+			// Make the call with the value selected
+			getPhonesFromBrand(selectedBrand)
 			.then(result => {
+				// Distribute the results in states
 				setBrandTitle(result.data.data.title);
 				setPhones(result.data.data.phones);
 				setCurrentPage(result.data.data.current_page);
 				setTotalPages(result.data.data.last_page);
 				setSearchResult(null);
 			})
-			.catch(error => console.error(error));
+			.catch(error => {
+				console.error(error);
+			});
 
-			setSelectedBrand(currentBrand);
+			// Empty the state after the call is fulfilled
+			setSelectedBrand(null);
 		}
 		else {
-			if(!document.querySelector(".dropdown__warning")) {
-				warningElement.setAttribute("class", "dropdown__warning");
-				warningElement.innerText = "Please select a brand";
-				dropdownContainer.current.after(warningElement);
-			}
+			// Display a warning label if the value is not selected
+			setBrandInputWarning(true);
 		}
+	};
+
+	const getTerm = (event) => {
+		setTerm(event.target.value);
 	};
 
 	const getSearchQuery = (event) => {
 		event.preventDefault();
 
-		let searchTerms = searchInput.current.value;
+		// Launch the call if the user provided a term in the search field
+		if(term !== null) {
+			// Remove the warning if it was set due to a previous mistake
+			if(searchInputWarning) {
+				setSearchInputWarning(false);
+			}
 
-		if(searchTerms !== "") {
-			getResultsFromSearchQuery(searchTerms)
+			getResultsFromSearchQuery(term)
 			.then(result => {
+				// Distribute the results in the states
 				setSearchResult(result.data.data);
 				setBrandTitle(null);
 				setPhones(null);
 			})
-			.catch(error => console.error(error));
+			.catch(error => {
+				console.error(error);
+			});
+
+			// Empty the state after the call is fulfilled
+			setTerm(null);
 		}
 		else {
-			if(!document.querySelector(".search__warning")) {
-				warningElement.setAttribute("class", "search__warning");
-				warningElement.innerText = "Please provide a term for the research";
-				searchContainer.current.after(warningElement);
-			}
+			// Display a warning sign if no term is provided
+			setSearchInputWarning(true);
 		}
 	};
 
 	const clear = () => {
+		setSelectedBrand(null);
+		setTerm(null);
 		setBrandTitle(null);
 		setPhones(null);
 		setSearchResult(null);
 
-		dropDown.current.value = "default";
-		searchInput.current.value = null;
+		// if(dropDown.current.attribute !== "default") {
+		// 	dropDown.current.value = "default";
+		// }
 
-		if(document.querySelector(".dropdown__warning")) {
-			document.querySelector(".dropdown__warning").remove();
+		// if(searchInput.current.value !== "") {
+		// 	searchInput.current.value = "";
+		// }
+
+		if(brandInputWarning) {
+			setBrandInputWarning(false);
 		}
 
-		if(document.querySelector(".search__warning")) {
-			document.querySelector(".search__warning").remove()
+		if(searchInputWarning) {
+			setSearchInputWarning(false);
 		}
 	};
 
@@ -259,6 +314,7 @@ const Home = ({acquirePhoneDetails}) => {
 									id={"brandSelection"}
 									defaultValue={"default"}
 									ref={dropDown}
+									onChange={getOption}
 									className={"dropdown__selection"}
 								>
 									<option
@@ -280,7 +336,7 @@ const Home = ({acquirePhoneDetails}) => {
 								</select>
 								<Button
 									buttonType={"submit"}
-									buttonClick={getOption}
+									buttonClick={getDropdownResults}
 									buttonTouchStart={touchStartEffect}
 									buttonTouchEnd={touchEndEffect}
 									buttonClass={"button__validateSelection"}
@@ -288,6 +344,10 @@ const Home = ({acquirePhoneDetails}) => {
 									{"OK"}
 								</Button>
 							</div>
+							{brandInputWarning
+								? <Warning warningClass={"dropdown__warning"}>{"Please select a brand"}</Warning>
+								: null
+							}
 						</UserInput>
 					}
 
@@ -314,6 +374,7 @@ const Home = ({acquirePhoneDetails}) => {
 									type={"search"}
 									id={"phoneSearch"}
 									ref={searchInput}
+									onChange={getTerm}
 									className={"search__field"}
 								/>
 								<Button
@@ -326,6 +387,10 @@ const Home = ({acquirePhoneDetails}) => {
 									{"OK"}
 								</Button>
 							</div>
+							{searchInputWarning
+								? <Warning warningClass={"search__warning"}>{"Please provide a term"}</Warning>
+								: null
+							}
 						</UserInput>
 					}
 				</div>
