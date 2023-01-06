@@ -30,6 +30,16 @@
 	&__close { // <svg>
 		@extend .svg__clear;
 	}
+
+	&__previous { // <svg>
+		@extend .svg__clear;
+		transform: rotateZ(90deg);
+	}
+
+	&__next { // <svg>
+		@extend .svg__previous;
+		transform: rotateZ(-90deg);
+	}
 }
 
 .touchSVG {
