@@ -5,7 +5,20 @@ import PhonesList from "../phonesList/phonesList";
 import Pagination from "../pagination/pagination";
 import PhoneCard from "../phoneCard/phoneCard";
 
-const Render = ({latestPhones, brandTitle, searchResult, phones, selectedBrand, setPhones, currentPage, setCurrentPage, totalPages, acquirePhoneDetails}) => {
+const Render = ({
+	latestPhones,
+	brandTitle,
+	searchResult,
+	phones,
+	selectedBrand,
+	setPhones,
+	currentPage,
+	setCurrentPage,
+	totalPages,
+	touchStartEffect,
+	touchEndEffect,
+	acquirePhoneDetails
+}) => {
 	if(brandTitle && phones) {
 		return <PhonesList title={brandTitle}>
 			<Pagination
@@ -14,6 +27,8 @@ const Render = ({latestPhones, brandTitle, searchResult, phones, selectedBrand, 
 				currentPage={currentPage}
 				setCurrentPage={setCurrentPage}
 				totalPages={totalPages}
+				touchStartEffect={touchStartEffect}
+				touchEndEffect={touchEndEffect}
 			/>
 			{phones.map(phone =>
 				<Link
