@@ -33,6 +33,11 @@ const Pagination = ({selectedBrandPagination, currentPage, setCurrentPage, total
 					<path d={"M24.2929 31.2929L8 15C7.44772 14.4477 6.55228 14.4477 6 15C5.44772 15.5523 5.44771 16.4477 6 17L24.2929 35.2929C24.6834 35.6834 25.3166 35.6834 25.7071 35.2929L44 17C44.5523 16.4477 44.5523 15.5523 44 15C43.4477 14.4477 42.5523 14.4477 42 15L25.7071 31.2929C25.3166 31.6834 24.6834 31.6834 24.2929 31.2929Z"} />
 				</SVG>
 			</Button>
+			<p className={"pagination__localization"}>
+				{"You are on page"}
+				<br />
+				{`${currentPage} of ${totalPages}`}
+			</p>
 			<Button
 				buttonType={"button"}
 				buttonClick={() => {
