@@ -209,13 +209,15 @@ header .header__link {
 
 .phonesList {
   background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
-  padding-top: 40px;
-  padding-bottom: 40px;
   border-radius: 20px;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   row-gap: 40px;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  padding-left: 20px;
 }
 .phonesList__title {
   text-align: center;
@@ -230,9 +232,19 @@ header .header__link {
 .phonesList__link {
   display: block;
   width: 100%;
-  max-width: 250px;
   text-decoration: none;
   border-radius: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.pagination__localization {
+  margin: 0;
+  text-align: center;
 }
 
 .phoneCard {
@@ -248,7 +260,6 @@ header .header__link {
   row-gap: 20px;
 }
 .phoneCard__image {
-  max-width: 150px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -279,14 +290,14 @@ header .header__link {
 }
 .phoneDetails__presentation {
   background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
-  padding-top: 40px;
-  padding-bottom: 40px;
   border-radius: 20px;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   row-gap: 40px;
+  padding-top: 40px;
   padding-right: 20px;
+  padding-bottom: 40px;
   padding-left: 20px;
 }
 .phoneDetails__presentation .presentation {
@@ -301,9 +312,6 @@ header .header__link {
 .phoneDetails__presentation .presentation__thumbnailContainer {
   display: flex;
   justify-content: center;
-}
-.phoneDetails__presentation .presentation__thumbnail {
-  max-width: 150px;
 }
 .phoneDetails__presentation .informations dl {
   margin: 0;
