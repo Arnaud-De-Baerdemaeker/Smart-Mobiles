@@ -71,7 +71,24 @@
 		position: fixed;
 		right: 20px;
 		bottom: 20px;
-		outline-color: $white;
+		border: {
+			style: solid;
+			width: 1px;
+			color: $white;
+		}
+	}
+
+	&__previous { // <button>
+		@extend .button__brands;
+		border: {
+			style: solid;
+			width: 1px;
+			color: $white;
+		}
+	}
+
+	&__next { // <next>
+		@extend .button__previous;
 	}
 }
 
