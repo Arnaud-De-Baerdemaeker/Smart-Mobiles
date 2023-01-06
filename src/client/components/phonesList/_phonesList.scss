@@ -4,6 +4,12 @@
 	display: flex;
 	flex-direction: column;
 	row-gap: 40px;
+	padding: {
+		top: 40px;
+		right: 20px;
+		bottom: 40px;
+		left: 20px;
+	}
 
 	&__title { // <h2>
 		text-align: center;
@@ -20,7 +26,6 @@
 	&__link { // <a>
 		display: block;
 		width: 100%;
-		max-width: 250px;
 		text-decoration: none;
 		border-radius: 10px;
 	}
