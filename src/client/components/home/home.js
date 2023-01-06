@@ -405,6 +405,8 @@ const Home = ({acquirePhoneDetails}) => {
 					currentPage={currentPage}
 					setCurrentPage={setCurrentPage}
 					totalPages={totalPages}
+					touchStartEffect={touchStartEffect}
+					touchEndEffect={touchEndEffect}
 					acquirePhoneDetails={acquirePhoneDetails}
 				/>
 			</main>
