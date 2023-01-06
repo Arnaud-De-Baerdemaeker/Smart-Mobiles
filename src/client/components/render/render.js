@@ -10,7 +10,7 @@ const Render = ({
 	brandTitle,
 	searchResult,
 	phones,
-	selectedBrand,
+	selectedBrandPagination,
 	setPhones,
 	currentPage,
 	setCurrentPage,
@@ -22,7 +22,7 @@ const Render = ({
 	if(brandTitle && phones) {
 		return <PhonesList title={brandTitle}>
 			<Pagination
-				selectedBrand={selectedBrand}
+				selectedBrandPagination={selectedBrandPagination}
 				setPhones={setPhones}
 				currentPage={currentPage}
 				setCurrentPage={setCurrentPage}
@@ -45,7 +45,7 @@ const Render = ({
 				</Link>
 			)}
 			<Pagination
-				selectedBrand={selectedBrand}
+				selectedBrandPagination={selectedBrandPagination}
 				setPhones={setPhones}
 				currentPage={currentPage}
 				setCurrentPage={setCurrentPage}

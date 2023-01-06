@@ -21,6 +21,7 @@ const Home = ({acquirePhoneDetails}) => {
 	const [brandInputWarning, setBrandInputWarning] = useState(false);
 	const [searchInputWarning, setSearchInputWarning] = useState(false);
 	const [selectedBrand, setSelectedBrand] = useState(null);
+	const [selectedBrandPagination, setSelectedBrandPagination] = useState(null);
 	const [term, setTerm] = useState(null);
 	const [brandTitle, setBrandTitle] = useState(null);
 	const [searchResult, setSearchResult] = useState(null);
@@ -101,6 +102,7 @@ const Home = ({acquirePhoneDetails}) => {
 
 		if(isBrandSelectionOpen === true) {
 			setIsBrandSelectionOpen(!isBrandSelectionOpen);
+			setSelectedBrandPagination(null);
 
 			if(searchInputWarning) {
 				setSearchInputWarning(false);
@@ -135,6 +137,8 @@ const Home = ({acquirePhoneDetails}) => {
 			.catch(error => {
 				console.error(error);
 			});
+
+			setSelectedBrandPagination(selectedBrand);
 
 			// Empty the state after the call is fulfilled
 			setSelectedBrand(null);
@@ -181,6 +185,7 @@ const Home = ({acquirePhoneDetails}) => {
 
 	const clear = () => {
 		setSelectedBrand(null);
+		setSelectedBrandPagination(null);
 		setTerm(null);
 		setBrandTitle(null);
 		setPhones(null);
@@ -401,7 +406,7 @@ const Home = ({acquirePhoneDetails}) => {
 					searchResult={searchResult}
 					phones={phones}
 					setPhones={setPhones}
-					selectedBrand={selectedBrand}
+					selectedBrandPagination={selectedBrandPagination}
 					currentPage={currentPage}
 					setCurrentPage={setCurrentPage}
 					totalPages={totalPages}

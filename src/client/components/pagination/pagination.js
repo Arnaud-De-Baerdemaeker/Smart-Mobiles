@@ -5,14 +5,14 @@ import SVG from "../svg/svg";
 
 import {getPhonesFromBrand} from "../../apiCalls/fetchPhonesFromBrand";
 
-const Pagination = ({selectedBrand, currentPage, setCurrentPage, totalPages, setPhones, touchStartEffect, touchEndEffect}) => {
+const Pagination = ({selectedBrandPagination, currentPage, setCurrentPage, totalPages, setPhones, touchStartEffect, touchEndEffect}) => {
 	return(
 		<div className={"pagination"}>
 			<Button
 				buttonType={"button"}
 				buttonClick={() => {
 					if(currentPage > 1) {
-						getPhonesFromBrand(selectedBrand, currentPage - 1)
+						getPhonesFromBrand(selectedBrandPagination, currentPage - 1)
 						.then(result => {
 							setCurrentPage(result.data.data.current_page);
 							setPhones(result.data.data.phones);
@@ -37,7 +37,7 @@ const Pagination = ({selectedBrand, currentPage, setCurrentPage, totalPages, set
 				buttonType={"button"}
 				buttonClick={() => {
 					if(currentPage < totalPages) {
-						getPhonesFromBrand(selectedBrand, currentPage + 1)
+						getPhonesFromBrand(selectedBrandPagination, currentPage + 1)
 						.then(result => {
 							setCurrentPage(result.data.data.current_page);
 							setPhones(result.data.data.phones);
