@@ -190,7 +190,7 @@ const Home = ({acquirePhoneDetails}) => {
 			dropDown.current.selectedIndex = "default";
 		}
 
-		if(searchInput.current.value !== "") {
+		if(searchInput.current && searchInput.current.value !== "") {
 			searchInput.current.value = "";
 		}
 
