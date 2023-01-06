@@ -82,7 +82,7 @@ header .header__link {
   display: none;
 }
 
-.button__brands, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
+.button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
   margin: 0;
   padding: 0;
   border: none;
@@ -98,7 +98,7 @@ header .header__link {
   transition-duration: 0.2s;
 }
 @media screen and (hover: hover) {
-  .button__brands:hover, .button__close:hover, .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover, .button__clear:hover, .button__search:hover {
+  .button__brands:hover, .button__previous:hover, .button__next:hover, .button__close:hover, .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover, .button__clear:hover, .button__search:hover {
     cursor: pointer;
   }
 }
@@ -119,14 +119,20 @@ header .header__link {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  outline-color: rgb(250, 250, 250);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(250, 250, 250);
 }
-
+.button__previous, .button__next {
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(250, 250, 250);
+}
 .touchButton, .touchButton--modal {
   background-color: rgb(26, 39, 101);
   color: rgb(250, 250, 250);
 }
-.svg__brands, .svg__clear, .svg__close, .svg__search {
+.svg__brands, .svg__clear, .svg__previous, .svg__next, .svg__close, .svg__search {
   width: 50px;
   height: 50px;
   fill: rgb(26, 39, 101);
@@ -134,13 +140,20 @@ header .header__link {
   transition-duration: 0.2s;
 }
 @media screen and (hover: hover) {
-  .svg__brands:hover, .svg__clear:hover, .svg__close:hover, .svg__search:hover {
+  .svg__brands:hover, .svg__clear:hover, .svg__previous:hover, .svg__next:hover, .svg__close:hover, .svg__search:hover {
     fill: rgb(250, 250, 250);
   }
 }
-.svg__clear, .svg__close {
+.svg__clear, .svg__previous, .svg__next, .svg__close {
   pointer-events: none;
 }
+.svg__previous, .svg__next {
+  transform: rotateZ(90deg);
+}
+.svg__next {
+  transform: rotateZ(-90deg);
+}
+
 .touchSVG {
   fill: rgb(250, 250, 250);
 }
@@ -159,14 +172,6 @@ header .header__link {
   display: flex;
   -moz-column-gap: 10px;
        column-gap: 10px;
-}
-.userInput__dropdown .dropdown__warning, .userInput__search .dropdown__warning, .userInput__search .search__warning {
-  background-color: rgb(101, 26, 39);
-  text-align: center;
-  margin: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 22px;
 }
 .userInput__dropdown .dropdown__selection, .userInput__dropdown .userInput__field, .userInput__search .dropdown__selection, .userInput__search .userInput__field, .userInput__search .search__field {
   width: calc(100% - 60px);
@@ -193,6 +198,15 @@ header .header__link {
 .userInput__search .search__field {
   background-image: unset;
 }
+.dropdown__warning, .search__warning {
+  background-color: rgb(101, 26, 39);
+  text-align: center;
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 22px;
+}
+
 .phonesList {
   background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   padding-top: 40px;
