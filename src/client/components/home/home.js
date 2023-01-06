@@ -186,13 +186,13 @@ const Home = ({acquirePhoneDetails}) => {
 		setPhones(null);
 		setSearchResult(null);
 
-		// if(dropDown.current.attribute !== "default") {
-		// 	dropDown.current.value = "default";
-		// }
+		if(dropDown.current.selectedIndex !== "default") {
+			dropDown.current.selectedIndex = "default";
+		}
 
-		// if(searchInput.current.value !== "") {
-		// 	searchInput.current.value = "";
-		// }
+		if(searchInput.current.value !== "") {
+			searchInput.current.value = "";
+		}
 
 		if(brandInputWarning) {
 			setBrandInputWarning(false);
