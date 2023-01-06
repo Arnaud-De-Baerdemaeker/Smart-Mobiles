@@ -18,8 +18,6 @@ const getPhonesFromBrand = async (brand, page) => {
 		params: params
 	});
 
-	console.log(request);
-
 	return request;
 };
 
