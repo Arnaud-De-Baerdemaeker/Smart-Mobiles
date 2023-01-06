@@ -328,7 +328,6 @@ const Home = ({acquirePhoneDetails}) => {
 										<option
 											value={item.brand_slug}
 											key={item.brand_id}
-											className={"dropdown__option"}
 										>
 											{item.brand_name}
 										</option>
