@@ -34,12 +34,12 @@ const PhoneDetails = ({phoneDetails}) => {
 		let splitWord = title.split("");
 		let letters = [];
 
-		splitWord.forEach(letter => {
+		splitWord.forEach((letter, index) => {
 			if(letter === " ") {
-				letters.push(<span className={"space"}>{letter}</span>);
+				letters.push(<span key={index} className={"space"}>{letter}</span>);
 			}
 			else {
-				letters.push(<span className={"title"}>{letter}</span>);
+				letters.push(<span key={index} className={"title"}>{letter}</span>);
 			}
 		});
 
@@ -135,12 +135,12 @@ const PhoneDetails = ({phoneDetails}) => {
 									</div>
 									<dl>
 										{specification.specs.map(spec =>
-											<>
-												<dt>{spec.key}</dt>
+											<React.Fragment key={spec.key}>
+												<dt key={spec.val}>{spec.key}</dt>
 												{spec.val.map(value =>
-													<dd>{value}</dd>
+													<dd key={value}>{value}</dd>
 												)}
-											</>
+											</React.Fragment>
 										)}
 									</dl>
 								</div>
