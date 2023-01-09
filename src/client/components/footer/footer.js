@@ -13,7 +13,7 @@ const Footer = () => {
 	return(
 		<footer>
 			<Title titleClass={"footer__title"} />
-			<p>
+			<p className={"footer__projectOwner"}>
 				{"A project made in ReactJS by"}
 				<br />
 				<a
@@ -23,19 +23,23 @@ const Footer = () => {
 					{"Arnaud De Baerdemaeker"}
 				</a>
 			</p>
-			<p>
+			<p className={"footer__apiProvider"}>
 				{"This project uses the "}
+				<br />
 				<a
 					href={"https://github.com/azharimm/phone-specs-api"}
 					target={"_blank"}
+					className={"apiProvider__link"}
 				>
 					{"Phone Specs API"}
 				</a>
+				<br />
 				{" made by "}
 				<br />
 				<a
 					href={"https://www.azharimm.dev/"}
 					target={"_blank"}
+					className={"apiProvider__website"}
 				>
 					{"Azhari Muhammad M"}
 				</a>
