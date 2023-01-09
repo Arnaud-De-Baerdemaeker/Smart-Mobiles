@@ -22,10 +22,12 @@ const PhoneDetails = ({phoneDetails}) => {
 
 	const openGalleryModal = () => {
 		setGalleryModalState(true);
+		blockScroll();
 	};
 
 	const closeGalleryModal = () => {
 		setGalleryModalState(false);
+		unblockScroll();
 	};
 
 	const transformTitle = (title) => {
@@ -70,6 +72,14 @@ const PhoneDetails = ({phoneDetails}) => {
 		if(event.target.children.length > 0) {
 			event.target.childNodes[0].classList.remove("touchSVG");
 		}
+	};
+
+	const blockScroll = () => {
+		document.querySelector("body").classList.add("scroll--blocked");
+	};
+
+	const unblockScroll = () => {
+		document.querySelector("body").classList.remove("scroll--blocked");
 	};
 
 	return(
@@ -140,7 +150,6 @@ const PhoneDetails = ({phoneDetails}) => {
 						{galleryModalState &&
 							<Modal
 								galleryModalState={galleryModalState}
-								setGalleryModalState={setGalleryModalState}
 								modalClass={"modal__gallery"}
 							>
 								<div className={"gallery"}>
