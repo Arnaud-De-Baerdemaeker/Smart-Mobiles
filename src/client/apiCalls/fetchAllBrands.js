@@ -1,3 +1,9 @@
+/*
+	Smart Mobiles
+	Started on December 2022
+	By Arnaud De Baerdemaeker
+*/
+
 import axios from "axios";
 
 import {baseURL} from "../App";

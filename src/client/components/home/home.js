@@ -1,3 +1,9 @@
+/*
+	Smart Mobiles
+	Started on December 2022
+	By Arnaud De Baerdemaeker
+*/
+
 import React, {useState, useEffect, useRef} from "react";
 
 import Header from "../header/header";

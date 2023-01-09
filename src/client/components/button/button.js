@@ -1,3 +1,9 @@
+/*
+	Smart Mobiles
+	Started on December 2022
+	By Arnaud De Baerdemaeker
+*/
+
 import React from "react";
 
 const Button = ({buttonType, buttonClick, buttonTouchStart, buttonTouchEnd, buttonRef, buttonClass, children}) => {
