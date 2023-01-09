@@ -2,11 +2,30 @@
 footer {
 	padding: {
 		right: 20px;
+		bottom: 40px;
 		left: 20px;
 	}
 
-	p {
-		color: $primary;
-		text-align: center;
+	.footer {
+		&__projectOwner { // <p>
+			color: $primary;
+			text-align: center;
+
+			a {
+
+			}
+		}
+
+		&__apiProvider { // <p>
+			@extend .footer__projectOwner;
+
+			.apiProvider {
+				&__link { // <a>
+				}
+
+				&__website { // <a>
+				}
+			}
+		}
 	}
 }
