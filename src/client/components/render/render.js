@@ -97,7 +97,7 @@ const Render = ({
 			</PhonesList>;
 		}
 		else {
-			return <div className={"loading"}>{"Loading"}</div>;
+			return <div className={"loading"}>{"Loading..."}</div>;
 		}
 	}
 };
