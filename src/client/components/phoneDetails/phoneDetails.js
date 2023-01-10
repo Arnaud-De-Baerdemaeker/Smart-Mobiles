@@ -208,7 +208,7 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 							</Modal>
 						}
 					</>
-					: <p>{"Loading"}</p>
+					: <div className={"loading"}>{"Loading"}</div>
 				}
 			</main>
 			<Footer />
