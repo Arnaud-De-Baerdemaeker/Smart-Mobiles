@@ -4,7 +4,7 @@
 	By Arnaud De Baerdemaeker
 */
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import Header from "../header/header";
 import Modal from "../modal/modal";
@@ -12,7 +12,9 @@ import Button from "../button/button";
 import SVG from "../svg/svg";
 import Footer from "../footer/footer";
 
-const PhoneDetails = ({phoneDetails}) => {
+import {baseURL} from "../../App";
+
+const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 	const [galleryModalState, setGalleryModalState] = useState(false);
 	const [fullscreenModalState, setFullscreenModalState] = useState(false);
 	const [clickedImage, setClickedImage] = useState({
@@ -81,6 +83,10 @@ const PhoneDetails = ({phoneDetails}) => {
 	const unblockScroll = () => {
 		document.querySelector("body").classList.remove("scroll--blocked");
 	};
+
+	useEffect(() => {
+		acquirePhoneDetails(baseURL + window.location.pathname);
+	}, [phoneDetails]);
 
 	return(
 		<>
@@ -152,17 +158,15 @@ const PhoneDetails = ({phoneDetails}) => {
 								galleryModalState={galleryModalState}
 								modalClass={"modal__gallery"}
 							>
-								<div className={"gallery"}>
-									{phoneDetails.phone_images.map((image, index) =>
-										<img
-											key={image}
-											src={image}
-											alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
-											onClick={openFullscreenModal}
-											className={`gallery__image image${index + 1}`}
-										/>
-									)}
-								</div>
+								{phoneDetails.phone_images.map((image, index) =>
+									<img
+										key={image}
+										src={image}
+										alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
+										onClick={openFullscreenModal}
+										className={`gallery__image image${index + 1}`}
+									/>
+								)}
 								<Button
 									buttonType={"button"}
 									buttonClick={closeGalleryModal}
@@ -182,9 +186,11 @@ const PhoneDetails = ({phoneDetails}) => {
 
 						{fullscreenModalState &&
 							<Modal modalClass={"modal__fullscreen"}>
-								<div className={"fullscreen"}>
-									<img src={clickedImage.src} alt={clickedImage.alt} className={"fullscreen__image"} />
-								</div>
+								<img
+									src={clickedImage.src}
+									alt={clickedImage.alt}
+									className={"fullscreen__image"}
+								/>
 								<Button
 									buttonType={"button"}
 									buttonClick={closeFullscreenModal}

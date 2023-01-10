@@ -19,7 +19,9 @@ const App = () => {
 
 	const acquirePhoneDetails = (url) => {
 		getPhoneDetails(url)
-		.then(result => setPhoneDetails(result.data.data));
+		.then(result => {
+			setPhoneDetails(result.data.data);
+		});
 	}
 
 	return (
@@ -31,7 +33,7 @@ const App = () => {
 				/>
 				<Route
 					path={"/:slug"}
-					element={<PhoneDetails phoneDetails={phoneDetails} />}
+					element={<PhoneDetails phoneDetails={phoneDetails} acquirePhoneDetails={acquirePhoneDetails} />}
 				/>
 			</Routes>
 		</BrowserRouter>
