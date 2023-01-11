@@ -85,9 +85,6 @@ header .header__link {
   display: flex;
   justify-content: space-evenly;
 }
-.home .userInterface__fields--closed, .phoneDetails .userInterface__fields--closed {
-  display: none;
-}
 
 .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
   margin: 0;
@@ -95,18 +92,27 @@ header .header__link {
   border: none;
   width: 50px;
   height: 50px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(26, 39, 101);
   border-radius: 50px;
-  outline-style: solid;
-  outline-width: 1px;
-  outline-color: rgb(26, 39, 101);
   background-color: rgb(250, 250, 250);
   -webkit-tap-highlight-color: transparent;
   transition-property: background-color;
   transition-duration: 0.2s;
 }
+@media screen and (hover: none) {
+  .button__brands:active, .button__previous:active, .button__next:active, .button__close:active, .button__validate:active, .button__validateTerms:active, .button__validateSelection:active, .button__clear:active, .button__search:active {
+    background-color: rgb(26, 39, 101);
+  }
+}
 @media screen and (hover: hover) {
   .button__brands:hover, .button__previous:hover, .button__next:hover, .button__close:hover, .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover, .button__clear:hover, .button__search:hover {
     cursor: pointer;
+    background-color: rgb(26, 39, 101);
+  }
+  .button__brands:hover .svg__brands, .button__brands:hover .svg__next, .button__brands:hover .svg__previous, .button__brands:hover .svg__close, .button__brands:hover .svg__clear, .button__brands:hover .svg__search, .button__previous:hover .svg__brands, .button__previous:hover .svg__next, .button__previous:hover .svg__previous, .button__previous:hover .svg__close, .button__previous:hover .svg__clear, .button__previous:hover .svg__search, .button__next:hover .svg__brands, .button__next:hover .svg__next, .button__next:hover .svg__previous, .button__next:hover .svg__close, .button__next:hover .svg__clear, .button__next:hover .svg__search, .button__close:hover .svg__brands, .button__close:hover .svg__next, .button__close:hover .svg__previous, .button__close:hover .svg__close, .button__close:hover .svg__clear, .button__close:hover .svg__search, .button__validate:hover .svg__brands, .button__validate:hover .svg__next, .button__validate:hover .svg__previous, .button__validate:hover .svg__close, .button__validate:hover .svg__clear, .button__validate:hover .svg__search, .button__validateTerms:hover .svg__brands, .button__validateTerms:hover .svg__next, .button__validateTerms:hover .svg__previous, .button__validateTerms:hover .svg__close, .button__validateTerms:hover .svg__clear, .button__validateTerms:hover .svg__search, .button__validateSelection:hover .svg__brands, .button__validateSelection:hover .svg__next, .button__validateSelection:hover .svg__previous, .button__validateSelection:hover .svg__close, .button__validateSelection:hover .svg__clear, .button__validateSelection:hover .svg__search, .button__clear:hover .svg__brands, .button__clear:hover .svg__next, .button__clear:hover .svg__previous, .button__clear:hover .svg__close, .button__clear:hover .svg__clear, .button__clear:hover .svg__search, .button__search:hover .svg__brands, .button__search:hover .svg__next, .button__search:hover .svg__previous, .button__search:hover .svg__close, .button__search:hover .svg__clear, .button__search:hover .svg__search {
+    fill: rgb(250, 250, 250);
   }
 }
 .button__validate, .button__validateTerms, .button__validateSelection {
@@ -139,22 +145,28 @@ header .header__link {
   background-color: rgb(26, 39, 101);
   color: rgb(250, 250, 250);
 }
-.svg__brands, .svg__clear, .svg__previous, .svg__next, .svg__close, .svg__search {
-  width: 50px;
-  height: 50px;
+.svg__brands, .svg__next, .svg__previous, .svg__close, .svg__clear, .svg__search {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   fill: rgb(26, 39, 101);
   transition-property: fill;
   transition-duration: 0.2s;
 }
-@media screen and (hover: hover) {
-  .svg__brands:hover, .svg__clear:hover, .svg__previous:hover, .svg__next:hover, .svg__close:hover, .svg__search:hover {
+@media screen and (hover: none) {
+  .svg__brands:active, .svg__next:active, .svg__previous:active, .svg__close:active, .svg__clear:active, .svg__search:active {
     fill: rgb(250, 250, 250);
   }
 }
-.svg__clear, .svg__previous, .svg__next, .svg__close {
-  pointer-events: none;
+@media screen and (hover: hover) {
+  .svg__brands:hover, .svg__next:hover, .svg__previous:hover, .svg__close:hover, .svg__clear:hover, .svg__search:hover {
+    fill: rgb(250, 250, 250);
+  }
 }
-.svg__previous, .svg__next {
+.svg__previous {
   transform: rotateZ(90deg);
 }
 .svg__next {
