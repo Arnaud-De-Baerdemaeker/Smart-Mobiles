@@ -17,6 +17,12 @@ body {
   overflow-y: hidden;
 }
 
+.loading {
+  color: rgb(26, 39, 101);
+  text-align: center;
+  font-size: 20px;
+}
+
 header {
   padding-top: 20px;
   padding-right: 20px;
@@ -58,6 +64,7 @@ header .header__link {
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  margin-bottom: 40px;
 }
 
 .home, .phoneDetails {
@@ -386,26 +393,25 @@ header .header__link {
   left: 0;
   display: flex;
   background-color: rgb(26, 39, 101);
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 20px;
 }
-.modal__gallery .gallery {
-  display: flex;
+.modal__gallery {
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   row-gap: 20px;
   -moz-column-gap: 20px;
        column-gap: 20px;
+  flex-wrap: wrap;
 }
 .modal__gallery .gallery__image {
   padding: 10px;
   background-color: white;
   border-radius: 20px;
-  width: 100px;
+  width: calc(50% - 30px);
 }
-.modal__fullscreen .fullscreen {
-  display: flex;
+.modal__fullscreen {
+  padding: 0;
   align-items: center;
 }
 .modal__fullscreen .fullscreen__image {
@@ -413,13 +419,15 @@ header .header__link {
   padding: 10px;
   background-color: white;
   border-radius: 20px;
+  vertical-align: bottom;
 }
 
 footer {
   padding-right: 20px;
+  padding-bottom: 40px;
   padding-left: 20px;
 }
-footer p {
+footer .footer__projectOwner, footer .footer__apiProvider {
   color: rgb(26, 39, 101);
   text-align: center;
 }
