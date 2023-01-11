@@ -7,8 +7,14 @@ body {
 	font-size: 16px;
 }
 
-.scroll--blocked {
+.scroll--blocked { // <body>
 	overflow-y: hidden;
+}
+
+.loading { // <div>
+	color: $primary;
+	text-align: center;
+	font-size: 20px;
 }
 
 @mixin gradientBackground {
