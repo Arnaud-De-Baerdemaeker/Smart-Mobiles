@@ -6,13 +6,11 @@
 
 import React from "react";
 
-const Button = ({buttonType, buttonClick, buttonTouchStart, buttonTouchEnd, buttonRef, buttonClass, children}) => {
+const Button = ({buttonType, buttonClick, buttonRef, buttonClass, children}) => {
 	return(
 		<button
 			type={buttonType}
 			onClick={buttonClick && buttonClick}
-			onTouchStart={buttonTouchStart && buttonTouchStart}
-			onTouchEnd={buttonTouchEnd && buttonTouchEnd}
 			ref={buttonRef && buttonRef}
 			className={buttonClass}
 		>

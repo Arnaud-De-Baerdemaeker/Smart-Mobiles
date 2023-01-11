@@ -214,22 +214,6 @@ const Home = ({acquirePhoneDetails}) => {
 		}
 	};
 
-	const touchStartEffect = (event) => {
-		event.target.classList.add("touchButton");
-
-		if(event.target.children.length > 0) {
-			event.target.childNodes[0].classList.add("touchSVG");
-		}
-	};
-
-	const touchEndEffect = (event) => {
-		event.target.classList.remove("touchButton");
-
-		if(event.target.children.length > 0) {
-			event.target.childNodes[0].classList.remove("touchSVG");
-		}
-	};
-
 	useEffect(() => {
 		getLatestPhones()
 		.then(result =>
@@ -291,8 +275,6 @@ const Home = ({acquirePhoneDetails}) => {
 						<Button
 							buttonType={"button"}
 							buttonClick={clear}
-							buttonTouchStart={touchStartEffect}
-							buttonTouchEnd={touchEndEffect}
 							buttonClass={"button__clear"}
 						>
 							<SVG
@@ -347,8 +329,6 @@ const Home = ({acquirePhoneDetails}) => {
 								<Button
 									buttonType={"submit"}
 									buttonClick={getDropdownResults}
-									buttonTouchStart={touchStartEffect}
-									buttonTouchEnd={touchEndEffect}
 									buttonClass={"button__validateSelection"}
 								>
 									{"OK"}
@@ -390,8 +370,6 @@ const Home = ({acquirePhoneDetails}) => {
 								<Button
 									buttonType={"submit"}
 									buttonClick={getSearchQuery}
-									buttonTouchStart={touchStartEffect}
-									buttonTouchEnd={touchEndEffect}
 									buttonClass={"button__validateTerms"}
 								>
 									{"OK"}
@@ -416,8 +394,6 @@ const Home = ({acquirePhoneDetails}) => {
 					currentPage={currentPage}
 					setCurrentPage={setCurrentPage}
 					totalPages={totalPages}
-					touchStartEffect={touchStartEffect}
-					touchEndEffect={touchEndEffect}
 					acquirePhoneDetails={acquirePhoneDetails}
 				/>
 			</main>
