@@ -85,8 +85,10 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 	};
 
 	useEffect(() => {
-		acquirePhoneDetails(baseURL + window.location.pathname);
-	}, [phoneDetails]);
+		if(!phoneDetails) {
+			acquirePhoneDetails(baseURL + window.location.pathname);
+		}
+	}, []);
 
 	return(
 		<>
