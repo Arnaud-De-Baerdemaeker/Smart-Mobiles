@@ -1,8 +1,8 @@
 // SVG
 .svg {
 	&__brands { // <svg>
-		width: 50px;
-		height: 50px;
+		width: fit-content;
+		height: fit-content;
 		fill: $primary;
 		transition: {
 			property: fill;
@@ -10,6 +10,12 @@
 		}
 
 		@media screen {
+			@media (hover: none) {
+				&:active {
+					fill: $white;
+				}
+			}
+
 			@media (hover: hover) {
 				&:hover {
 					fill: $white;
@@ -24,20 +30,19 @@
 
 	&__clear { // <svg>
 		@extend .svg__brands;
-		pointer-events: none;
 	}
 
 	&__close { // <svg>
-		@extend .svg__clear;
+		@extend .svg__brands;
 	}
 
 	&__previous { // <svg>
-		@extend .svg__clear;
+		@extend .svg__brands;
 		transform: rotateZ(90deg);
 	}
 
 	&__next { // <svg>
-		@extend .svg__previous;
+		@extend .svg__brands;
 		transform: rotateZ(-90deg);
 	}
 }

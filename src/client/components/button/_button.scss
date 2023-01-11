@@ -6,11 +6,11 @@
 		border: none;
 		width: 50px;
 		height: 50px;
-		border-radius: 50px;
-		outline: {
+		border: {
 			style: solid;
 			width: 1px;
 			color: $primary;
+			radius: 50px;
 		}
 		background-color: $white;
 		-webkit-tap-highlight-color: transparent;
@@ -20,9 +20,20 @@
 		}
 
 		@media screen {
+			@media (hover: none) {
+				&:active {
+					background-color: $primary;
+				}
+			}
+
 			@media (hover: hover) {
 				&:hover {
 					cursor: pointer;
+					background-color: $primary;
+
+					.svg__brands { // <svg>
+						fill: $white;
+					}
 				}
 			}
 		}
