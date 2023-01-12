@@ -54,3 +54,7 @@ body {
 		}
 	}
 }
+
+@mixin fluidContent($property, $min-size-px, $max-size, $min-size, $max-viewport-vw-vh) {
+	#{$property}: calc(#{$min-size-px} + (#{$max-size} - #{$min-size}) * ((#{$max-viewport-vw-vh} - 300px) / (1080 - 300)));
+}
