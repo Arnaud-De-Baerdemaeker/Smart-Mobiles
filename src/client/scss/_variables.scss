@@ -14,3 +14,15 @@ $secondary: rgb(43, 64, 167);
 $white: rgb(250, 250, 250);
 $warning: rgb(101, 26, 39);
 $gradient: linear-gradient(90deg, $primary 0%, $secondary 100%);
+
+// Orientations
+$portrait: "(orientation: portrait)";
+$landscape: "(orientation: landscape)";
+
+// Breakpoints
+$bp-1080: 67.5rem; // 1080px
+
+// Media queries
+$mq-w1080-up: "(min-width: #{$bp-1080})";
+
+$mq-h1080-up: "(min-height: #{$bp-1080})";
