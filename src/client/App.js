@@ -33,7 +33,12 @@ const App = () => {
 				/>
 				<Route
 					path={"/:slug"}
-					element={<PhoneDetails phoneDetails={phoneDetails} acquirePhoneDetails={acquirePhoneDetails} />}
+					element={
+						<PhoneDetails
+							phoneDetails={phoneDetails}
+							acquirePhoneDetails={acquirePhoneDetails}
+						/>
+					}
 				/>
 			</Routes>
 		</BrowserRouter>
