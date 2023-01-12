@@ -26,7 +26,6 @@ body {
 header {
   padding-top: 20px;
   padding-right: 20px;
-  padding-bottom: 20px;
   padding-left: 20px;
 }
 header .header__link {
@@ -41,14 +40,31 @@ header .header__link {
   text-align: center;
   background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   color: rgb(250, 250, 250);
-  border-radius: 59px;
   box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
   padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
-  font-size: 35px;
-  letter-spacing: -1px;
+}
+@media screen and (orientation: portrait) {
+  .header__title {
+    border-radius: calc(59px + (76 - 59) * ((100vw - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .header__title {
+    border-radius: 76px;
+  }
+}
+@media screen and (orientation: portrait) {
+  .header__title {
+    font-size: calc(35px + (50 - 35) * ((100vw - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .header__title {
+    font-size: 50px;
+  }
 }
 
 .footer__title {
@@ -58,7 +74,6 @@ header .header__link {
   text-align: center;
   background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   color: rgb(250, 250, 250);
-  border-radius: 59px;
   box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
   padding-top: 10px;
   padding-right: 10px;
@@ -66,24 +81,54 @@ header .header__link {
   padding-left: 10px;
   margin-bottom: 40px;
 }
+@media screen and (orientation: portrait) {
+  .footer__title {
+    border-radius: calc(59px + (76 - 59) * ((100vw - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .footer__title {
+    border-radius: 76px;
+  }
+}
 
 .home, .phoneDetails {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+}
+@media screen and (orientation: portrait) {
+  .home, .phoneDetails {
+    padding-top: calc(40px + (50 - 40) * ((100vw - 300px) / (1080 - 300)));
+    padding-bottom: calc(40px + (50 - 40) * ((100vw - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .home, .phoneDetails {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 .home .userInterface, .phoneDetails .userInterface {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .home .userInterface__controls, .phoneDetails .userInterface__controls {
   display: flex;
   justify-content: space-evenly;
+}
+@media screen and (orientation: portrait) {
+  .home .userInterface__controls, .phoneDetails .userInterface__controls {
+    width: calc(260px + (540 - 260) * ((100vw - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .home .userInterface__controls, .phoneDetails .userInterface__controls {
+    width: 540px;
+  }
 }
 
 .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
