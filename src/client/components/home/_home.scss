@@ -3,23 +3,43 @@
 	display: flex;
 	flex-direction: column;
 	row-gap: 40px;
-	padding: {
-		top: 40px;
-		bottom: 40px;
+
+	@media screen {
+		@media #{$portrait} {
+			@include fluidContent(padding-top, 40px, 50, 40, 100vw);
+			@include fluidContent(padding-bottom, 40px, 50, 40, 100vw);
+
+			@media #{$mq-w1080-up} {
+				padding: {
+					top: 50px;
+					bottom: 50px;
+				}
+			}
+		}
 	}
 
 	.userInterface { // <div>
 		display: flex;
 		flex-direction: column;
 		row-gap: 20px;
-		padding: {
-			right: 20px;
-			left: 20px;
+		margin: {
+			right: auto;
+			left: auto;
 		}
 
 		&__controls { // <div>
 			display: flex;
 			justify-content: space-evenly;
+
+			@media screen {
+				@media #{$portrait} {
+					@include fluidContent(width, 260px, 540, 260, 100vw);
+
+					@media #{$mq-w1080-up} {
+						width: 540px;
+					}
+				}
+			}
 		}
 	}
 }
