@@ -21,8 +21,6 @@ const Render = ({
 	currentPage,
 	setCurrentPage,
 	totalPages,
-	touchStartEffect,
-	touchEndEffect,
 	acquirePhoneDetails
 }) => {
 	if(brandTitle && phones) {
@@ -33,8 +31,6 @@ const Render = ({
 				currentPage={currentPage}
 				setCurrentPage={setCurrentPage}
 				totalPages={totalPages}
-				touchStartEffect={touchStartEffect}
-				touchEndEffect={touchEndEffect}
 			/>
 			{phones.map(phone =>
 				<Link
