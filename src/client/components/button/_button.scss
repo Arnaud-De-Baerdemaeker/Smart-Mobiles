@@ -4,13 +4,10 @@
 		margin: 0;
 		padding: 0;
 		border: none;
-		width: 50px;
-		height: 50px;
 		border: {
 			style: solid;
 			width: 1px;
 			color: $primary;
-			radius: 50px;
 		}
 		background-color: $white;
 		-webkit-tap-highlight-color: transparent;
@@ -23,10 +20,12 @@
 			@media #{$portrait} {
 				@include fluidContent(width, 50px, 70, 50, 100vw);
 				@include fluidContent(height, 50px, 70, 50, 100vw);
+				@include fluidContent(border-radius, 50px, 70, 50, 100vw);
 
 				@media #{$mq-w1080-up} {
 					width: 70px;
 					height: 70px;
+					border-radius: 70px;
 				}
 			}
 
@@ -70,6 +69,14 @@
 		}
 
 		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(font-size, 15px, 20, 15, 100vw);
+
+				@media #{$mq-w1080-up} {
+					font-size: 20px;
+				}
+			}
+
 			@media (hover: hover) {
 				&:hover {
 					cursor: pointer;
