@@ -20,6 +20,16 @@
 		}
 
 		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(width, 50px, 70, 50, 100vw);
+				@include fluidContent(height, 50px, 70, 50, 100vw);
+
+				@media #{$mq-w1080-up} {
+					width: 70px;
+					height: 70px;
+				}
+			}
+
 			@media (hover: none) {
 				&:active {
 					background-color: $primary;
