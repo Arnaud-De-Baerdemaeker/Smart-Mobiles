@@ -3,25 +3,49 @@
 	&__dropdown { // <form>
 		display: flex;
 		flex-direction: column;
-		row-gap: 10px;
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(row-gap, 10px, 20, 10, 100vw);
+
+				@media #{$mq-w1080-up} {
+					row-gap: 20px;
+				}
+			}
+		}
 
 		.dropdown {
 			&__label { // <label>
 				color: $primary;
 				text-align: center;
-				font-size: 18px;
+
+				@media screen {
+					@media #{$portrait} {
+						@include fluidContent(font-size, 18px, 20, 18, 100vw);
+
+						@media #{$mq-w1080-up} {
+							font-size: 20px;
+						}
+					}
+				}
 			}
 
 			&__fieldsContainer { // <div>
 				display: flex;
-				column-gap: 10px;
+
+				@media screen {
+					@media #{$portrait} {
+						@include fluidContent(column-gap, 10px, 20, 10, 100vw);
+
+						@media #{$mq-w1080-up} {
+							column-gap: 20px;
+						}
+					}
+				}
 			}
 
 			&__selection { // <select>
-				width: calc(100% - (50px + 10px));
-				height: 50px;
 				border: none;
-				border-radius: 50px;
 				border: {
 					style: solid;
 					width: 1px;
@@ -35,7 +59,6 @@
 				appearance: none;
 				background: {
 					image: url("data:image/svg+xml;utf8,<svg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'><path d='M24.2929 31.2929L8 15C7.44772 14.4477 6.55228 14.4477 6 15C5.44772 15.5523 5.44771 16.4477 6 17L24.2929 35.2929C24.6834 35.6834 25.3166 35.6834 25.7071 35.2929L44 17C44.5523 16.4477 44.5523 15.5523 44 15C43.4477 14.4477 42.5523 14.4477 42 15L25.7071 31.2929C25.3166 31.6834 24.6834 31.6834 24.2929 31.2929Z' fill='rgb(18, 73, 94)'/></svg>");
-					size: 15px;
 					repeat: no-repeat;
 					position: calc(100% - 10px) center;
 				}
@@ -44,6 +67,20 @@
 					size: 16px;
 				}
 				color: $primary;
+
+				@media screen {
+					@media #{$portrait} {
+						@include fluidContent(width, 200px, 450, 200, 100vw);
+						@include fluidContent(border-radius, 50px, 70, 50, 100vw);
+						@include fluidContent(background-size, 15px, 25, 15, 100vw);
+
+						@media #{$mq-w1080-up} {
+							width: 450px;
+							border-radius: 70px;
+							background-size: 25px;
+						}
+					}
+				}
 			}
 		}
 	}
