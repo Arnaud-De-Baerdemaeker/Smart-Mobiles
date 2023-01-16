@@ -40,7 +40,7 @@ footer {
 						}
 					}
 
-					a {
+					.projectOwner__website {
 						white-space: nowrap;
 						color: $primary;
 						background-color: rgba(26, 39, 101, 0.2);
@@ -72,10 +72,12 @@ footer {
 					@extend .credits__projectOwner;
 
 					.apiProvider {
-						&__link { // <a>
+						&__github { // <a>
+							@extend .projectOwner__website;
 						}
 
 						&__website { // <a>
+							@extend .projectOwner__website;
 						}
 					}
 				}
