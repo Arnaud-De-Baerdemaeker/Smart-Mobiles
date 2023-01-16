@@ -580,6 +580,7 @@ footer .footer__credits .credits__projectOwner, footer .footer__credits .credits
   color: rgb(26, 39, 101);
   margin: 0;
   text-align: center;
+  line-height: 30px;
 }
 @media screen and (min-width: 33.75rem) {
   footer .footer__credits .credits__projectOwner, footer .footer__credits .credits__apiProvider {
@@ -587,6 +588,23 @@ footer .footer__credits .credits__projectOwner, footer .footer__credits .credits
     text-align: unset;
   }
 }
-footer .footer__credits .credits__projectOwner a, footer .footer__credits .credits__apiProvider a {
+footer .footer__credits .credits__projectOwner .projectOwner__website, footer .footer__credits .credits__apiProvider .projectOwner__website, footer .footer__credits .credits__apiProvider .apiProvider__website, footer .footer__credits .credits__apiProvider .apiProvider__github {
   white-space: nowrap;
+  color: rgb(26, 39, 101);
+  background-color: rgba(26, 39, 101, 0.2);
+  text-decoration: none;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 3px;
+  -webkit-tap-highlight-color: transparent;
+  transition-property: color background-color;
+  transition-duration: 0.2s;
+}
+footer .footer__credits .credits__projectOwner .projectOwner__website:active, footer .footer__credits .credits__apiProvider .projectOwner__website:active, footer .footer__credits .credits__apiProvider .apiProvider__website:active, footer .footer__credits .credits__apiProvider .apiProvider__github:active {
+  color: rgb(250, 250, 250);
+  background-color: rgb(26, 39, 101);
+}
+footer .footer__credits .credits__projectOwner .projectOwner__website:hover, footer .footer__credits .credits__apiProvider .projectOwner__website:hover, footer .footer__credits .credits__apiProvider .apiProvider__website:hover, footer .footer__credits .credits__apiProvider .apiProvider__github:hover {
+  color: rgb(250, 250, 250);
+  background-color: rgb(26, 39, 101);
 }
