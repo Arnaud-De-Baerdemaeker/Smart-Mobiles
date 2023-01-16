@@ -1,29 +1,59 @@
 // FOOTER
 footer {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
 	padding: {
 		right: 20px;
-		bottom: 40px;
+		bottom: 20px;
 		left: 20px;
 	}
 
 	.footer {
-		&__projectOwner { // <p>
-			color: $primary;
-			text-align: center;
+		&__credits { // <div>
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			row-gap: 20px;
 
-			a {
-
+			@media screen {
+				@media #{$mq-w540-up} {
+					flex-direction: row;
+					justify-content: space-evenly;
+					align-items: unset;
+					row-gap: unset;
+					column-gap: 40px;
+				}
 			}
-		}
 
-		&__apiProvider { // <p>
-			@extend .footer__projectOwner;
+			.credits {
+				&__projectOwner { // <p>
+					color: $primary;
+					margin: 0;
+					text-align: center;
 
-			.apiProvider {
-				&__link { // <a>
+					@media screen {
+						@media #{$mq-w540-up} {
+							width: 50%;
+							text-align: unset;
+						}
+					}
+
+					a {
+						white-space: nowrap;
+					}
 				}
 
-				&__website { // <a>
+				&__apiProvider { // <p>
+					@extend .credits__projectOwner;
+
+					.apiProvider {
+						&__link { // <a>
+						}
+
+						&__website { // <a>
+						}
+					}
 				}
 			}
 		}
