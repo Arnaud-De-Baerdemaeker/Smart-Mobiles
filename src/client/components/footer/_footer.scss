@@ -31,6 +31,7 @@ footer {
 					color: $primary;
 					margin: 0;
 					text-align: center;
+					line-height: 30px;
 
 					@media screen {
 						@media #{$mq-w540-up} {
@@ -41,6 +42,29 @@ footer {
 
 					a {
 						white-space: nowrap;
+						color: $primary;
+						background-color: rgba(26, 39, 101, 0.2);
+						text-decoration: none;
+						padding: {
+							right: 5px;
+							left: 5px;
+						}
+						border-radius: 3px;
+						-webkit-tap-highlight-color: transparent;
+						transition: {
+							property: color background-color;
+							duration: 0.2s;
+						}
+
+						&:active {
+							color: $white;
+							background-color: $primary;
+						}
+
+						&:hover {
+							color: $white;
+							background-color: $primary;
+						}
 					}
 				}
 
