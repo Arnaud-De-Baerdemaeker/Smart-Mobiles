@@ -17,6 +17,12 @@ body {
   overflow-y: hidden;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+
 .loading {
   color: rgb(26, 39, 101);
   text-align: center;
@@ -79,7 +85,6 @@ header .header__link {
   padding-right: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
-  margin-bottom: 40px;
 }
 @media screen and (orientation: portrait) {
   .footer__title {
@@ -95,19 +100,7 @@ header .header__link {
 .home, .phoneDetails {
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
-}
-@media screen and (orientation: portrait) {
-  .home, .phoneDetails {
-    padding-top: calc(40px + (50 - 40) * ((100vw - 300px) / (1080 - 300)));
-    padding-bottom: calc(40px + (50 - 40) * ((100vw - 300px) / (1080 - 300)));
-  }
-}
-@media screen and (orientation: portrait) and (min-width: 67.5rem) {
-  .home, .phoneDetails {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+  row-gap: 50px;
 }
 .home .userInterface, .phoneDetails .userInterface {
   display: flex;
@@ -345,25 +338,37 @@ header .header__link {
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
-  row-gap: 40px;
-  padding-top: 40px;
+  row-gap: 50px;
+  padding-top: 50px;
   padding-right: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 50px;
   padding-left: 20px;
 }
 .phonesList__title {
   text-align: center;
   margin: 0;
 }
+@media screen and (orientation: portrait) {
+  .phonesList__title {
+    font-size: calc(22px + (32 - 22) * ((100vw - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .phonesList__title {
+    font-size: 32px;
+  }
+}
 .phonesList__list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   row-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 .phonesList__link {
   display: block;
-  width: 100%;
+  width: 300px;
   text-decoration: none;
   border-radius: 10px;
 }
@@ -548,11 +553,40 @@ header .header__link {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
   padding-right: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   padding-left: 20px;
 }
-footer .footer__projectOwner, footer .footer__apiProvider {
+footer .footer__credits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}
+@media screen and (min-width: 33.75rem) {
+  footer .footer__credits {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: unset;
+    row-gap: unset;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
+  }
+}
+footer .footer__credits .credits__projectOwner, footer .footer__credits .credits__apiProvider {
   color: rgb(26, 39, 101);
+  margin: 0;
   text-align: center;
+}
+@media screen and (min-width: 33.75rem) {
+  footer .footer__credits .credits__projectOwner, footer .footer__credits .credits__apiProvider {
+    width: 50%;
+    text-align: unset;
+  }
+}
+footer .footer__credits .credits__projectOwner a, footer .footer__credits .credits__apiProvider a {
+  white-space: nowrap;
 }
