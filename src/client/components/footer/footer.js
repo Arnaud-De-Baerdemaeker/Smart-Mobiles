@@ -18,6 +18,7 @@ const Footer = () => {
 					<a
 						href={"https://arnaud-de-baerdemaeker.netlify.app/"}
 						target={"_blank"}
+						className={"projectOwner__website"}
 					>
 						{"Arnaud De Baerdemaeker"}
 					</a>
@@ -27,7 +28,7 @@ const Footer = () => {
 					<a
 						href={"https://github.com/azharimm/phone-specs-api"}
 						target={"_blank"}
-						className={"apiProvider__link"}
+						className={"apiProvider__github"}
 					>
 						{"Phone Specs API"}
 					</a>
