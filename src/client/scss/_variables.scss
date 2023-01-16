@@ -20,9 +20,11 @@ $portrait: "(orientation: portrait)";
 $landscape: "(orientation: landscape)";
 
 // Breakpoints
+$bp-540: 33.75rem; // 540px
 $bp-1080: 67.5rem; // 1080px
 
 // Media queries
+$mq-w540-up: "(min-width: #{$bp-540})";
 $mq-w1080-up: "(min-width: #{$bp-1080})";
 
 $mq-h1080-up: "(min-height: #{$bp-1080})";
