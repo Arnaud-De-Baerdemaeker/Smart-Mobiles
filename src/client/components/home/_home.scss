@@ -2,21 +2,7 @@
 .home { // <main>
 	display: flex;
 	flex-direction: column;
-	row-gap: 40px;
-
-	@media screen {
-		@media #{$portrait} {
-			@include fluidContent(padding-top, 40px, 50, 40, 100vw);
-			@include fluidContent(padding-bottom, 40px, 50, 40, 100vw);
-
-			@media #{$mq-w1080-up} {
-				padding: {
-					top: 50px;
-					bottom: 50px;
-				}
-			}
-		}
-	}
+	row-gap: 50px;
 
 	.userInterface { // <div>
 		display: flex;
