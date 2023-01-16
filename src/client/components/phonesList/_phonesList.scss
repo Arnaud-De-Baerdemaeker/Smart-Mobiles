@@ -3,29 +3,40 @@
 	@include gradientBackground;
 	display: flex;
 	flex-direction: column;
-	row-gap: 40px;
+	row-gap: 50px;
 	padding: {
-		top: 40px;
+		top: 50px;
 		right: 20px;
-		bottom: 40px;
+		bottom: 50px;
 		left: 20px;
 	}
 
 	&__title { // <h2>
 		text-align: center;
 		margin: 0;
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(font-size, 22px, 32, 22, 100vw);
+
+				@media #{$mq-w1080-up} {
+					font-size: 32px;
+				}
+			}
+		}
 	}
 
 	&__list { // <div>
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
 		row-gap: 30px;
+		column-gap: 30px;
 	}
 
 	&__link { // <a>
 		display: block;
-		width: 100%;
+		width: 300px;
 		text-decoration: none;
 		border-radius: 10px;
 	}
