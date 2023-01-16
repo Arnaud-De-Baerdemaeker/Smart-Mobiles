@@ -11,6 +11,12 @@ body {
 	overflow-y: hidden;
 }
 
+#root { // <div>
+	display: flex;
+	flex-direction: column;
+	row-gap: 50px;
+}
+
 .loading { // <div>
 	color: $primary;
 	text-align: center;
