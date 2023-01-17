@@ -23,6 +23,10 @@ body {
 	font-size: 20px;
 }
 
+img {
+	vertical-align: bottom;
+}
+
 @mixin gradientBackground {
 	background-image: $gradient;
 	border-radius: 20px;
