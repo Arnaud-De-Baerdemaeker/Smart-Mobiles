@@ -20,11 +20,17 @@ $portrait: "(orientation: portrait)";
 $landscape: "(orientation: landscape)";
 
 // Breakpoints
+$bp-450: 28.125rem; // 450px
 $bp-540: 33.75rem; // 540px
+$bp-600: 37.5rem; // 600px
+$bp-650: 40.625rem; // 650px
 $bp-1080: 67.5rem; // 1080px
 
 // Media queries
+$mq-w450-up: "(min-width: #{$bp-450})";
 $mq-w540-up: "(min-width: #{$bp-540})";
+$mq-w600-up: "(min-width: #{$bp-600})";
+$mq-w650-up: "(min-width: #{$bp-650})";
 $mq-w1080-up: "(min-width: #{$bp-1080})";
 
 $mq-h1080-up: "(min-height: #{$bp-1080})";
