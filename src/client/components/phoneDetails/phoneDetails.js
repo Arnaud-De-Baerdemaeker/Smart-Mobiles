@@ -112,23 +112,35 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 							</div>
 							<div className={"informations"}>
 								<dl>
-									<dt>{"Brand"}</dt>
-									<dd>{phoneDetails.brand}</dd>
+									<div>
+										<dt>{"Brand"}</dt>
+										<dd>{phoneDetails.brand}</dd>
+									</div>
 
-									<dt>{"Phone name"}</dt>
-									<dd>{phoneDetails.phone_name}</dd>
+									<div>
+										<dt>{"Phone name"}</dt>
+										<dd>{phoneDetails.phone_name}</dd>
+									</div>
 
-									<dt>{"Dimensions"}</dt>
-									<dd>{phoneDetails.dimension}</dd>
+									<div>
+										<dt>{"Dimensions"}</dt>
+										<dd>{phoneDetails.dimension}</dd>
+									</div>
 
-									<dt>{"OS"}</dt>
-									<dd>{phoneDetails.os}</dd>
+									<div>
+										<dt>{"OS"}</dt>
+										<dd>{phoneDetails.os}</dd>
+									</div>
 
-									<dt>{"Storage"}</dt>
-									<dd>{phoneDetails.storage}</dd>
+									<div>
+										<dt>{"Storage"}</dt>
+										<dd>{phoneDetails.storage}</dd>
+									</div>
 
-									<dt>{"Release date"}</dt>
-									<dd>{phoneDetails.release_date}</dd>
+									<div>
+										<dt>{"Release date"}</dt>
+										<dd>{phoneDetails.release_date}</dd>
+									</div>
 								</dl>
 							</div>
 						</div>
