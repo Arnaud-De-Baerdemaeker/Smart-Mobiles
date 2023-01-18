@@ -4,6 +4,24 @@
 	display: flex;
 	flex-direction: column;
 	row-gap: 20px;
+	transition: {
+		property: box-shadow;
+		duration: 0.2s;
+	}
+
+	@media screen {
+		@media (hover: hover) {
+			&:hover {
+				box-shadow: 0 0 10px 2px rgba(250, 250, 250, 0.6);
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				box-shadow: 0 0 10px 2px rgba(250, 250, 250, 0.6);
+			}
+		}
+	}
 
 	&__image { // <img>
 		margin: {
