@@ -155,12 +155,12 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 									</div>
 									<dl>
 										{specification.specs.map(spec =>
-											<React.Fragment key={spec.key}>
+											<div key={spec.key}>
 												<dt key={spec.val}>{spec.key}</dt>
 												{spec.val.map(value =>
 													<dd key={value}>{value}</dd>
 												)}
-											</React.Fragment>
+											</div>
 										)}
 									</dl>
 								</div>
