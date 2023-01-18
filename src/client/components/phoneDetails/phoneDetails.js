@@ -98,11 +98,11 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 					? <>
 						<h2 className={"phoneDetails__title"}>{`${phoneDetails.brand} ${phoneDetails.phone_name}`}</h2>
 						<div className={"phoneDetails__presentation"}>
-							<div className={"presentation"}>
-								<div
-									onClick={openGalleryModal}
-									className={"presentation__thumbnailContainer"}
-								>
+							<div
+								onClick={openGalleryModal}
+								className={"presentation"}
+							>
+								<div className={"presentation__thumbnailContainer"}>
 									<img
 										src={phoneDetails.thumbnail}
 										alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
