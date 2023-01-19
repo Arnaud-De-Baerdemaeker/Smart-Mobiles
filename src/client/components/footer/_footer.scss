@@ -13,8 +13,10 @@ footer {
 		&__credits { // <div>
 			display: flex;
 			flex-direction: column;
+			align-self: center;
 			align-items: center;
 			row-gap: 20px;
+			max-width: 1000px;
 
 			@media screen {
 				@media #{$mq-w540-up} {
@@ -56,14 +58,20 @@ footer {
 							duration: 0.2s;
 						}
 
-						&:active {
-							color: $white;
-							background-color: $primary;
-						}
+						@media screen {
+							@media (hover: none) {
+								&:active {
+									color: $white;
+									background-color: $primary;
+								}
+							}
 
-						&:hover {
-							color: $white;
-							background-color: $primary;
+							@media (hover: hover) {
+								&:hover {
+									color: $white;
+									background-color: $primary;
+								}
+							}
 						}
 					}
 				}
