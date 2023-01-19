@@ -98,6 +98,18 @@ header .header__link {
     border-radius: 76px;
   }
 }
+@media screen and (orientation: landscape) {
+  .header__title {
+    font-size: calc(35px + (60 - 35) * ((100vh - 300px) / (1080 - 300)));
+    border-radius: calc(59px + (88 - 59) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .header__title {
+    font-size: 60px;
+    border-radius: 88px;
+  }
+}
 
 .footer__title {
   margin: 0;
@@ -124,6 +136,18 @@ header .header__link {
     border-radius: 65px;
   }
 }
+@media screen and (orientation: landscape) {
+  .footer__title {
+    font-size: calc(30px + (50 - 30) * ((100vh - 300px) / (1080 - 300)));
+    border-radius: calc(54px + (76 - 54) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .footer__title {
+    font-size: 50px;
+    border-radius: 76px;
+  }
+}
 
 .home, .phoneDetails {
   display: flex;
@@ -146,6 +170,16 @@ header .header__link {
     row-gap: 40px;
   }
 }
+@media screen and (orientation: landscape) {
+  .home .userInterface, .phoneDetails .userInterface {
+    row-gap: calc(20px + (40 - 20) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .home .userInterface, .phoneDetails .userInterface {
+    row-gap: 40px;
+  }
+}
 .home .userInterface__controls, .phoneDetails .userInterface__controls {
   display: flex;
   justify-content: space-evenly;
@@ -158,6 +192,16 @@ header .header__link {
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .home .userInterface__controls, .phoneDetails .userInterface__controls {
     width: 540px;
+  }
+}
+@media screen and (orientation: landscape) {
+  .home .userInterface__controls, .phoneDetails .userInterface__controls {
+    width: calc(300px + (960 - 300) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .home .userInterface__controls, .phoneDetails .userInterface__controls {
+    width: 960px;
   }
 }
 
@@ -181,6 +225,20 @@ header .header__link {
   }
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+  }
+}
+@media screen and (orientation: landscape) {
+  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
+    width: calc(50px + (70 - 50) * ((100vh - 300px) / (1080 - 300)));
+    height: calc(50px + (70 - 50) * ((100vh - 300px) / (1080 - 300)));
+    border-radius: calc(50px + (70 - 50) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
     width: 70px;
     height: 70px;
@@ -214,6 +272,16 @@ header .header__link {
   }
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .button__validate, .button__validateTerms, .button__validateSelection {
+    font-size: 20px;
+  }
+}
+@media screen and (orientation: landscape) {
+  .button__validate, .button__validateTerms, .button__validateSelection {
+    font-size: calc(15px + (20 - 15) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .button__validate, .button__validateTerms, .button__validateSelection {
     font-size: 20px;
   }
@@ -287,6 +355,16 @@ header .header__link {
     row-gap: 20px;
   }
 }
+@media screen and (orientation: landscape) {
+  .userInput__dropdown, .userInput__search {
+    row-gap: calc(10px + (20 - 10) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .userInput__dropdown, .userInput__search {
+    row-gap: 20px;
+  }
+}
 .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
   color: rgb(26, 39, 101);
   text-align: center;
@@ -297,6 +375,16 @@ header .header__link {
   }
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
+    font-size: 20px;
+  }
+}
+@media screen and (orientation: landscape) {
+  .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
+    font-size: calc(18px + (20 - 18) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
     font-size: 20px;
   }
@@ -314,6 +402,18 @@ header .header__link {
   .userInput__dropdown .dropdown__fieldsContainer, .userInput__search .dropdown__fieldsContainer, .userInput__search .search__fieldsContainer {
     -moz-column-gap: 20px;
          column-gap: 20px;
+  }
+}
+@media screen and (orientation: landscape) {
+  .userInput__dropdown .dropdown__fieldsContainer, .userInput__search .dropdown__fieldsContainer, .userInput__search .search__fieldsContainer {
+    -moz-column-gap: calc(20px + (40 - 20) * ((100vh - 300px) / (1080 - 300)));
+         column-gap: calc(20px + (40 - 20) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .userInput__dropdown .dropdown__fieldsContainer, .userInput__search .dropdown__fieldsContainer, .userInput__search .search__fieldsContainer {
+    -moz-column-gap: 40px;
+         column-gap: 40px;
   }
 }
 .userInput__dropdown .dropdown__selection, .userInput__dropdown .userInput__field, .userInput__search .dropdown__selection, .userInput__search .userInput__field, .userInput__search .search__field {
@@ -348,6 +448,20 @@ header .header__link {
     background-size: 25px;
   }
 }
+@media screen and (orientation: landscape) {
+  .userInput__dropdown .dropdown__selection, .userInput__dropdown .userInput__field, .userInput__search .dropdown__selection, .userInput__search .userInput__field, .userInput__search .search__field {
+    width: calc(230px + (850 - 230) * ((100vh - 300px) / (1080 - 300)));
+    border-radius: calc(50px + (70 - 50) * ((100vh - 300px) / (1080 - 300)));
+    background-size: calc(20px + (25 - 20) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .userInput__dropdown .dropdown__selection, .userInput__dropdown .userInput__field, .userInput__search .dropdown__selection, .userInput__search .userInput__field, .userInput__search .search__field {
+    width: 850px;
+    border-radius: 70px;
+    background-size: 25px;
+  }
+}
 .userInput__search .search__field {
   background-image: unset;
 }
@@ -375,6 +489,7 @@ header .header__link {
 .phonesList__title {
   text-align: center;
   margin: 0;
+  letter-spacing: 1px;
 }
 @media screen and (orientation: portrait) {
   .phonesList__title {
@@ -386,6 +501,16 @@ header .header__link {
     font-size: 32px;
   }
 }
+@media screen and (orientation: landscape) {
+  .phonesList__title {
+    font-size: calc(25px + (35 - 25) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .phonesList__title {
+    font-size: 35px;
+  }
+}
 .phonesList__list {
   display: flex;
   justify-content: center;
@@ -393,6 +518,16 @@ header .header__link {
   row-gap: 30px;
   -moz-column-gap: 30px;
        column-gap: 30px;
+}
+@media (orientation: portrait) {
+  .phonesList__list {
+    max-width: 1080px;
+  }
+}
+@media (orientation: landscape) {
+  .phonesList__list {
+    max-width: 1920px;
+  }
 }
 .phonesList__link {
   display: block;
@@ -654,8 +789,10 @@ footer {
 footer .footer__credits {
   display: flex;
   flex-direction: column;
+  align-self: center;
   align-items: center;
   row-gap: 20px;
+  max-width: 1000px;
 }
 @media screen and (min-width: 33.75rem) {
   footer .footer__credits {
@@ -691,11 +828,15 @@ footer .footer__credits .credits__projectOwner .projectOwner__website, footer .f
   transition-property: color background-color;
   transition-duration: 0.2s;
 }
-footer .footer__credits .credits__projectOwner .projectOwner__website:active, footer .footer__credits .credits__apiProvider .projectOwner__website:active, footer .footer__credits .credits__apiProvider .apiProvider__website:active, footer .footer__credits .credits__apiProvider .apiProvider__github:active {
-  color: rgb(250, 250, 250);
-  background-color: rgb(26, 39, 101);
+@media screen and (hover: none) {
+  footer .footer__credits .credits__projectOwner .projectOwner__website:active, footer .footer__credits .credits__apiProvider .projectOwner__website:active, footer .footer__credits .credits__apiProvider .apiProvider__website:active, footer .footer__credits .credits__apiProvider .apiProvider__github:active {
+    color: rgb(250, 250, 250);
+    background-color: rgb(26, 39, 101);
+  }
 }
-footer .footer__credits .credits__projectOwner .projectOwner__website:hover, footer .footer__credits .credits__apiProvider .projectOwner__website:hover, footer .footer__credits .credits__apiProvider .apiProvider__website:hover, footer .footer__credits .credits__apiProvider .apiProvider__github:hover {
-  color: rgb(250, 250, 250);
-  background-color: rgb(26, 39, 101);
+@media screen and (hover: hover) {
+  footer .footer__credits .credits__projectOwner .projectOwner__website:hover, footer .footer__credits .credits__apiProvider .projectOwner__website:hover, footer .footer__credits .credits__apiProvider .apiProvider__website:hover, footer .footer__credits .credits__apiProvider .apiProvider__github:hover {
+    color: rgb(250, 250, 250);
+    background-color: rgb(26, 39, 101);
+  }
 }
