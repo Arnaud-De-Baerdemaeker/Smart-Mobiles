@@ -98,50 +98,47 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 					? <>
 						<h2 className={"phoneDetails__title"}>{`${phoneDetails.brand} ${phoneDetails.phone_name}`}</h2>
 						<div className={"phoneDetails__presentation"}>
-							<div
-								onClick={openGalleryModal}
-								className={"presentation"}
-							>
-								<div className={"presentation__thumbnailContainer"}>
-									<img
-										src={phoneDetails.thumbnail}
-										alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
-										className={"presentation__thumbnail"}
-									/>
+							<div className={"presentation"}>
+								<div
+									onClick={openGalleryModal}
+									className={"presentation__container"}
+								>
+									<div className={"presentation__thumbnailContainer"}>
+										<img
+											src={phoneDetails.thumbnail}
+											alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
+											className={"presentation__thumbnail"}
+										/>
+									</div>
 								</div>
-							</div>
-							<div className={"informations"}>
-								<dl>
-									<div>
-										<dt>{"Brand"}</dt>
-										<dd>{phoneDetails.brand}</dd>
-									</div>
-
-									<div>
-										<dt>{"Phone name"}</dt>
-										<dd>{phoneDetails.phone_name}</dd>
-									</div>
-
-									<div>
-										<dt>{"Dimensions"}</dt>
-										<dd>{phoneDetails.dimension}</dd>
-									</div>
-
-									<div>
-										<dt>{"OS"}</dt>
-										<dd>{phoneDetails.os}</dd>
-									</div>
-
-									<div>
-										<dt>{"Storage"}</dt>
-										<dd>{phoneDetails.storage}</dd>
-									</div>
-
-									<div>
-										<dt>{"Release date"}</dt>
-										<dd>{phoneDetails.release_date}</dd>
-									</div>
-								</dl>
+								<div className={"informations"}>
+									<dl>
+										<div>
+											<dt>{"Brand"}</dt>
+											<dd>{phoneDetails.brand}</dd>
+										</div>
+										<div>
+											<dt>{"Phone name"}</dt>
+											<dd>{phoneDetails.phone_name}</dd>
+										</div>
+										<div>
+											<dt>{"Dimensions"}</dt>
+											<dd>{phoneDetails.dimension}</dd>
+										</div>
+										<div>
+											<dt>{"OS"}</dt>
+											<dd>{phoneDetails.os}</dd>
+										</div>
+										<div>
+											<dt>{"Storage"}</dt>
+											<dd>{phoneDetails.storage}</dd>
+										</div>
+										<div>
+											<dt>{"Release date"}</dt>
+											<dd>{phoneDetails.release_date}</dd>
+										</div>
+									</dl>
+								</div>
 							</div>
 						</div>
 						<div className={"phoneDetails__specifications"}>
