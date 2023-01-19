@@ -12,6 +12,14 @@
 					row-gap: 20px;
 				}
 			}
+
+			@media #{$landscape} {
+				@include fluidContent(row-gap, 10px, 20, 10, 100vh);
+
+				@media #{$mq-h1080-up} {
+					row-gap: 20px;
+				}
+			}
 		}
 
 		.dropdown {
@@ -27,6 +35,14 @@
 							font-size: 20px;
 						}
 					}
+
+					@media #{$landscape} {
+						@include fluidContent(font-size, 18px, 20, 18, 100vh);
+
+						@media #{$mq-h1080-up} {
+							font-size: 20px;
+						}
+					}
 				}
 			}
 
@@ -39,6 +55,14 @@
 
 						@media #{$mq-w1080-up} {
 							column-gap: 20px;
+						}
+					}
+
+					@media #{$landscape} {
+						@include fluidContent(column-gap, 20px, 40, 20, 100vh);
+
+						@media #{$mq-h1080-up} {
+							column-gap: 40px;
 						}
 					}
 				}
@@ -76,6 +100,18 @@
 
 						@media #{$mq-w1080-up} {
 							width: 450px;
+							border-radius: 70px;
+							background-size: 25px;
+						}
+					}
+
+					@media #{$landscape} {
+						@include fluidContent(width, 230px, 850, 230, 100vh);
+						@include fluidContent(border-radius, 50px, 70, 50, 100vh);
+						@include fluidContent(background-size, 20px, 25, 20, 100vh);
+
+						@media #{$mq-h1080-up} {
+							width: 850px;
 							border-radius: 70px;
 							background-size: 25px;
 						}
