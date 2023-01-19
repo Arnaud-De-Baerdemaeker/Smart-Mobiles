@@ -20,6 +20,14 @@
 					row-gap: 40px;
 				}
 			}
+
+			@media #{$landscape} {
+				@include fluidContent(row-gap, 20px, 40, 20, 100vh);
+
+				@media #{$mq-h1080-up} {
+					row-gap: 40px;
+				}
+			}
 		}
 
 		&__controls { // <div>
@@ -32,6 +40,14 @@
 
 					@media #{$mq-w1080-up} {
 						width: 540px;
+					}
+				}
+
+				@media #{$landscape} {
+					@include fluidContent(width, 300px, 960, 300, 100vh);
+
+					@media #{$mq-h1080-up} {
+						width: 960px;
 					}
 				}
 			}
