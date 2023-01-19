@@ -7,8 +7,7 @@ header {
 	}
 
 	.header {
-		&__link {
-			-webkit-tap-highlight-color: transparent;
+		&__link { // <a>
 			text-decoration: none;
 		}
 	}
