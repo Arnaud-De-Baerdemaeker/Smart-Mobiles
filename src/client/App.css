@@ -60,13 +60,16 @@ img {
   vertical-align: bottom;
 }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 header {
   padding-top: 20px;
   padding-right: 20px;
   padding-left: 20px;
 }
 header .header__link {
-  -webkit-tap-highlight-color: transparent;
   text-decoration: none;
 }
 
@@ -85,22 +88,14 @@ header .header__link {
 }
 @media screen and (orientation: portrait) {
   .header__title {
+    font-size: calc(35px + (50 - 35) * ((100vw - 300px) / (1080 - 300)));
     border-radius: calc(59px + (76 - 59) * ((100vw - 300px) / (1080 - 300)));
   }
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .header__title {
-    border-radius: 76px;
-  }
-}
-@media screen and (orientation: portrait) {
-  .header__title {
-    font-size: calc(35px + (50 - 35) * ((100vw - 300px) / (1080 - 300)));
-  }
-}
-@media screen and (orientation: portrait) and (min-width: 67.5rem) {
-  .header__title {
     font-size: 50px;
+    border-radius: 76px;
   }
 }
 
@@ -119,12 +114,14 @@ header .header__link {
 }
 @media screen and (orientation: portrait) {
   .footer__title {
-    border-radius: calc(59px + (76 - 59) * ((100vw - 300px) / (1080 - 300)));
+    font-size: calc(30px + (40 - 30) * ((100vw - 300px) / (1080 - 300)));
+    border-radius: calc(54px + (65 - 54) * ((100vw - 300px) / (1080 - 300)));
   }
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .footer__title {
-    border-radius: 76px;
+    font-size: 40px;
+    border-radius: 65px;
   }
 }
 
@@ -402,6 +399,7 @@ header .header__link {
   width: 300px;
   text-decoration: none;
   border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pagination {
