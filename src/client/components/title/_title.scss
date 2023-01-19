@@ -1,41 +1,15 @@
 // TITLE
-@mixin globalTitleSettings {
-	margin: 0;
-	font: {
-		family: $shareTechMono;
-		weight: 100;
-	}
-	text-align: center;
-	background: $gradient;
-	color: $white;
-	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
-	padding: {
-		top: 10px;
-		right: 10px;
-		bottom: 10px;
-		left: 10px;
-	}
-
-	@media screen {
-		@media #{$portrait} {
-			@include fluidContent(border-radius, 59px, 76, 59, 100vw);
-
-			@media #{$mq-w1080-up} {
-				border-radius: 76px;
-			}
-		}
-	}
-}
-
 .header__title {
 	@include globalTitleSettings;
 
 	@media screen {
 		@media #{$portrait} {
 			@include fluidContent(font-size, 35px, 50, 35, 100vw);
+			@include fluidContent(border-radius, 59px, 76, 59, 100vw);
 
 			@media #{$mq-w1080-up} {
 				font-size: 50px;
+				border-radius: 76px;
 			}
 		}
 	}
@@ -43,4 +17,16 @@
 
 .footer__title {
 	@include globalTitleSettings;
+
+	@media screen {
+		@media #{$portrait} {
+			@include fluidContent(font-size, 30px, 40, 30, 100vw);
+			@include fluidContent(border-radius, 54px, 65, 54, 100vw);
+
+			@media #{$mq-w1080-up} {
+				font-size: 40px;
+				border-radius: 65px;
+			}
+		}
+	}
 }
