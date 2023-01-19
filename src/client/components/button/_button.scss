@@ -29,6 +29,18 @@
 				}
 			}
 
+			@media #{$landscape} {
+				@include fluidContent(width, 50px, 70, 50, 100vh);
+				@include fluidContent(height, 50px, 70, 50, 100vh);
+				@include fluidContent(border-radius, 50px, 70, 50, 100vh);
+
+				@media #{$mq-h1080-up} {
+					width: 70px;
+					height: 70px;
+					border-radius: 70px;
+				}
+			}
+
 			@media (hover: none) {
 				&:active {
 					background-color: $primary;
@@ -73,6 +85,14 @@
 				@include fluidContent(font-size, 15px, 20, 15, 100vw);
 
 				@media #{$mq-w1080-up} {
+					font-size: 20px;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(font-size, 15px, 20, 15, 100vh);
+
+				@media #{$mq-h1080-up} {
 					font-size: 20px;
 				}
 			}
