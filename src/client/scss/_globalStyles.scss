@@ -18,6 +18,14 @@ body {
 					width: 10px;
 				}
 			}
+
+			@media #{$landscape} {
+				@include fluidContent(width, 10px, 15, 10, 100vh);
+
+				@media #{$mq-h1080-up} {
+					width: 15px;
+				}
+			}
 		}
 	}
 
@@ -30,6 +38,14 @@ body {
 
 				@media #{$mq-w1080-up} {
 					border-radius: 10px;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(border-radius, 10px, 15, 10, 100vh);
+
+				@media #{$mq-h1080-up} {
+					border-radius: 15px;
 				}
 			}
 		}
