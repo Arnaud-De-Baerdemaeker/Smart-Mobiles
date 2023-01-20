@@ -22,7 +22,6 @@
 			padding: 10px;
 			background-color: white;
 			border-radius: 20px;
-			width: calc(50% - 30px);
 			box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
 			transition: {
 				property: box-shadow;
@@ -30,6 +29,22 @@
 			}
 
 			@media screen {
+				@media #{$portrait} {
+					@include fluidContent(width, 90px, 300, 90, 100vw);
+
+					@media #{$mq-w1080-up} {
+						width: 300px;
+					}
+				}
+
+				@media #{$landscape} {
+					@include fluidContent(width, 190px, 580, 190, 100vh);
+
+					@media #{$mq-h1080-up} {
+						width: 580px;
+					}
+				}
+
 				@media (hover: hover) {
 					&:hover {
 						cursor: pointer;
@@ -49,14 +64,24 @@
 	&__fullscreen { // <div>
 		@extend .modal;
 		padding: 0;
+		justify-content: center;
 		align-items: center;
 
 		.fullscreen__image { // <img>
-			width: calc(100% - 20px);
 			padding: 10px;
 			background-color: white;
 			border-radius: 20px;
 			vertical-align: bottom;
+
+			@media screen {
+				@media #{$portrait} {
+					width: calc(100% - 20px);
+				}
+
+				@media #{$landscape} {
+					height: calc(100% - 20px); 
+				}
+			}
 		}
 	}
 }
