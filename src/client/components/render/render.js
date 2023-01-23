@@ -24,6 +24,7 @@ const Render = ({
 	acquirePhoneDetails
 }) => {
 	if(brandTitle && phones) {
+		document.title = `${brandTitle} | Smartmobiles`;
 		return <PhonesList title={brandTitle}>
 			<Pagination
 				selectedBrandPagination={selectedBrandPagination}
@@ -35,7 +36,10 @@ const Render = ({
 			{phones.map(phone =>
 				<Link
 					to={`/${phone.slug}`}
-					onClick={() => acquirePhoneDetails(phone.detail)}
+					onClick={() => {
+						acquirePhoneDetails(phone.detail);
+						document.title = `${phone.phone_name} | Smartmobiles`;
+					}}
 					key={phone.slug}
 					className={"phonesList__link"}
 				>
@@ -56,11 +60,15 @@ const Render = ({
 		</PhonesList>;
 	}
 	else if(searchResult) {
+		document.title = `${searchResult.title} | Smartmobiles`;
 		return <PhonesList title={searchResult.title}>
 			{searchResult.phones.map(phone =>
 				<Link
 					to={`/${phone.slug}`}
-					onClick={() => acquirePhoneDetails(phone.detail)}
+					onClick={() => {
+						acquirePhoneDetails(phone.detail);
+						document.title = `${phone.phone_name} | Smartmobiles`;
+					}}
 					key={phone.slug}
 					className={"phonesList__link"}
 				>
@@ -75,11 +83,15 @@ const Render = ({
 	}
 	else {
 		if(latestPhones) {
+			document.title = `${latestPhones.title} | Smartmobiles`;
 			return <PhonesList title={latestPhones.title}>
 				{latestPhones.phones.map(phone =>
 					<Link
 						to={`/${phone.slug}`}
-						onClick={() => acquirePhoneDetails(phone.detail)}
+						onClick={() => {
+							acquirePhoneDetails(phone.detail);
+							document.title = `${phone.phone_name} | Smartmobiles`;
+						}}
 						key={phone.slug}
 						className={"phonesList__link"}
 					>
