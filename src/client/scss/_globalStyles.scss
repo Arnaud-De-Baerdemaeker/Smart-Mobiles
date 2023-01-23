@@ -8,47 +8,11 @@ body {
 	scroll-behavior: smooth;
 
 	&::-webkit-scrollbar {
-		background-color: $white;
-
-		@media screen {
-			@media #{$portrait} {
-				@include fluidContent(width, 5px, 10, 5, 100vw);
-
-				@media #{$mq-w1080-up} {
-					width: 10px;
-				}
-			}
-
-			@media #{$landscape} {
-				@include fluidContent(width, 10px, 15, 10, 100vh);
-
-				@media #{$mq-h1080-up} {
-					width: 15px;
-				}
-			}
-		}
+		@include scrollbar;
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: $primary;
-
-		@media screen {
-			@media #{$portrait} {
-				@include fluidContent(border-radius, 5px, 10, 5, 100vw);
-
-				@media #{$mq-w1080-up} {
-					border-radius: 10px;
-				}
-			}
-
-			@media #{$landscape} {
-				@include fluidContent(border-radius, 10px, 15, 10, 100vh);
-
-				@media #{$mq-h1080-up} {
-					border-radius: 15px;
-				}
-			}
-		}
+		@include scrollbarThumb;
 	}
 }
 
