@@ -101,15 +101,13 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 							<div className={"presentation"}>
 								<div
 									onClick={openGalleryModal}
-									className={"presentation__container"}
+									className={"presentation__thumbnail"}
 								>
-									<div className={"presentation__thumbnailContainer"}>
-										<img
-											src={phoneDetails.thumbnail}
-											alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
-											className={"presentation__thumbnail"}
-										/>
-									</div>
+									<img
+										src={phoneDetails.thumbnail}
+										alt={`${phoneDetails.brand} ${phoneDetails.phone_name}`}
+										className={"thumbnail"}
+									/>
 								</div>
 								<div className={"informations"}>
 									<dl>
