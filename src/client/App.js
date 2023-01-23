@@ -18,6 +18,10 @@ const App = () => {
 	const [phoneDetails, setPhoneDetails] = useState(null);
 
 	const acquirePhoneDetails = (url) => {
+		if(phoneDetails !== null) {
+			setPhoneDetails(null);
+		}
+
 		getPhoneDetails(url)
 		.then(result => {
 			setPhoneDetails(result.data.data);
