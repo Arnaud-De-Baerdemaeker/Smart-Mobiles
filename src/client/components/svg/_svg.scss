@@ -9,18 +9,12 @@
 			duration: 0.2s;
 		}
 
-		@media screen {
-			@media (hover: none) {
-				&:active {
-					fill: $white;
-				}
-			}
+		&:active {
+			fill: $white;
+		}
 
-			@media (hover: hover) {
-				&:hover {
-					fill: $white;
-				}
-			}
+		&:hover {
+			fill: $white;
 		}
 	}
 
