@@ -496,6 +496,7 @@ header .header__link {
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
+  align-items: center;
   row-gap: 50px;
   padding-top: 50px;
   padding-right: 20px;
@@ -534,6 +535,7 @@ header .header__link {
   row-gap: 30px;
   -moz-column-gap: 30px;
        column-gap: 30px;
+  width: 100%;
 }
 @media (orientation: portrait) {
   .phonesList__list {
@@ -558,6 +560,7 @@ header .header__link {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 500px;
 }
 .pagination__localization {
   margin: 0;
