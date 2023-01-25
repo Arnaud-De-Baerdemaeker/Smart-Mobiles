@@ -1,0 +1,46 @@
+// SVG
+.svg {
+	&__brands { // <svg>
+		width: fit-content;
+		height: fit-content;
+		fill: $primary;
+		transition: {
+			property: fill;
+			duration: 0.2s;
+		}
+
+		&:active {
+			fill: $white;
+		}
+
+		&:hover {
+			fill: $white;
+		}
+	}
+
+	&__search { // <svg>
+		@extend .svg__brands;
+	}
+
+	&__clear { // <svg>
+		@extend .svg__brands;
+	}
+
+	&__close { // <svg>
+		@extend .svg__brands;
+	}
+
+	&__previous { // <svg>
+		@extend .svg__brands;
+		transform: rotateZ(90deg);
+	}
+
+	&__next { // <svg>
+		@extend .svg__brands;
+		transform: rotateZ(-90deg);
+	}
+}
+
+.touchSVG {
+	fill: $white;
+}

@@ -1,0 +1,104 @@
+// MIXINS
+@mixin fluidContent($property, $min-size-px, $max-size, $min-size, $max-viewport-vw-vh) {
+	#{$property}: calc(#{$min-size-px} + (#{$max-size} - #{$min-size}) * ((#{$max-viewport-vw-vh} - 300px) / (1080 - 300)));
+}
+
+@mixin globalTitleSettings {
+	margin: 0;
+	font: {
+		family: $shareTechMono;
+		weight: 100;
+	}
+	text-align: center;
+	background: $gradient;
+	color: $white;
+	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+	padding: {
+		top: 10px;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
+	}
+}
+
+@mixin gradientBackground {
+	background-image: $gradient;
+	border-radius: 20px;
+	box-shadow: 0 0 7px 0 rgb(0, 0, 0, 0.4);
+}
+
+@mixin whiteBackground {
+	border-radius: 10px;
+	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+	padding: {
+		top: 30px;
+		right: 20px;
+		bottom: 30px;
+		left: 20px;
+	}
+	background-color: white;
+}
+
+@mixin productTitle {
+	text-align: center;
+	margin: 0;
+	padding: {
+		top: 5px;
+		bottom: 5px;
+	}
+	color: $primary;
+	border: {
+		top: {
+			style: solid;
+			width: 1px;
+		}
+		bottom: {
+			style: solid;
+			width: 1px;
+		}
+	}
+}
+
+@mixin scrollbar {
+	background-color: $white;
+
+	@media screen {
+		@media #{$portrait} {
+			@include fluidContent(width, 5px, 10, 5, 100vw);
+
+			@media #{$mq-w1080-up} {
+				width: 10px;
+			}
+		}
+
+		@media #{$landscape} {
+			@include fluidContent(width, 10px, 15, 10, 100vh);
+
+			@media #{$mq-h1080-up} {
+				width: 15px;
+			}
+		}
+	}
+}
+
+@mixin scrollbarThumb {
+	background-color: $primary;
+
+	@media screen {
+		@media #{$portrait} {
+			@include fluidContent(border-radius, 5px, 10, 5, 100vw);
+
+			@media #{$mq-w1080-up} {
+				border-radius: 10px;
+			}
+		}
+
+		@media #{$landscape} {
+			@include fluidContent(border-radius, 10px, 15, 10, 100vh);
+
+			@media #{$mq-h1080-up} {
+				border-radius: 15px;
+			}
+		}
+	}
+}

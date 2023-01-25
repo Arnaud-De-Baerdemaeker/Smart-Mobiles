@@ -1,0 +1,13 @@
+// PAGINATION
+.pagination { // <div>
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 500px;
+
+	&__localization { // <p>
+		margin: 0;
+		text-align: center;
+	}
+}

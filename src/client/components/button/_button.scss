@@ -1,0 +1,150 @@
+// BUTTON
+.button {
+	&__brands { // <button>
+		margin: 0;
+		padding: 0;
+		border: none;
+		border: {
+			style: solid;
+			width: 1px;
+			color: $primary;
+		}
+		background-color: $white;
+		-webkit-tap-highlight-color: transparent;
+		transition: {
+			property: background-color;
+			duration: 0.2s;
+		}
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(width, 50px, 70, 50, 100vw);
+				@include fluidContent(height, 50px, 70, 50, 100vw);
+				@include fluidContent(border-radius, 50px, 70, 50, 100vw);
+
+				@media #{$mq-w1080-up} {
+					width: 70px;
+					height: 70px;
+					border-radius: 70px;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(width, 50px, 70, 50, 100vh);
+				@include fluidContent(height, 50px, 70, 50, 100vh);
+				@include fluidContent(border-radius, 50px, 70, 50, 100vh);
+
+				@media #{$mq-h1080-up} {
+					width: 70px;
+					height: 70px;
+					border-radius: 70px;
+				}
+			}
+
+			@media (hover: none) {
+				&:active {
+					background-color: $primary;
+				}
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					cursor: pointer;
+					background-color: $primary;
+
+					.svg__brands { // <svg>
+						fill: $white;
+					}
+				}
+			}
+		}
+	}
+
+	&__search { // <button>
+		@extend .button__brands;
+	}
+
+	&__clear { // <button>
+		@extend .button__brands;
+	}
+
+	&__validate {
+		@extend .button__brands;
+		color: $primary;
+		font: {
+			family: $notoSans;
+			weight: 900;
+		}
+		transition: {
+			property: color;
+			duration: 0.2s;
+		}
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(font-size, 15px, 20, 15, 100vw);
+
+				@media #{$mq-w1080-up} {
+					font-size: 20px;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(font-size, 15px, 20, 15, 100vh);
+
+				@media #{$mq-h1080-up} {
+					font-size: 20px;
+				}
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					cursor: pointer;
+					color: $white;
+				}
+			}
+		}
+
+		&Selection { // <button>
+			@extend .button__validate;
+		}
+
+		&Terms { // <button>
+			@extend .button__validate;
+		}
+	}
+
+	&__close { // button>
+		@extend .button__brands;
+		position: fixed;
+		right: 20px;
+		bottom: 20px;
+		border: {
+			style: solid;
+			width: 1px;
+			color: $white;
+		}
+	}
+
+	&__previous { // <button>
+		@extend .button__brands;
+		border: {
+			style: solid;
+			width: 1px;
+			color: $white;
+		}
+	}
+
+	&__next { // <next>
+		@extend .button__previous;
+	}
+}
+
+.touchButton {
+	background-color: $primary;
+	color: $white;
+
+	&--modal {
+		@extend .touchButton;
+	}
+}
