@@ -15,6 +15,9 @@ import {getPhoneDetails} from "./apiCalls/fetchPhoneDetails";
 const baseURL = "http://phone-specs-api.azharimm.dev";
 
 const App = () => {
+	const [latestPhones, setLatestPhones] = useState(null);
+	const [brands, setBrands] = useState([]);
+	const [fetchError, setFetchError] = useState(false);
 	const [phoneDetails, setPhoneDetails] = useState(null);
 
 	const acquirePhoneDetails = (url) => {
@@ -23,17 +26,26 @@ const App = () => {
 		}
 
 		getPhoneDetails(url)
-		.then(result => {
-			setPhoneDetails(result.data.data);
-		});
+		.then(result => setPhoneDetails(result.data.data))
+		.catch(() => setFetchError(true));
 	}
 
-	return (
+	return(
 		<BrowserRouter>
 			<Routes>
 				<Route
 					path={"/"}
-					element={<Home acquirePhoneDetails={acquirePhoneDetails} />}
+					element={
+						<Home
+							latestPhones={latestPhones}
+							setLatestPhones={setLatestPhones}
+							brands={brands}
+							setBrands={setBrands}
+							fetchError={fetchError}
+							setFetchError={setFetchError}
+							acquirePhoneDetails={acquirePhoneDetails}
+						/>
+					}
 				/>
 				<Route
 					path={"/:slug"}
@@ -41,6 +53,7 @@ const App = () => {
 						<PhoneDetails
 							phoneDetails={phoneDetails}
 							acquirePhoneDetails={acquirePhoneDetails}
+							fetchError={fetchError}
 						/>
 					}
 				/>
