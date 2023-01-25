@@ -7,6 +7,7 @@
 import React, {useState, useEffect} from "react";
 
 import Header from "../header/header";
+import FailedFetch from "../failedFetch/failedFetch";
 import Modal from "../modal/modal";
 import Button from "../button/button";
 import SVG from "../svg/svg";
@@ -14,7 +15,7 @@ import Footer from "../footer/footer";
 
 import {baseURL} from "../../App";
 
-const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
+const PhoneDetails = ({phoneDetails, acquirePhoneDetails, fetchError, fetchErrorDetails}) => {
 	const [galleryModalState, setGalleryModalState] = useState(false);
 	const [fullscreenModalState, setFullscreenModalState] = useState(false);
 	const [clickedImage, setClickedImage] = useState({
@@ -88,7 +89,7 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 		if(!phoneDetails) {
 			acquirePhoneDetails(baseURL + window.location.pathname);
 		}
-	}, []);
+	}, [phoneDetails, acquirePhoneDetails]);
 
 	return(
 		<>
@@ -217,6 +218,8 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails}) => {
 							</Modal>
 						}
 					</>
+					: fetchError
+					? <FailedFetch />
 					: <div className={"loading"}>{"Loading..."}</div>
 				}
 			</main>
