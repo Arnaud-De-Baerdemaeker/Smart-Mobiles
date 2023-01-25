@@ -914,6 +914,41 @@ header .header__link {
   }
 }
 
+.failedFetch {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin: 0;
+  text-align: center;
+  color: rgb(26, 39, 101);
+}
+.failedFetch h2 {
+  margin: 0;
+}
+@media screen and (orientation: portrait) {
+  .failedFetch h2 {
+    font-size: calc(22px + (32 - 22) * ((100vw - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 67.5rem) {
+  .failedFetch h2 {
+    font-size: 32px;
+  }
+}
+@media screen and (orientation: landscape) {
+  .failedFetch h2 {
+    font-size: calc(25px + (35 - 25) * ((100vh - 300px) / (1080 - 300)));
+  }
+}
+@media screen and (orientation: landscape) and (min-height: 67.5rem) {
+  .failedFetch h2 {
+    font-size: 35px;
+  }
+}
+.failedFetch p {
+  margin: 0;
+}
+
 footer {
   display: flex;
   flex-direction: column;
