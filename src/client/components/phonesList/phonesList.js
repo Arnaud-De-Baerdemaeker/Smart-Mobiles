@@ -6,13 +6,15 @@
 
 import React from "react";
 
-const PhonesList = ({title, children}) => {
+const PhonesList = ({title, paginationPrevious, paginationNext, children}) => {
 	return(
 		<section className={"phonesList"}>
 			<h2 className={"phonesList__title"}>{title}</h2>
+			{paginationPrevious}
 			<div className={"phonesList__list"}>
 				{children}
 			</div>
+			{paginationNext}
 		</section>
 	);
 };

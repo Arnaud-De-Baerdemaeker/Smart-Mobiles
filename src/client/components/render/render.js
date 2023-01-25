@@ -29,14 +29,27 @@ const Render = ({
 		document.title = `${brandTitle} | Smartmobiles`
 
 		return(
-			<PhonesList title={brandTitle}>
-				<Pagination
-					selectedBrandPagination={selectedBrandPagination}
-					setPhones={setPhones}
-					currentPage={currentPage}
-					setCurrentPage={setCurrentPage}
-					totalPages={totalPages}
-				/>
+			<PhonesList
+				title={brandTitle}
+				paginationPrevious={
+					<Pagination
+						selectedBrandPagination={selectedBrandPagination}
+						setPhones={setPhones}
+						currentPage={currentPage}
+						setCurrentPage={setCurrentPage}
+						totalPages={totalPages}
+					/>
+				}
+				paginationNext={
+					<Pagination
+						selectedBrandPagination={selectedBrandPagination}
+						setPhones={setPhones}
+						currentPage={currentPage}
+						setCurrentPage={setCurrentPage}
+						totalPages={totalPages}
+					/>
+				}
+			>
 				{phones.map(phone =>
 					<Link
 						to={`/${phone.slug}`}
@@ -54,13 +67,6 @@ const Render = ({
 						/>
 					</Link>
 				)}
-				<Pagination
-					selectedBrandPagination={selectedBrandPagination}
-					setPhones={setPhones}
-					currentPage={currentPage}
-					setCurrentPage={setCurrentPage}
-					totalPages={totalPages}
-				/>
 			</PhonesList>
 		);
 	}
