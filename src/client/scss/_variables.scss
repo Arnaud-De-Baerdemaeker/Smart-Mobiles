@@ -1,0 +1,40 @@
+// VARIABLES
+// Fonts
+@import
+	url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"),
+	url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap')
+;
+
+$notoSans: "Noto Sans", sans-serif;
+$shareTechMono: "Share Tech Mono", arial;
+
+// Colors
+$primary: rgb(26, 39, 101);
+$secondary: rgb(43, 64, 167);
+$white: rgb(250, 250, 250);
+$warning: rgb(101, 26, 39);
+$gradient: linear-gradient(90deg, $primary 0%, $secondary 100%);
+
+// Orientations
+$portrait: "(orientation: portrait)";
+$landscape: "(orientation: landscape)";
+
+// Breakpoints
+$bp-450: 28.125rem; // 450px
+$bp-540: 33.75rem; // 540px
+$bp-600: 37.5rem; // 600px
+$bp-650: 40.625rem; // 650px
+$bp-1000: 62.5rem; // 1000px
+$bp-1080: 67.5rem; // 1080px
+$bp-1500: 93.75rem; // 1500px
+
+// Media queries
+$mq-w450-up: "(min-width: #{$bp-450})";
+$mq-w540-up: "(min-width: #{$bp-540})";
+$mq-w600-up: "(min-width: #{$bp-600})";
+$mq-w650-up: "(min-width: #{$bp-650})";
+$mq-w1000-up: "(min-width: #{$bp-1000})";
+$mq-w1080-up: "(min-width: #{$bp-1080})";
+$mq-w1500-up: "(min-width: #{$bp-1500})";
+
+$mq-h1080-up: "(min-height: #{$bp-1080})";

@@ -1,0 +1,92 @@
+// MODAL
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	background-color: $primary;
+	overflow-y: scroll;
+	padding: 20px;
+
+	&__gallery { // <div>
+		@extend .modal;
+		justify-content: center;
+		align-items: center;
+		row-gap: 20px;
+		column-gap: 20px;
+		flex-wrap: wrap;
+
+		&::-webkit-scrollbar {
+			@include scrollbar;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			@include scrollbarThumb;
+		}
+
+		.gallery__image {  // <img>
+			padding: 10px;
+			background-color: white;
+			border-radius: 20px;
+			box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+			transition: {
+				property: box-shadow;
+				duration: 0.2s;
+			}
+
+			&:hover {
+				cursor: pointer;
+				box-shadow: 0 0 10px 2px rgba(250, 250, 250, 0.6);
+			}
+
+			&:active {
+				box-shadow: 0 0 20px 4px rgba(250, 250, 250, 0.8);
+			}
+
+			@media screen {
+				@media #{$portrait} {
+					@include fluidContent(width, 90px, 300, 90, 100vw);
+
+					@media #{$mq-w1080-up} {
+						width: 300px;
+					}
+				}
+
+				@media #{$landscape} {
+					@include fluidContent(width, 190px, 580, 190, 100vh);
+
+					@media #{$mq-h1080-up} {
+						width: 580px;
+					}
+				}
+			}
+		}
+	}
+
+	&__fullscreen { // <div>
+		@extend .modal;
+		padding: 0;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+
+		.fullscreen__image { // <img>
+			padding: 10px;
+			background-color: white;
+			border-radius: 20px;
+			vertical-align: bottom;
+
+			@media screen {
+				@media #{$portrait} {
+					width: calc(100% - 20px);
+				}
+
+				@media #{$landscape} {
+					height: calc(100% - 20px); 
+				}
+			}
+		}
+	}
+}

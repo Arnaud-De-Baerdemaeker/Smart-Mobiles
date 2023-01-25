@@ -1,0 +1,25 @@
+/*
+	Smart Mobiles
+	Started on December 2022
+	By Arnaud De Baerdemaeker
+*/
+
+@import
+	"./scss/variables",
+	"./scss/mixins",
+	"./scss/globalStyles",
+	"./components/header/header",
+	"./components/title/title",
+	"./components/home/home",
+	"./components/button/button",
+	"./components/svg/svg",
+	"./components/userInput/userInput",
+	"./components/warning/warning",
+	"./components/phonesList/phonesList",
+	"./components/pagination/pagination",
+	"./components/phoneCard/phoneCard",
+	"./components/phoneDetails/phoneDetails",
+	"./components/modal/modal",
+	"./components/failedFetch/failedFetch",
+	"./components/footer/footer"
+;
