@@ -3,6 +3,7 @@
 	@include gradientBackground;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	row-gap: 50px;
 	padding: {
 		top: 50px;
