@@ -8,7 +8,6 @@ import axios from "axios";
 
 import {baseURL} from "../App";
 
-
 const getPhonesFromBrand = async (brand, page) => {
 	const params = {};
 	if (page) {
