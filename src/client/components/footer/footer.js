@@ -18,6 +18,7 @@ const Footer = () => {
 					<a
 						href={"https://arnaud-de-baerdemaeker.netlify.app/"}
 						target={"_blank"}
+						rel={"noreferrer"}
 						className={"projectOwner__website"}
 					>
 						{"Arnaud De Baerdemaeker"}
@@ -28,6 +29,7 @@ const Footer = () => {
 					<a
 						href={"https://github.com/azharimm/phone-specs-api"}
 						target={"_blank"}
+						rel={"noreferrer"}
 						className={"apiProvider__github"}
 					>
 						{"Phone Specs API"}
@@ -36,6 +38,7 @@ const Footer = () => {
 					<a
 						href={"https://www.azharimm.dev/"}
 						target={"_blank"}
+						rel={"noreferrer"}
 						className={"apiProvider__website"}
 					>
 						{"Azhari Muhammad M"}
