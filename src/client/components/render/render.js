@@ -93,9 +93,7 @@ const Render = ({
 		document.title = "Request failed | Smartmobiles";
 
 		return(
-			<PhonesList title={"Something went wrong..."}>
-				<FailedFetch />
-			</PhonesList>
+			<FailedFetch />
 		);
 	}
 	else if(latestPhones) {
