@@ -19,14 +19,21 @@ import {getAllBrands} from "../../apiCalls/fetchAllBrands";
 import {getResultsFromSearchQuery} from "../../apiCalls/fetchFromInputTerm";
 import {getPhonesFromBrand} from "../../apiCalls/fetchPhonesFromBrand";
 
-const Home = ({acquirePhoneDetails}) => {
-	const [latestPhones, setLatestPhones] = useState(null);
-	const [brands, setBrands] = useState([]);
+const Home = ({
+	latestPhones,
+	setLatestPhones,
+	brands,
+	setBrands,
+	fetchError,
+	setFetchError,
+	acquirePhoneDetails
+}) => {
+	const [selectedBrand, setSelectedBrand] = useState(null);
 	const [isBrandSelectionOpen, setIsBrandSelectionOpen] = useState(false);
 	const [isSearchFieldOpen, setIsSearchFieldOpen] = useState(false);
 	const [brandInputWarning, setBrandInputWarning] = useState(false);
+	const [sameBrandInputWarning, setSameBrandInputWarning] = useState(false);
 	const [searchInputWarning, setSearchInputWarning] = useState(false);
-	const [selectedBrand, setSelectedBrand] = useState(null);
 	const [selectedBrandPagination, setSelectedBrandPagination] = useState(null);
 	const [term, setTerm] = useState(null);
 	const [brandTitle, setBrandTitle] = useState(null);
@@ -123,34 +130,52 @@ const Home = ({acquirePhoneDetails}) => {
 	const getDropdownResults = (event) => {
 		event.preventDefault();
 
-		// Launch the call if the value is different than default
+		// Check if the state value is different than default or not
 		if(selectedBrand !== null) {
-			// Remove the warning if it was set due to a previous mistake
-			if(brandInputWarning) {
-				setBrandInputWarning(false);
+			// Check if the selected brand is the same as the previous one or not
+			if(selectedBrand !== selectedBrandPagination) {
+				// Check if the warning regarding the lack of selection was active or not
+				if(brandInputWarning) {
+					setBrandInputWarning(false);
+				}
+
+				// Check if the warning regarding the same value selected was active or not
+				if(sameBrandInputWarning) {
+					setSameBrandInputWarning(false);
+				}
+
+				// Check if the error regarding a failed call was active or not
+				if(fetchError) {
+					setFetchError(false);
+				}
+
+				// Make the call with the value selected
+				getPhonesFromBrand(selectedBrand)
+				.then(result => {
+					setBrandTitle(result.data.data.title);
+					setPhones(result.data.data.phones);
+					setCurrentPage(result.data.data.current_page);
+					setTotalPages(result.data.data.last_page);
+					setSearchResult(null);
+
+					if(dropDown.current.selectedIndex !== "default") {
+						dropDown.current.selectedIndex = "default";
+					}
+				})
+				.catch(() => setFetchError(true));
+
+				setSelectedBrandPagination(selectedBrand);
+
+				// Empty the selected brand state after the call is fulfilled
+				setSelectedBrand(null);
 			}
-
-			// Make the call with the value selected
-			getPhonesFromBrand(selectedBrand)
-			.then(result => {
-				// Distribute the results in states
-				setBrandTitle(result.data.data.title);
-				setPhones(result.data.data.phones);
-				setCurrentPage(result.data.data.current_page);
-				setTotalPages(result.data.data.last_page);
-				setSearchResult(null);
-			})
-			.catch(error => {
-				console.error(error);
-			});
-
-			setSelectedBrandPagination(selectedBrand);
-
-			// Empty the state after the call is fulfilled
-			setSelectedBrand(null);
+			else {
+				// Display a warning if the selected brand is the same as the previous one
+				setSameBrandInputWarning(true);
+			}
 		}
 		else {
-			// Display a warning label if the value is not selected
+			// Display a warning if the brand is not selected
 			setBrandInputWarning(true);
 		}
 	};
@@ -162,25 +187,28 @@ const Home = ({acquirePhoneDetails}) => {
 	const getSearchQuery = (event) => {
 		event.preventDefault();
 
-		// Launch the call if the user provided a term in the search field
+		// Check if the user provided a term in the search field or not
 		if(term !== null) {
-			// Remove the warning if it was set due to a previous mistake
+			// Check if the warning regarding the absence of term for the call was active or not
 			if(searchInputWarning) {
 				setSearchInputWarning(false);
 			}
 
+			// Check if the error regarding a failed call was active or not
+			if(fetchError) {
+				setFetchError(false);
+			}
+
+			// Make the call with the term provided
 			getResultsFromSearchQuery(term)
 			.then(result => {
-				// Distribute the results in the states
 				setSearchResult(result.data.data);
 				setBrandTitle(null);
 				setPhones(null);
 			})
-			.catch(error => {
-				console.error(error);
-			});
+			.catch(() => setFetchError(true));
 
-			// Empty the state after the call is fulfilled
+			// Empty the term state state after the call is fulfilled
 			setTerm(null);
 		}
 		else {
@@ -209,22 +237,28 @@ const Home = ({acquirePhoneDetails}) => {
 			setBrandInputWarning(false);
 		}
 
+		if(sameBrandInputWarning) {
+			setSameBrandInputWarning(false);
+		}
+
 		if(searchInputWarning) {
 			setSearchInputWarning(false);
+		}
+
+		if(fetchError) {
+			setFetchError(false);
 		}
 	};
 
 	useEffect(() => {
 		getLatestPhones()
-		.then(result =>
-			setLatestPhones(result.data.data)
-		);
+		.then(result => setLatestPhones(result.data.data))
+		.catch(() => setFetchError(true));
 
 		getAllBrands()
-		.then(result =>
-			setBrands(result.data.data)
-		);
-	}, []);
+		.then(result => setBrands(result.data.data))
+		.catch(() => setFetchError(true));
+	}, [setLatestPhones, setBrands, setFetchError]);
 
 	return(
 		<>
@@ -338,6 +372,10 @@ const Home = ({acquirePhoneDetails}) => {
 								? <Warning warningClass={"dropdown__warning"}>{"Please select a brand"}</Warning>
 								: null
 							}
+							{sameBrandInputWarning
+								? <Warning warningClass={"dropdown__warning"}>{"You already made that request"}</Warning>
+								: null
+							}
 						</UserInput>
 					}
 
@@ -395,6 +433,7 @@ const Home = ({acquirePhoneDetails}) => {
 					setCurrentPage={setCurrentPage}
 					totalPages={totalPages}
 					acquirePhoneDetails={acquirePhoneDetails}
+					fetchError={fetchError}
 				/>
 			</main>
 			<Footer />
