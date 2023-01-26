@@ -2,7 +2,7 @@
 .home { // <main>
 	display: flex;
 	flex-direction: column;
-	row-gap: 50px;
+	row-gap: 3.125rem;
 
 	.userInterface { // <div>
 		display: flex;
@@ -17,7 +17,7 @@
 				@include fluidContent(row-gap, 20px, 40, 20, 100vw);
 
 				@media #{$mq-w1080-up} {
-					row-gap: 40px;
+					row-gap: 2.5rem;
 				}
 			}
 
@@ -25,7 +25,7 @@
 				@include fluidContent(row-gap, 20px, 40, 20, 100vh);
 
 				@media #{$mq-h1080-up} {
-					row-gap: 40px;
+					row-gap: 2.5rem;
 				}
 			}
 		}
@@ -39,7 +39,7 @@
 					@include fluidContent(width, 260px, 540, 260, 100vw);
 
 					@media #{$mq-w1080-up} {
-						width: 540px;
+						width: 33.75rem;
 					}
 				}
 
@@ -47,7 +47,7 @@
 					@include fluidContent(width, 300px, 960, 300, 100vh);
 
 					@media #{$mq-h1080-up} {
-						width: 960px;
+						width: 60rem;
 					}
 				}
 			}

@@ -23,13 +23,13 @@ body {
 #root { // <div>
 	display: flex;
 	flex-direction: column;
-	row-gap: 50px;
+	row-gap: 3.125rem;
 }
 
 .loading { // <div>
 	color: $primary;
 	text-align: center;
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 
 img {
