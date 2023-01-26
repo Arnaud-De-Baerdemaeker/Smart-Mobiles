@@ -3,18 +3,18 @@
 	@include whiteBackground;
 	display: flex;
 	flex-direction: column;
-	row-gap: 20px;
+	row-gap: 1.25rem;
 	transition: {
 		property: box-shadow;
 		duration: 0.2s;
 	}
 
 	&:hover {
-		box-shadow: 0 0 10px 2px rgba(250, 250, 250, 0.6);
+		box-shadow: 0 0 0.625rem 0.125rem rgba(250, 250, 250, 0.6);
 	}
 
 	&:active {
-		box-shadow: 0 0 20px 4px rgba(250, 250, 250, 0.8);
+		box-shadow: 0 0 1.25rem 0.25rem rgba(250, 250, 250, 0.8);
 	}
 
 	&__image { // <img>

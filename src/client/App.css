@@ -23,7 +23,7 @@ body::-webkit-scrollbar {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   body::-webkit-scrollbar {
-    width: 10px;
+    width: 0.625rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   body::-webkit-scrollbar {
-    width: 15px;
+    width: 0.9375rem;
   }
 }
 body::-webkit-scrollbar-thumb {
@@ -46,7 +46,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   body::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 0.625rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -56,7 +56,7 @@ body::-webkit-scrollbar-thumb {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   body::-webkit-scrollbar-thumb {
-    border-radius: 15px;
+    border-radius: 0.9375rem;
   }
 }
 
@@ -67,13 +67,13 @@ body::-webkit-scrollbar-thumb {
 #root {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 3.125rem;
 }
 
 .loading {
   color: rgb(26, 39, 101);
   text-align: center;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 img {
@@ -85,9 +85,9 @@ a {
 }
 
 header {
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-top: 1.25rem;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
 }
 header .header__link {
   text-decoration: none;
@@ -100,11 +100,11 @@ header .header__link {
   text-align: center;
   background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   color: rgb(250, 250, 250);
-  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  box-shadow: 0.125rem 0.125rem 0.3125rem 0 rgba(0, 0, 0, 0.4);
+  padding-top: 0.625rem;
+  padding-right: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 0.625rem;
 }
 @media screen and (orientation: portrait) {
   .header__title {
@@ -114,8 +114,8 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .header__title {
-    font-size: 50px;
-    border-radius: 76px;
+    font-size: 3.125rem;
+    border-radius: 4.75rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -126,8 +126,8 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .header__title {
-    font-size: 60px;
-    border-radius: 88px;
+    font-size: 3.75rem;
+    border-radius: 5.5rem;
   }
 }
 
@@ -138,11 +138,11 @@ header .header__link {
   text-align: center;
   background: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
   color: rgb(250, 250, 250);
-  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  box-shadow: 0.125rem 0.125rem 0.3125rem 0 rgba(0, 0, 0, 0.4);
+  padding-top: 0.625rem;
+  padding-right: 0.625rem;
+  padding-bottom: 0.625rem;
+  padding-left: 0.625rem;
 }
 @media screen and (orientation: portrait) {
   .footer__title {
@@ -152,8 +152,8 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .footer__title {
-    font-size: 40px;
-    border-radius: 65px;
+    font-size: 2.5rem;
+    border-radius: 4.0625rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -164,15 +164,15 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .footer__title {
-    font-size: 50px;
-    border-radius: 76px;
+    font-size: 3.125rem;
+    border-radius: 4.75rem;
   }
 }
 
 .home, .phoneDetails {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
+  row-gap: 3.125rem;
 }
 .home .userInterface, .phoneDetails .userInterface {
   display: flex;
@@ -187,7 +187,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .home .userInterface, .phoneDetails .userInterface {
-    row-gap: 40px;
+    row-gap: 2.5rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -197,7 +197,7 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .home .userInterface, .phoneDetails .userInterface {
-    row-gap: 40px;
+    row-gap: 2.5rem;
   }
 }
 .home .userInterface__controls, .phoneDetails .userInterface__controls {
@@ -211,7 +211,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .home .userInterface__controls, .phoneDetails .userInterface__controls {
-    width: 540px;
+    width: 33.75rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -221,7 +221,7 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .home .userInterface__controls, .phoneDetails .userInterface__controls {
-    width: 960px;
+    width: 60rem;
   }
 }
 
@@ -230,7 +230,7 @@ header .header__link {
   padding: 0;
   border: none;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-color: rgb(26, 39, 101);
   background-color: rgb(250, 250, 250);
   -webkit-tap-highlight-color: transparent;
@@ -246,9 +246,9 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
-    width: 70px;
-    height: 70px;
-    border-radius: 70px;
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 4.375rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -260,9 +260,9 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
-    width: 70px;
-    height: 70px;
-    border-radius: 70px;
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 4.375rem;
   }
 }
 @media screen and (hover: none) {
@@ -293,7 +293,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .button__validate, .button__validateTerms, .button__validateSelection {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -303,7 +303,7 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .button__validate, .button__validateTerms, .button__validateSelection {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 @media screen and (hover: hover) {
@@ -314,15 +314,15 @@ header .header__link {
 }
 .button__close {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 1.25rem;
+  bottom: 1.25rem;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-color: rgb(250, 250, 250);
 }
 .button__previous, .button__next {
   border-style: solid;
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-color: rgb(250, 250, 250);
 }
 .touchButton, .touchButton--modal {
@@ -368,7 +368,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .userInput__dropdown, .userInput__search {
-    row-gap: 20px;
+    row-gap: 1.25rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -378,7 +378,7 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .userInput__dropdown, .userInput__search {
-    row-gap: 20px;
+    row-gap: 1.25rem;
   }
 }
 .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
@@ -392,7 +392,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -402,7 +402,7 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .userInput__dropdown .dropdown__label, .userInput__search .dropdown__label, .userInput__search .search__label {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 .userInput__dropdown .dropdown__fieldsContainer, .userInput__search .dropdown__fieldsContainer, .userInput__search .search__fieldsContainer {
@@ -416,8 +416,8 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .userInput__dropdown .dropdown__fieldsContainer, .userInput__search .dropdown__fieldsContainer, .userInput__search .search__fieldsContainer {
-    -moz-column-gap: 20px;
-         column-gap: 20px;
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -428,26 +428,26 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .userInput__dropdown .dropdown__fieldsContainer, .userInput__search .dropdown__fieldsContainer, .userInput__search .search__fieldsContainer {
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
   }
 }
 .userInput__dropdown .dropdown__selection, .userInput__dropdown .userInput__field, .userInput__search .dropdown__selection, .userInput__search .userInput__field, .userInput__search .search__field {
   border: none;
   border-style: solid;
-  border-width: 1px;
+  border-width: 0.0625rem;
   border-color: rgb(26, 39, 101);
   outline: none;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'><path d='M24.2929 31.2929L8 15C7.44772 14.4477 6.55228 14.4477 6 15C5.44772 15.5523 5.44771 16.4477 6 17L24.2929 35.2929C24.6834 35.6834 25.3166 35.6834 25.7071 35.2929L44 17C44.5523 16.4477 44.5523 15.5523 44 15C43.4477 14.4477 42.5523 14.4477 42 15L25.7071 31.2929C25.3166 31.6834 24.6834 31.6834 24.2929 31.2929Z' fill='rgb(18, 73, 94)'/></svg>");
   background-repeat: no-repeat;
-  background-position: calc(100% - 10px) center;
+  background-position: calc(100% - 0.625rem) center;
   font-family: "Noto Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: rgb(26, 39, 101);
 }
 @media screen and (orientation: portrait) {
@@ -459,9 +459,9 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .userInput__dropdown .dropdown__selection, .userInput__dropdown .userInput__field, .userInput__search .dropdown__selection, .userInput__search .userInput__field, .userInput__search .search__field {
-    width: 450px;
-    border-radius: 70px;
-    background-size: 25px;
+    width: 28.125rem;
+    border-radius: 4.375rem;
+    background-size: 1.5625rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -473,9 +473,9 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .userInput__dropdown .dropdown__selection, .userInput__dropdown .userInput__field, .userInput__search .dropdown__selection, .userInput__search .userInput__field, .userInput__search .search__field {
-    width: 850px;
-    border-radius: 70px;
-    background-size: 25px;
+    width: 53.125rem;
+    border-radius: 4.375rem;
+    background-size: 1.5625rem;
   }
 }
 .userInput__search .search__field {
@@ -485,28 +485,28 @@ header .header__link {
   background-color: rgb(101, 26, 39);
   text-align: center;
   margin: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 22px;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  border-radius: 1.375rem;
 }
 
 .phonesList {
   background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
-  border-radius: 20px;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
+  border-radius: 1.25rem;
+  box-shadow: 0 0 0.4375rem 0 rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 50px;
-  padding-top: 50px;
-  padding-right: 20px;
-  padding-bottom: 50px;
-  padding-left: 20px;
+  row-gap: 3.125rem;
+  padding-top: 3.125rem;
+  padding-right: 1.25rem;
+  padding-bottom: 3.125rem;
+  padding-left: 1.25rem;
 }
 .phonesList__title {
   text-align: center;
   margin: 0;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem;
 }
 @media screen and (orientation: portrait) {
   .phonesList__title {
@@ -515,7 +515,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .phonesList__title {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -525,33 +525,33 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .phonesList__title {
-    font-size: 35px;
+    font-size: 2.1875rem;
   }
 }
 .phonesList__list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  row-gap: 30px;
-  -moz-column-gap: 30px;
-       column-gap: 30px;
+  row-gap: 1.875rem;
+  -moz-column-gap: 1.875rem;
+       column-gap: 1.875rem;
   width: 100%;
 }
 @media (orientation: portrait) {
   .phonesList__list {
-    max-width: 1080px;
+    max-width: 67.5rem;
   }
 }
 @media (orientation: landscape) {
   .phonesList__list {
-    max-width: 1920px;
+    max-width: 120rem;
   }
 }
 .phonesList__link {
   display: block;
-  width: 300px;
+  width: 18.75rem;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -560,7 +560,7 @@ header .header__link {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 31.25rem;
 }
 .pagination__localization {
   margin: 0;
@@ -568,24 +568,24 @@ header .header__link {
 }
 
 .phoneCard {
-  border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
-  padding-top: 30px;
-  padding-right: 20px;
-  padding-bottom: 30px;
-  padding-left: 20px;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 0.625rem 0.125rem rgba(0, 0, 0, 0.2);
+  padding-top: 1.875rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.875rem;
+  padding-left: 1.25rem;
   background-color: white;
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 1.25rem;
   transition-property: box-shadow;
   transition-duration: 0.2s;
 }
 .phoneCard:hover {
-  box-shadow: 0 0 10px 2px rgba(250, 250, 250, 0.6);
+  box-shadow: 0 0 0.625rem 0.125rem rgba(250, 250, 250, 0.6);
 }
 .phoneCard:active {
-  box-shadow: 0 0 20px 4px rgba(250, 250, 250, 0.8);
+  box-shadow: 0 0 1.25rem 0.25rem rgba(250, 250, 250, 0.8);
 }
 .phoneCard__image {
   margin-right: auto;
@@ -594,27 +594,27 @@ header .header__link {
 .phoneCard__title {
   text-align: center;
   margin: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
   color: rgb(26, 39, 101);
   border-top-style: solid;
-  border-top-width: 1px;
+  border-top-width: 0.0625rem;
   border-bottom-style: solid;
-  border-bottom-width: 1px;
+  border-bottom-width: 0.0625rem;
 }
 
 .phoneDetails__title {
   text-align: center;
   margin: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
   color: rgb(26, 39, 101);
   border-top-style: solid;
-  border-top-width: 1px;
+  border-top-width: 0.0625rem;
   border-bottom-style: solid;
-  border-bottom-width: 1px;
-  margin-right: 20px;
-  margin-left: 20px;
+  border-bottom-width: 0.0625rem;
+  margin-right: 1.25rem;
+  margin-left: 1.25rem;
 }
 @media screen and (orientation: portrait) {
   .phoneDetails__title {
@@ -623,7 +623,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .phoneDetails__title {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -633,32 +633,32 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .phoneDetails__title {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 }
 .phoneDetails__presentation {
   background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
-  border-radius: 20px;
-  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.4);
-  padding-top: 40px;
-  padding-right: 20px;
-  padding-bottom: 40px;
-  padding-left: 20px;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 0.4375rem 0 rgba(0, 0, 0, 0.4);
+  padding-top: 2.5rem;
+  padding-right: 1.25rem;
+  padding-bottom: 2.5rem;
+  padding-left: 1.25rem;
 }
 .phoneDetails__presentation .presentation {
   display: grid;
-  row-gap: 40px;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
+  row-gap: 2.5rem;
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
 }
 @media screen and (orientation: portrait) {
   .phoneDetails__presentation .presentation {
-    max-width: 1080px;
+    max-width: 67.5rem;
   }
 }
 @media screen and (orientation: landscape) {
   .phoneDetails__presentation .presentation {
-    max-width: 1920px;
+    max-width: 120rem;
   }
 }
 @media screen and (min-width: 40.625rem) {
@@ -667,48 +667,48 @@ header .header__link {
   }
 }
 .phoneDetails__presentation .presentation__thumbnail {
-  border-radius: 10px;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
-  padding-top: 30px;
-  padding-right: 20px;
-  padding-bottom: 30px;
-  padding-left: 20px;
+  border-radius: 0.625rem;
+  box-shadow: 0 0 0.625rem 0.125rem rgba(0, 0, 0, 0.2);
+  padding-top: 1.875rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.875rem;
+  padding-left: 1.25rem;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 250px;
+  height: 15.625rem;
   transition-property: box-shadow;
   transition-duration: 0.2s;
 }
 .phoneDetails__presentation .presentation__thumbnail:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px 2px rgba(250, 250, 250, 0.6);
+  box-shadow: 0 0 0.625rem 0.125rem rgba(250, 250, 250, 0.6);
 }
 .phoneDetails__presentation .presentation__thumbnail:active {
-  box-shadow: 0 0 20px 4px rgba(250, 250, 250, 0.8);
+  box-shadow: 0 0 1.25rem 0.25rem rgba(250, 250, 250, 0.8);
 }
 .phoneDetails__presentation .presentation__thumbnail .thumbnail {
   height: 100%;
 }
 .phoneDetails__presentation .informations dl {
   display: grid;
-  row-gap: 20px;
+  row-gap: 1.25rem;
   margin: 0;
 }
 @media screen and (min-width: 28.125rem) {
   .phoneDetails__presentation .informations dl {
     grid-template-columns: repeat(2, 1fr);
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
   }
 }
 .phoneDetails__presentation .informations dl div dt {
   display: inline-block;
   font-weight: 900;
-  border-radius: 50px;
-  padding-right: 10px;
-  padding-left: 10px;
+  border-radius: 3.125rem;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
   color: rgb(26, 39, 101);
   background-color: rgb(250, 250, 250);
 }
@@ -717,21 +717,21 @@ header .header__link {
 }
 .phoneDetails__specifications {
   display: grid;
-  row-gap: 40px;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
-  padding-right: 20px;
-  padding-left: 20px;
+  row-gap: 2.5rem;
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
   color: rgb(26, 39, 101);
 }
 @media screen and (orientation: portrait) {
   .phoneDetails__specifications {
-    max-width: 1080px;
+    max-width: 67.5rem;
   }
 }
 @media screen and (orientation: landscape) {
   .phoneDetails__specifications {
-    max-width: 1920px;
+    max-width: 120rem;
   }
 }
 @media screen and (min-width: 37.5rem) {
@@ -752,15 +752,15 @@ header .header__link {
 .phoneDetails__specifications .specifications {
   display: flex;
   align-items: stretch;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  row-gap: 20px;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
+  row-gap: 1.25rem;
 }
 .phoneDetails__specifications .specifications__container {
   display: inherit;
   align-items: start;
   background-image: linear-gradient(90deg, rgb(26, 39, 101) 0%, rgb(43, 64, 167) 100%);
-  border-radius: 35px;
+  border-radius: 2.1875rem;
 }
 .phoneDetails__specifications .specifications__container .container__title {
   display: inherit;
@@ -768,22 +768,22 @@ header .header__link {
   align-items: center;
   text-transform: uppercase;
   margin: 0;
-  padding-top: 20px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-  padding-left: 10px;
+  padding-top: 1.25rem;
+  padding-right: 0.625rem;
+  padding-bottom: 1.25rem;
+  padding-left: 0.625rem;
 }
 .phoneDetails__specifications .specifications__container .container__title .title {
   transform: rotateZ(-90deg);
   color: rgb(250, 250, 250);
 }
 .phoneDetails__specifications .specifications__container .container__title .space {
-  height: 25px;
+  height: 1.5625rem;
 }
 .phoneDetails__specifications .specifications dl {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 1.25rem;
   margin: 0;
 }
 .phoneDetails__specifications .specifications dl div dt {
@@ -803,14 +803,14 @@ header .header__link {
   display: flex;
   background-color: rgb(26, 39, 101);
   overflow-y: scroll;
-  padding: 20px;
+  padding: 1.25rem;
 }
 .modal__gallery {
   justify-content: center;
   align-items: center;
-  row-gap: 20px;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
+  row-gap: 1.25rem;
+  -moz-column-gap: 1.25rem;
+       column-gap: 1.25rem;
   flex-wrap: wrap;
 }
 .modal__gallery::-webkit-scrollbar {
@@ -823,7 +823,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .modal__gallery::-webkit-scrollbar {
-    width: 10px;
+    width: 0.625rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -833,7 +833,7 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .modal__gallery::-webkit-scrollbar {
-    width: 15px;
+    width: 0.9375rem;
   }
 }
 .modal__gallery::-webkit-scrollbar-thumb {
@@ -846,7 +846,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .modal__gallery::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 0.625rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -856,23 +856,23 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .modal__gallery::-webkit-scrollbar-thumb {
-    border-radius: 15px;
+    border-radius: 0.9375rem;
   }
 }
 .modal__gallery .gallery__image {
-  padding: 10px;
+  padding: 0.625rem;
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 1.25rem;
+  box-shadow: 0 0 0.625rem 0.125rem rgba(0, 0, 0, 0.2);
   transition-property: box-shadow;
   transition-duration: 0.2s;
 }
 .modal__gallery .gallery__image:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px 2px rgba(250, 250, 250, 0.6);
+  box-shadow: 0 0 0.625rem 0.125rem rgba(250, 250, 250, 0.6);
 }
 .modal__gallery .gallery__image:active {
-  box-shadow: 0 0 20px 4px rgba(250, 250, 250, 0.8);
+  box-shadow: 0 0 1.25rem 0.25rem rgba(250, 250, 250, 0.8);
 }
 @media screen and (orientation: portrait) {
   .modal__gallery .gallery__image {
@@ -881,7 +881,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .modal__gallery .gallery__image {
-    width: 300px;
+    width: 18.75rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -891,7 +891,7 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .modal__gallery .gallery__image {
-    width: 580px;
+    width: 36.25rem;
   }
 }
 .modal__fullscreen {
@@ -901,26 +901,26 @@ header .header__link {
   overflow: hidden;
 }
 .modal__fullscreen .fullscreen__image {
-  padding: 10px;
+  padding: 0.625rem;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   vertical-align: bottom;
 }
 @media screen and (orientation: portrait) {
   .modal__fullscreen .fullscreen__image {
-    width: calc(100% - 20px);
+    width: calc(100% - 1.25rem);
   }
 }
 @media screen and (orientation: landscape) {
   .modal__fullscreen .fullscreen__image {
-    height: calc(100% - 20px);
+    height: calc(100% - 1.25rem);
   }
 }
 
 .failedFetch {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 1.25rem;
   margin: 0;
   text-align: center;
   color: rgb(26, 39, 101);
@@ -935,7 +935,7 @@ header .header__link {
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
   .failedFetch h2 {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -945,7 +945,7 @@ header .header__link {
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
   .failedFetch h2 {
-    font-size: 35px;
+    font-size: 2.1875rem;
   }
 }
 .failedFetch p {
@@ -955,18 +955,18 @@ header .header__link {
 footer {
   display: flex;
   flex-direction: column;
-  row-gap: 30px;
-  padding-right: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+  row-gap: 1.875rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1.25rem;
+  padding-left: 1.25rem;
 }
 footer .footer__credits {
   display: flex;
   flex-direction: column;
   align-self: center;
   align-items: center;
-  row-gap: 20px;
-  max-width: 1000px;
+  row-gap: 1.25rem;
+  max-width: 62.5rem;
 }
 @media screen and (min-width: 33.75rem) {
   footer .footer__credits {
@@ -974,15 +974,15 @@ footer .footer__credits {
     justify-content: space-evenly;
     align-items: unset;
     row-gap: unset;
-    -moz-column-gap: 40px;
-         column-gap: 40px;
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
   }
 }
 footer .footer__credits .credits__projectOwner, footer .footer__credits .credits__apiProvider {
   color: rgb(26, 39, 101);
   margin: 0;
   text-align: center;
-  line-height: 30px;
+  line-height: 1.875rem;
 }
 @media screen and (min-width: 33.75rem) {
   footer .footer__credits .credits__projectOwner, footer .footer__credits .credits__apiProvider {
@@ -995,9 +995,9 @@ footer .footer__credits .credits__projectOwner .projectOwner__website, footer .f
   color: rgb(26, 39, 101);
   background-color: rgba(26, 39, 101, 0.2);
   text-decoration: none;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-radius: 22px;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  border-radius: 1.375rem;
   -webkit-tap-highlight-color: transparent;
   transition-property: color background-color;
   transition-duration: 0.2s;
