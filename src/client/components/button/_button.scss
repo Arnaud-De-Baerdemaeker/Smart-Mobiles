@@ -6,7 +6,7 @@
 		border: none;
 		border: {
 			style: solid;
-			width: 1px;
+			width: 0.0625rem;
 			color: $primary;
 		}
 		background-color: $white;
@@ -23,9 +23,9 @@
 				@include fluidContent(border-radius, 50px, 70, 50, 100vw);
 
 				@media #{$mq-w1080-up} {
-					width: 70px;
-					height: 70px;
-					border-radius: 70px;
+					width: 4.375rem;
+					height: 4.375rem;
+					border-radius: 4.375rem;
 				}
 			}
 
@@ -35,9 +35,9 @@
 				@include fluidContent(border-radius, 50px, 70, 50, 100vh);
 
 				@media #{$mq-h1080-up} {
-					width: 70px;
-					height: 70px;
-					border-radius: 70px;
+					width: 4.375rem;
+					height: 4.375rem;
+					border-radius: 4.375rem;
 				}
 			}
 
@@ -85,7 +85,7 @@
 				@include fluidContent(font-size, 15px, 20, 15, 100vw);
 
 				@media #{$mq-w1080-up} {
-					font-size: 20px;
+					font-size: 1.25rem;
 				}
 			}
 
@@ -93,7 +93,7 @@
 				@include fluidContent(font-size, 15px, 20, 15, 100vh);
 
 				@media #{$mq-h1080-up} {
-					font-size: 20px;
+					font-size: 1.25rem;
 				}
 			}
 
@@ -117,11 +117,11 @@
 	&__close { // button>
 		@extend .button__brands;
 		position: fixed;
-		right: 20px;
-		bottom: 20px;
+		right: 1.25rem;
+		bottom: 1.25rem;
 		border: {
 			style: solid;
-			width: 1px;
+			width: 0.0625rem;
 			color: $white;
 		}
 	}
@@ -130,7 +130,7 @@
 		@extend .button__brands;
 		border: {
 			style: solid;
-			width: 1px;
+			width: 0.0625rem;
 			color: $white;
 		}
 	}

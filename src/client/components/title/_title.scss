@@ -8,8 +8,8 @@
 			@include fluidContent(border-radius, 59px, 76, 59, 100vw);
 
 			@media #{$mq-w1080-up} {
-				font-size: 50px;
-				border-radius: 76px;
+				font-size: 3.125rem;
+				border-radius: 4.75rem;
 			}
 		}
 
@@ -18,8 +18,8 @@
 			@include fluidContent(border-radius, 59px, 88, 59, 100vh);
 
 			@media #{$mq-h1080-up} {
-				font-size: 60px;
-				border-radius: 88px;
+				font-size: 3.75rem;
+				border-radius: 5.5rem;
 			}
 		}
 	}
@@ -34,8 +34,8 @@
 			@include fluidContent(border-radius, 54px, 65, 54, 100vw);
 
 			@media #{$mq-w1080-up} {
-				font-size: 40px;
-				border-radius: 65px;
+				font-size: 2.5rem;
+				border-radius: 4.0625rem;
 			}
 		}
 
@@ -44,8 +44,8 @@
 			@include fluidContent(border-radius, 54px, 76, 54, 100vh);
 
 			@media #{$mq-h1080-up} {
-				font-size: 50px;
-				border-radius: 76px;
+				font-size: 3.125rem;
+				border-radius: 4.75rem;
 			}
 		}
 	}

@@ -2,11 +2,11 @@
 footer {
 	display: flex;
 	flex-direction: column;
-	row-gap: 30px;
+	row-gap: 1.875rem;
 	padding: {
-		right: 20px;
-		bottom: 20px;
-		left: 20px;
+		right: 1.25rem;
+		bottom: 1.25rem;
+		left: 1.25rem;
 	}
 
 	.footer {
@@ -15,8 +15,8 @@ footer {
 			flex-direction: column;
 			align-self: center;
 			align-items: center;
-			row-gap: 20px;
-			max-width: 1000px;
+			row-gap: 1.25rem;
+			max-width: 62.5rem;
 
 			@media screen {
 				@media #{$mq-w540-up} {
@@ -24,7 +24,7 @@ footer {
 					justify-content: space-evenly;
 					align-items: unset;
 					row-gap: unset;
-					column-gap: 40px;
+					column-gap: 2.5rem;
 				}
 			}
 
@@ -33,7 +33,7 @@ footer {
 					color: $primary;
 					margin: 0;
 					text-align: center;
-					line-height: 30px;
+					line-height: 1.875rem;
 
 					@media screen {
 						@media #{$mq-w540-up} {
@@ -48,10 +48,10 @@ footer {
 						background-color: rgba(26, 39, 101, 0.2);
 						text-decoration: none;
 						padding: {
-							right: 10px;
-							left: 10px;
+							right: 0.625rem;
+							left: 0.625rem;
 						}
-						border-radius: 22px;
+						border-radius: 1.375rem;
 						-webkit-tap-highlight-color: transparent;
 						transition: {
 							property: color background-color;
