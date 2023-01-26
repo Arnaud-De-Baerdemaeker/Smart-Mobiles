@@ -12,7 +12,7 @@ import PhoneDetails from "./components/phoneDetails/phoneDetails";
 
 import {getPhoneDetails} from "./apiCalls/fetchPhoneDetails";
 
-const baseURL = "http://phone-specs-api.azharimm.dev";
+const baseURL = "https://phone-specs-api.azharimm.dev";
 
 const App = () => {
 	const [latestPhones, setLatestPhones] = useState(null);
