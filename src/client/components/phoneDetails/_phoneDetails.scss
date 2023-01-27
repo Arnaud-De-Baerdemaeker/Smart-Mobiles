@@ -1,0 +1,208 @@
+// PHONEDETAILS
+.phoneDetails { // <main>
+	@extend .home;
+
+	&__title { // <h2>
+		@include productTitle;
+		margin: {
+			right: 1.25rem;
+			left: 1.25rem;
+		}
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(font-size, 22px, 26, 22, 100vh);
+
+				@media #{$mq-w1080-up} {
+					font-size: 1.625rem;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(font-size, 24px, 30, 24, 100vh);
+
+				@media #{$mq-h1080-up} {
+					font-size: 1.875rem;
+				}
+			}
+		}
+	}
+
+	&__presentation { // <div>
+		@include gradientBackground;
+		padding: {
+			top: 2.5rem;
+			right: 1.25rem;
+			bottom: 2.5rem;
+			left: 1.25rem;
+		}
+
+		.presentation {
+			display: grid;
+			row-gap: 2.5rem;
+			column-gap: 2.5rem;
+
+			@media screen {
+				@media #{$portrait} {
+					max-width: 67.5rem;
+				}
+
+				@media #{$landscape} {
+					max-width: 120rem;
+				}
+
+				@media #{$mq-w650-up} {
+					grid-template-columns: 1fr 1fr;
+				}
+			}
+
+			&__thumbnail { // <div>
+				@include whiteBackground;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 15.625rem;
+				transition: {
+					property: box-shadow;
+					duration: 0.2s;
+				};
+
+				&:hover {
+					cursor: pointer;
+					box-shadow: 0 0 0.625rem 0.125rem rgba(250, 250, 250, 0.6);
+				}
+
+				&:active {
+					box-shadow: 0 0 1.25rem 0.25rem rgba(250, 250, 250, 0.8);
+				}
+
+				.thumbnail {
+					height: 100%;
+				}
+			}
+		}
+
+		.informations { // <div>
+			dl {
+				display: grid;
+				row-gap: 1.25rem;
+				margin: 0;
+
+				@media screen {
+					@media #{$mq-w450-up} {
+						grid-template-columns: repeat(2, 1fr);
+						column-gap: 2.5rem;
+					}
+				}
+
+				div {
+					dt {
+						display: inline-block;
+						font-weight: 900;
+						border-radius: 3.125rem;
+						padding: {
+							right: 0.625rem;
+							left: 0.625rem;
+						}
+						color: $primary;
+						background-color: $white;
+					}
+
+					dd {
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&__specifications { // <div>
+		display: grid;
+		row-gap: 2.5rem;
+		column-gap: 2.5rem;
+		padding: {
+			right: 1.25rem;
+			left: 1.25rem;
+		}
+		color: $primary;
+
+		@media screen {
+			@media #{$portrait} {
+				max-width: 67.5rem;
+			}
+
+			@media #{$landscape} {
+				max-width: 120rem;
+			}
+
+			@media #{$mq-w600-up} {
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media #{$mq-w1000-up} {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			@media #{$mq-w1500-up} {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+
+		.specifications { // <section>
+			display: flex;
+			align-items: stretch;
+			column-gap: 1.25rem;
+			row-gap: 1.25rem;
+
+			&__container { // <div>
+				display: inherit;
+				align-items: start;
+				background-image: $gradient;
+				border-radius: 2.1875rem;
+
+				.container {
+					&__title { // <h3>
+						display: inherit;
+						flex-direction: column-reverse;
+						align-items: center;
+						text-transform: uppercase;
+						margin: 0;
+						padding: {
+							top: 1.25rem;
+							right: 0.625rem;
+							bottom: 1.25rem;
+							left: 0.625rem;
+						}
+
+						.title { // <span>
+							transform: rotateZ(-90deg);
+							color: $white;
+						}
+
+						.space { // <span>
+							height: 1.5625rem;
+						}
+					}
+				}
+			}
+
+			dl {
+				display: flex;
+				flex-direction: column;
+				row-gap: 1.25rem;
+				margin: 0;
+
+				div {
+					dt {
+						font-weight: 900;
+					}
+
+					dd {
+						margin: 0;
+						white-space: pre-line;
+					}
+				}
+			}
+		}
+	}
+}

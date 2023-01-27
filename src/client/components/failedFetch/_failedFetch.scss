@@ -1,0 +1,35 @@
+// FAILEDFETCH
+.failedFetch {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+    margin: 0;
+    text-align: center;
+    color: $primary;
+
+    h2 {
+        margin: 0;
+
+        @media screen {
+			@media #{$portrait} {
+				@include fluidContent(font-size, 22px, 32, 22, 100vw);
+
+				@media #{$mq-w1080-up} {
+					font-size: 2rem;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(font-size, 25px, 35, 25, 100vh);
+
+				@media #{$mq-h1080-up} {
+					font-size: 2.1875rem;
+				}
+			}
+		}
+    }
+
+    p {
+        margin: 0;
+    }
+}

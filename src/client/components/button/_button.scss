@@ -1,0 +1,153 @@
+// BUTTON
+.button {
+	&__brands { // <button>
+		margin: 0;
+		padding: 0;
+		border: none;
+		border: {
+			style: solid;
+			width: 0.0625rem;
+			color: $primary;
+		}
+		background-color: $white;
+		-webkit-tap-highlight-color: transparent;
+		transition: {
+			property: background-color;
+			duration: 0.2s;
+		}
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(width, 50px, 70, 50, 100vw);
+				@include fluidContent(height, 50px, 70, 50, 100vw);
+				@include fluidContent(border-radius, 50px, 70, 50, 100vw);
+
+				@media #{$mq-w1080-up} {
+					width: 4.375rem;
+					height: 4.375rem;
+					border-radius: 4.375rem;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(width, 50px, 70, 50, 100vh);
+				@include fluidContent(height, 50px, 70, 50, 100vh);
+				@include fluidContent(border-radius, 50px, 70, 50, 100vh);
+
+				@media #{$mq-h1080-up} {
+					width: 4.375rem;
+					height: 4.375rem;
+					border-radius: 4.375rem;
+				}
+			}
+
+			@media #{$hover} {
+				&:hover {
+					cursor: pointer;
+					background-color: $primary;
+				}
+			}
+
+			@media #{$no-hover} {
+				&:active {
+					background-color: $primary;
+				}
+			}
+		}
+	}
+
+	&__search { // <button>
+		@extend .button__brands;
+	}
+
+	&__clear { // <button>
+		@extend .button__brands;
+	}
+
+	&__validate {
+		@extend .button__brands;
+		color: $primary;
+		font: {
+			family: $notoSans;
+			weight: 900;
+		}
+		transition: {
+			property: color;
+			duration: 0.2s;
+		}
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(font-size, 15px, 20, 15, 100vw);
+
+				@media #{$mq-w1080-up} {
+					font-size: 1.25rem;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(font-size, 15px, 20, 15, 100vh);
+
+				@media #{$mq-h1080-up} {
+					font-size: 1.25rem;
+				}
+			}
+		}
+
+		&Selection { // <button>
+			@extend .button__validate;
+
+			@media screen {
+				@media #{$hover} {
+					&:hover {
+						color: $white;
+					}
+				}
+
+				@media #{$no-hover} {
+					&:active {
+						color: $white;
+					}
+				}
+			}
+		}
+
+		&Terms { // <button>
+			@extend .button__validateSelection;
+		}
+	}
+
+	&__close { // button>
+		@extend .button__brands;
+		position: fixed;
+		right: 1.25rem;
+		bottom: 1.25rem;
+		border: {
+			style: solid;
+			width: 0.0625rem;
+			color: $white;
+		}
+	}
+
+	&__previous { // <button>
+		@extend .button__brands;
+		border: {
+			style: solid;
+			width: 0.0625rem;
+			color: $white;
+		}
+	}
+
+	&__next { // <next>
+		@extend .button__previous;
+	}
+}
+
+.touchButton {
+	background-color: $primary;
+	color: $white;
+
+	&--modal {
+		@extend .touchButton;
+	}
+}

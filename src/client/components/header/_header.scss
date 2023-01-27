@@ -1,0 +1,14 @@
+// HEADER
+header {
+	padding: {
+		top: 1.25rem;
+		right: 1.25rem;
+		left: 1.25rem;
+	}
+
+	.header {
+		&__link { // <a>
+			text-decoration: none;
+		}
+	}
+}

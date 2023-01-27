@@ -1,0 +1,52 @@
+// TITLE
+.header__title {
+	@include globalTitleSettings;
+
+	@media screen {
+		@media #{$portrait} {
+			@include fluidContent(font-size, 35px, 50, 35, 100vw);
+			@include fluidContent(border-radius, 59px, 76, 59, 100vw);
+
+			@media #{$mq-w1080-up} {
+				font-size: 3.125rem;
+				border-radius: 4.75rem;
+			}
+		}
+
+		@media #{$landscape} {
+			@include fluidContent(font-size, 35px, 60, 35, 100vh);
+			@include fluidContent(border-radius, 59px, 88, 59, 100vh);
+
+			@media #{$mq-h1080-up} {
+				font-size: 3.75rem;
+				border-radius: 5.5rem;
+			}
+		}
+	}
+}
+
+.footer__title {
+	@include globalTitleSettings;
+
+	@media screen {
+		@media #{$portrait} {
+			@include fluidContent(font-size, 30px, 40, 30, 100vw);
+			@include fluidContent(border-radius, 54px, 65, 54, 100vw);
+
+			@media #{$mq-w1080-up} {
+				font-size: 2.5rem;
+				border-radius: 4.0625rem;
+			}
+		}
+
+		@media #{$landscape} {
+			@include fluidContent(font-size, 30px, 50, 30, 100vh);
+			@include fluidContent(border-radius, 54px, 76, 54, 100vh);
+
+			@media #{$mq-h1080-up} {
+				font-size: 3.125rem;
+				border-radius: 4.75rem;
+			}
+		}
+	}
+}

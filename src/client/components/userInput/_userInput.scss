@@ -1,0 +1,146 @@
+// USERINPUT
+.userInput {
+	&__dropdown { // <form>
+		display: flex;
+		flex-direction: column;
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(row-gap, 10px, 20, 10, 100vw);
+
+				@media #{$mq-w1080-up} {
+					row-gap: 1.25rem;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(row-gap, 10px, 20, 10, 100vh);
+
+				@media #{$mq-h1080-up} {
+					row-gap: 1.25rem;
+				}
+			}
+		}
+
+		.dropdown {
+			&__label { // <label>
+				color: $primary;
+				text-align: center;
+
+				@media screen {
+					@media #{$portrait} {
+						@include fluidContent(font-size, 18px, 20, 18, 100vw);
+
+						@media #{$mq-w1080-up} {
+							font-size: 1.25rem;
+						}
+					}
+
+					@media #{$landscape} {
+						@include fluidContent(font-size, 18px, 20, 18, 100vh);
+
+						@media #{$mq-h1080-up} {
+							font-size: 1.25rem;
+						}
+					}
+				}
+			}
+
+			&__fieldsContainer { // <div>
+				display: flex;
+
+				@media screen {
+					@media #{$portrait} {
+						@include fluidContent(column-gap, 10px, 20, 10, 100vw);
+
+						@media #{$mq-w1080-up} {
+							column-gap: 1.25rem;
+						}
+					}
+
+					@media #{$landscape} {
+						@include fluidContent(column-gap, 20px, 40, 20, 100vh);
+
+						@media #{$mq-h1080-up} {
+							column-gap: 2.5rem;
+						}
+					}
+				}
+			}
+
+			&__selection { // <select>
+				border: none;
+				border: {
+					style: solid;
+					width: 0.0625rem;
+					color: $primary;
+				}
+				outline: none;
+				padding: {
+					right: 0.625rem;
+					left: 0.625rem;
+				}
+				appearance: none;
+				background: {
+					image: url("data:image/svg+xml;utf8,<svg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'><path d='M24.2929 31.2929L8 15C7.44772 14.4477 6.55228 14.4477 6 15C5.44772 15.5523 5.44771 16.4477 6 17L24.2929 35.2929C24.6834 35.6834 25.3166 35.6834 25.7071 35.2929L44 17C44.5523 16.4477 44.5523 15.5523 44 15C43.4477 14.4477 42.5523 14.4477 42 15L25.7071 31.2929C25.3166 31.6834 24.6834 31.6834 24.2929 31.2929Z' fill='rgb(18, 73, 94)'/></svg>");
+					repeat: no-repeat;
+					position: calc(100% - 0.625rem) center;
+				}
+				font: {
+					family: $notoSans;
+					size: 1rem;
+				}
+				color: $primary;
+
+				@media screen {
+					@media #{$portrait} {
+						@include fluidContent(width, 200px, 450, 200, 100vw);
+						@include fluidContent(border-radius, 50px, 70, 50, 100vw);
+						@include fluidContent(background-size, 15px, 25, 15, 100vw);
+
+						@media #{$mq-w1080-up} {
+							width: 28.125rem;
+							border-radius: 4.375rem;
+							background-size: 1.5625rem;
+						}
+					}
+
+					@media #{$landscape} {
+						@include fluidContent(width, 230px, 850, 230, 100vh);
+						@include fluidContent(border-radius, 50px, 70, 50, 100vh);
+						@include fluidContent(background-size, 20px, 25, 20, 100vh);
+
+						@media #{$mq-h1080-up} {
+							width: 53.125rem;
+							border-radius: 4.375rem;
+							background-size: 1.5625rem;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__search { // <form>
+		@extend .userInput__dropdown;
+
+		.search {
+			&__label { // <label>
+				@extend .dropdown__label;
+			}
+
+			&__fieldsContainer { // <div>
+				@extend .dropdown__fieldsContainer;
+			}
+
+			&__field { // <input>
+				@extend .dropdown__selection;
+				background-image: unset;
+			}
+		}
+	}
+
+	&__field { // <input>
+		@extend .dropdown__selection;
+	}
+}

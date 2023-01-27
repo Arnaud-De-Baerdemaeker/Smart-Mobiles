@@ -1,0 +1,56 @@
+// HOME
+.home { // <main>
+	display: flex;
+	flex-direction: column;
+	row-gap: 3.125rem;
+
+	.userInterface { // <div>
+		display: flex;
+		flex-direction: column;
+		margin: {
+			right: auto;
+			left: auto;
+		}
+
+		@media screen {
+			@media #{$portrait} {
+				@include fluidContent(row-gap, 20px, 40, 20, 100vw);
+
+				@media #{$mq-w1080-up} {
+					row-gap: 2.5rem;
+				}
+			}
+
+			@media #{$landscape} {
+				@include fluidContent(row-gap, 20px, 40, 20, 100vh);
+
+				@media #{$mq-h1080-up} {
+					row-gap: 2.5rem;
+				}
+			}
+		}
+
+		&__controls { // <div>
+			display: flex;
+			justify-content: space-evenly;
+
+			@media screen {
+				@media #{$portrait} {
+					@include fluidContent(width, 260px, 540, 260, 100vw);
+
+					@media #{$mq-w1080-up} {
+						width: 33.75rem;
+					}
+				}
+
+				@media #{$landscape} {
+					@include fluidContent(width, 300px, 960, 300, 100vh);
+
+					@media #{$mq-h1080-up} {
+						width: 60rem;
+					}
+				}
+			}
+		}
+	}
+}

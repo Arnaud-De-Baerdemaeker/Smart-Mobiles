@@ -1,0 +1,41 @@
+// GLOBAL STYLES
+body {
+	margin: 0;
+	font-family: $notoSans;
+	color: $white;
+	background-color: $white;
+	font-size: 16px;
+	scroll-behavior: smooth;
+
+	&::-webkit-scrollbar {
+		@include scrollbar;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@include scrollbarThumb;
+	}
+}
+
+.scroll--blocked { // <body>
+	overflow-y: hidden;
+}
+
+#root { // <div>
+	display: flex;
+	flex-direction: column;
+	row-gap: 3.125rem;
+}
+
+.loading { // <div>
+	color: $primary;
+	text-align: center;
+	font-size: 1.25rem;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+a {
+	-webkit-tap-highlight-color: transparent;
+}
