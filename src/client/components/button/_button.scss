@@ -41,20 +41,16 @@
 				}
 			}
 
-			@media (hover: none) {
-				&:active {
+			@media #{$hover} {
+				&:hover {
+					cursor: pointer;
 					background-color: $primary;
 				}
 			}
 
-			@media (hover: hover) {
-				&:hover {
-					cursor: pointer;
+			@media #{$no-hover} {
+				&:active {
 					background-color: $primary;
-
-					.svg__brands { // <svg>
-						fill: $white;
-					}
 				}
 			}
 		}
@@ -96,21 +92,28 @@
 					font-size: 1.25rem;
 				}
 			}
-
-			@media (hover: hover) {
-				&:hover {
-					cursor: pointer;
-					color: $white;
-				}
-			}
 		}
 
 		&Selection { // <button>
 			@extend .button__validate;
+
+			@media screen {
+				@media #{$hover} {
+					&:hover {
+						color: $white;
+					}
+				}
+
+				@media #{$no-hover} {
+					&:active {
+						color: $white;
+					}
+				}
+			}
 		}
 
 		&Terms { // <button>
-			@extend .button__validate;
+			@extend .button__validateSelection;
 		}
 	}
 
