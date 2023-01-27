@@ -6,10 +6,12 @@
 
 import axios from "axios";
 
-const getPhoneDetails = async (url) => {
+import {baseURL} from "../App";
+
+const getPhoneDetails = async (slug) => {
 	const request = await axios({
 		method: "GET",
-		url: url,
+		url: `${baseURL}/${slug}`,
 		headers: {
 			"content-type": "application/json"
 		}
