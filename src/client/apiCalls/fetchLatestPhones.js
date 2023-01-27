@@ -6,7 +6,7 @@
 
 import axios from "axios";
 
-import { baseURL } from "../App";
+import {baseURL} from "../App";
 
 const getLatestPhones = async () => {
 	const request = await axios({
