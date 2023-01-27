@@ -225,7 +225,7 @@ header .header__link {
   }
 }
 
-.button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
+.button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateSelection, .button__validateTerms, .button__clear, .button__search {
   margin: 0;
   padding: 0;
   border: none;
@@ -238,48 +238,45 @@ header .header__link {
   transition-duration: 0.2s;
 }
 @media screen and (orientation: portrait) {
-  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
+  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateSelection, .button__validateTerms, .button__clear, .button__search {
     width: calc(50px + (70 - 50) * ((100vw - 300px) / (1080 - 300)));
     height: calc(50px + (70 - 50) * ((100vw - 300px) / (1080 - 300)));
     border-radius: calc(50px + (70 - 50) * ((100vw - 300px) / (1080 - 300)));
   }
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
-  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
+  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateSelection, .button__validateTerms, .button__clear, .button__search {
     width: 4.375rem;
     height: 4.375rem;
     border-radius: 4.375rem;
   }
 }
 @media screen and (orientation: landscape) {
-  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
+  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateSelection, .button__validateTerms, .button__clear, .button__search {
     width: calc(50px + (70 - 50) * ((100vh - 300px) / (1080 - 300)));
     height: calc(50px + (70 - 50) * ((100vh - 300px) / (1080 - 300)));
     border-radius: calc(50px + (70 - 50) * ((100vh - 300px) / (1080 - 300)));
   }
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
-  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateTerms, .button__validateSelection, .button__clear, .button__search {
+  .button__brands, .button__previous, .button__next, .button__close, .button__validate, .button__validateSelection, .button__validateTerms, .button__clear, .button__search {
     width: 4.375rem;
     height: 4.375rem;
     border-radius: 4.375rem;
   }
 }
-@media screen and (hover: none) {
-  .button__brands:active, .button__previous:active, .button__next:active, .button__close:active, .button__validate:active, .button__validateTerms:active, .button__validateSelection:active, .button__clear:active, .button__search:active {
-    background-color: rgb(26, 39, 101);
-  }
-}
 @media screen and (hover: hover) {
-  .button__brands:hover, .button__previous:hover, .button__next:hover, .button__close:hover, .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover, .button__clear:hover, .button__search:hover {
+  .button__brands:hover, .button__previous:hover, .button__next:hover, .button__close:hover, .button__validate:hover, .button__validateSelection:hover, .button__validateTerms:hover, .button__clear:hover, .button__search:hover {
     cursor: pointer;
     background-color: rgb(26, 39, 101);
   }
-  .button__brands:hover .svg__brands, .button__brands:hover .svg__next, .button__brands:hover .svg__previous, .button__brands:hover .svg__close, .button__brands:hover .svg__clear, .button__brands:hover .svg__search, .button__previous:hover .svg__brands, .button__previous:hover .svg__next, .button__previous:hover .svg__previous, .button__previous:hover .svg__close, .button__previous:hover .svg__clear, .button__previous:hover .svg__search, .button__next:hover .svg__brands, .button__next:hover .svg__next, .button__next:hover .svg__previous, .button__next:hover .svg__close, .button__next:hover .svg__clear, .button__next:hover .svg__search, .button__close:hover .svg__brands, .button__close:hover .svg__next, .button__close:hover .svg__previous, .button__close:hover .svg__close, .button__close:hover .svg__clear, .button__close:hover .svg__search, .button__validate:hover .svg__brands, .button__validate:hover .svg__next, .button__validate:hover .svg__previous, .button__validate:hover .svg__close, .button__validate:hover .svg__clear, .button__validate:hover .svg__search, .button__validateTerms:hover .svg__brands, .button__validateTerms:hover .svg__next, .button__validateTerms:hover .svg__previous, .button__validateTerms:hover .svg__close, .button__validateTerms:hover .svg__clear, .button__validateTerms:hover .svg__search, .button__validateSelection:hover .svg__brands, .button__validateSelection:hover .svg__next, .button__validateSelection:hover .svg__previous, .button__validateSelection:hover .svg__close, .button__validateSelection:hover .svg__clear, .button__validateSelection:hover .svg__search, .button__clear:hover .svg__brands, .button__clear:hover .svg__next, .button__clear:hover .svg__previous, .button__clear:hover .svg__close, .button__clear:hover .svg__clear, .button__clear:hover .svg__search, .button__search:hover .svg__brands, .button__search:hover .svg__next, .button__search:hover .svg__previous, .button__search:hover .svg__close, .button__search:hover .svg__clear, .button__search:hover .svg__search {
-    fill: rgb(250, 250, 250);
+}
+@media screen and (hover: none) {
+  .button__brands:active, .button__previous:active, .button__next:active, .button__close:active, .button__validate:active, .button__validateSelection:active, .button__validateTerms:active, .button__clear:active, .button__search:active {
+    background-color: rgb(26, 39, 101);
   }
 }
-.button__validate, .button__validateTerms, .button__validateSelection {
+.button__validate, .button__validateSelection, .button__validateTerms {
   color: rgb(26, 39, 101);
   font-family: "Noto Sans", sans-serif;
   font-weight: 900;
@@ -287,28 +284,32 @@ header .header__link {
   transition-duration: 0.2s;
 }
 @media screen and (orientation: portrait) {
-  .button__validate, .button__validateTerms, .button__validateSelection {
+  .button__validate, .button__validateSelection, .button__validateTerms {
     font-size: calc(15px + (20 - 15) * ((100vw - 300px) / (1080 - 300)));
   }
 }
 @media screen and (orientation: portrait) and (min-width: 67.5rem) {
-  .button__validate, .button__validateTerms, .button__validateSelection {
+  .button__validate, .button__validateSelection, .button__validateTerms {
     font-size: 1.25rem;
   }
 }
 @media screen and (orientation: landscape) {
-  .button__validate, .button__validateTerms, .button__validateSelection {
+  .button__validate, .button__validateSelection, .button__validateTerms {
     font-size: calc(15px + (20 - 15) * ((100vh - 300px) / (1080 - 300)));
   }
 }
 @media screen and (orientation: landscape) and (min-height: 67.5rem) {
-  .button__validate, .button__validateTerms, .button__validateSelection {
+  .button__validate, .button__validateSelection, .button__validateTerms {
     font-size: 1.25rem;
   }
 }
 @media screen and (hover: hover) {
-  .button__validate:hover, .button__validateTerms:hover, .button__validateSelection:hover {
-    cursor: pointer;
+  .button__validateSelection:hover, .button__validateTerms:hover {
+    color: rgb(250, 250, 250);
+  }
+}
+@media screen and (hover: none) {
+  .button__validateSelection:active, .button__validateTerms:active {
     color: rgb(250, 250, 250);
   }
 }
@@ -340,11 +341,15 @@ header .header__link {
   transition-property: fill;
   transition-duration: 0.2s;
 }
-.svg__brands:active, .svg__next:active, .svg__previous:active, .svg__close:active, .svg__clear:active, .svg__search:active {
-  fill: rgb(250, 250, 250);
+@media screen and (hover: hover) {
+  .svg__brands:hover, .svg__next:hover, .svg__previous:hover, .svg__close:hover, .svg__clear:hover, .svg__search:hover {
+    fill: rgb(250, 250, 250);
+  }
 }
-.svg__brands:hover, .svg__next:hover, .svg__previous:hover, .svg__close:hover, .svg__clear:hover, .svg__search:hover {
-  fill: rgb(250, 250, 250);
+@media screen and (hover: none) {
+  .svg__brands:active, .svg__next:active, .svg__previous:active, .svg__close:active, .svg__clear:active, .svg__search:active {
+    fill: rgb(250, 250, 250);
+  }
 }
 .svg__previous {
   transform: rotateZ(90deg);

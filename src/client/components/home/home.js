@@ -225,7 +225,7 @@ const Home = ({
 		setPhones(null);
 		setSearchResult(null);
 
-		if(dropDown.current.selectedIndex !== "default") {
+		if(dropDown.current !== null) {
 			dropDown.current.selectedIndex = "default";
 		}
 

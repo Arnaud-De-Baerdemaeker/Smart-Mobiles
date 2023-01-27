@@ -20,12 +20,12 @@ const App = () => {
 	const [fetchError, setFetchError] = useState(false);
 	const [phoneDetails, setPhoneDetails] = useState(null);
 
-	const acquirePhoneDetails = (url) => {
+	const acquirePhoneDetails = (slug) => {
 		if(phoneDetails !== null) {
 			setPhoneDetails(null);
 		}
 
-		getPhoneDetails(url)
+		getPhoneDetails(slug)
 		.then(result => setPhoneDetails(result.data.data))
 		.catch(() => setFetchError(true));
 	}
