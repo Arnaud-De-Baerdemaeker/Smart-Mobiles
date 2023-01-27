@@ -15,7 +15,11 @@ import Footer from "../footer/footer";
 
 import {baseURL} from "../../App";
 
-const PhoneDetails = ({phoneDetails, acquirePhoneDetails, fetchError, fetchErrorDetails}) => {
+const PhoneDetails = ({
+	phoneDetails,
+	acquirePhoneDetails,
+	fetchError
+}) => {
 	const [galleryModalState, setGalleryModalState] = useState(false);
 	const [fullscreenModalState, setFullscreenModalState] = useState(false);
 	const [clickedImage, setClickedImage] = useState({
@@ -87,7 +91,11 @@ const PhoneDetails = ({phoneDetails, acquirePhoneDetails, fetchError, fetchError
 
 	useEffect(() => {
 		if(!phoneDetails) {
-			acquirePhoneDetails(baseURL + window.location.pathname);
+			let slug = window.location.pathname;
+			// Remove the "/" that is sent by the window object
+			let cleanSlug = slug.replace(/\//, "");
+
+			acquirePhoneDetails(cleanSlug);
 		}
 	}, [phoneDetails, acquirePhoneDetails]);
 
