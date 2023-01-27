@@ -54,7 +54,7 @@ const Render = ({
 					<Link
 						to={`/${phone.slug}`}
 						onClick={() => {
-							acquirePhoneDetails(phone.detail);
+							acquirePhoneDetails(phone.slug);
 							document.title = `${phone.phone_name} | Smartmobiles`;
 						}}
 						key={phone.slug}
@@ -79,7 +79,7 @@ const Render = ({
 					<Link
 						to={`/${phone.slug}`}
 						onClick={() => {
-							acquirePhoneDetails(phone.detail);
+							acquirePhoneDetails(phone.slug);
 							document.title = `${phone.phone_name} | Smartmobiles`;
 						}}
 						key={phone.slug}
@@ -95,13 +95,6 @@ const Render = ({
 			</PhonesList>
 		);
 	}
-	else if(fetchError) {
-		document.title = "Request failed | Smartmobiles";
-
-		return(
-			<FailedFetch />
-		);
-	}
 	else if(latestPhones) {
 		document.title = `${latestPhones.title} | Smartmobiles`;
 
@@ -109,14 +102,14 @@ const Render = ({
 			<PhonesList title={latestPhones.title}>
 				{latestPhones.phones.map(phone =>
 					<Link
-					to={`/${phone.slug}`}
-					onClick={() => {
-						acquirePhoneDetails(phone.detail);
-						document.title = `${phone.phone_name} | Smartmobiles`;
-					}}
+						to={`/${phone.slug}`}
+						onClick={() => {
+							acquirePhoneDetails(phone.slug);
+							document.title = `${phone.phone_name} | Smartmobiles`;
+						}}
 						key={phone.slug}
 						className={"phonesList__link"}
-						>
+					>
 						<PhoneCard
 							imgSrc={phone.image}
 							imgAlt={phone.phone_name}
@@ -125,6 +118,13 @@ const Render = ({
 					</Link>
 				)}
 			</PhonesList>
+		);
+	}
+	else if(fetchError) {
+		document.title = "Request failed | Smartmobiles";
+
+		return(
+			<FailedFetch />
 		);
 	}
 };
