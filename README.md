@@ -16,12 +16,14 @@ The users are able to :
 
 ### 1.0.2
 
-\- Convert px units to rem units in CSS
-\- Update README
+\- Converted px units to rem units in CSS
+\- Fixed a wrong URL that was causing an error on some requests
+\- Fixed the behavior of the buttons' effects on touchscreens
+\- Updated README
 
 ### 1.0.1
 
-\- Fix the URl for the API
+\- Fixe the URl for the API
 
 ### 1.0.0
 
