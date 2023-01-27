@@ -13,8 +13,6 @@ import Button from "../button/button";
 import SVG from "../svg/svg";
 import Footer from "../footer/footer";
 
-import {baseURL} from "../../App";
-
 const PhoneDetails = ({
 	phoneDetails,
 	acquirePhoneDetails,
