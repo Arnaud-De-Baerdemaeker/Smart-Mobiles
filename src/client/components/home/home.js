@@ -208,8 +208,9 @@ const Home = ({
 			})
 			.catch(() => setFetchError(true));
 
-			// Empty the term state state after the call is fulfilled
+			// Empty the term state and the input field after the call is fulfilled
 			setTerm(null);
+			searchInput.current.value = "";
 		}
 		else {
 			// Display a warning sign if no term is provided
