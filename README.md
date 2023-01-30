@@ -14,6 +14,10 @@ The users are able to :
 
 ## Versions
 
+### 1.0.3
+
+\- Fix to make the search input field blank after a previous request
+
 ### 1.0.2
 
 \- Converted px units to rem units in CSS
@@ -23,7 +27,7 @@ The users are able to :
 
 ### 1.0.1
 
-\- Fixe the URl for the API
+\- Fixed the URl for the API
 
 ### 1.0.0
 
